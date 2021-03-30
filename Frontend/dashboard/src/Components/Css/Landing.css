@@ -1,0 +1,342 @@
+/* ________________ */
+/* Section 1 */
+/* _______________ */
+
+#home {
+  background-color: #f5f5f5;
+  padding: 80px 0px 40px 0px !important;
+  display: flex;
+}
+
+.welcome-design {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-logo {
+  width: 30%;
+  margin: 40px 0px 10px 0px;
+}
+
+.welcome-text h2 {
+  text-align: center;
+  font-weight: 500;
+  color: #424242;
+  font-size: 3vw;
+  margin: 0px 0px 0px 0px;
+}
+
+.welcome-text h4 {
+  text-align: center;
+  font-weight: 400;
+  color: #424242;
+  font-size: 1.5vw;
+  margin: 10px 0px 10px 0px;
+}
+
+.welcome-sign-up {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-sign-up .signup-button {
+  padding: 10px 30px;
+  font-size: 1.2vw;
+  font-weight: 500rem;
+  margin: 25px 0px 0px 0px;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: #3d7ed1;
+  color: #f5f5f5;
+}
+
+.welcome-sign-up .signup-button a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+/* ________________ */
+/* Section 2 */
+/* _______________ */
+
+#services {
+  background-color: #f5f5f5;
+  padding: 80px 0px 40px 0px !important;
+  display: flex;
+}
+
+.service-design {
+  display: flex;
+  justify-content: center;
+}
+
+.service-logo {
+  width: 50%;
+  margin: 40px 0px 10px 0px;
+}
+
+.service-heading h2 {
+  text-align: justify;
+  font-weight: 500;
+  color: #424242;
+  font-size: 2.5vw;
+  margin: 0px 0px 20px 0px;
+}
+
+.service-sub-heading h5 {
+  text-align: justify;
+  font-weight: 400;
+  color: #424242;
+  font-size: 1.4vw;
+  margin: 0px 0px 20px 0px;
+}
+
+.service-services h6 {
+  text-align: left;
+  font-weight: 300;
+  color: #424242;
+  font-size: 1.3vw;
+  margin: 0px 0px 16px 0px;
+}
+
+/* ________________ */
+/* Section 3 */
+/* _______________ */
+
+#universe {
+  background-color: #f5f5f5;
+  padding: 80px 0px 40px 0px !important;
+  display: flex;
+}
+
+.universe-design {
+  display: flex;
+  justify-content: center;
+}
+
+.universe-logo {
+  width: 50%;
+  margin: 40px 0px 10px 0px;
+}
+
+.universe-heading h2 {
+  text-align: justify;
+  font-weight: 500;
+  color: #424242;
+  font-size: 2.5vw;
+  margin: 0px 0px 20px 0px;
+}
+
+.universe-sub-heading h5 {
+  text-align: justify;
+  font-weight: 400;
+  color: #424242;
+  font-size: 1.4vw;
+  margin: 0px 0px 20px 0px;
+}
+
+.universe-have-a-look a {
+  text-align: left;
+  font-weight: 300;
+  font-size: 1.3vw;
+  margin: 0px 0px 16px 0px;
+}
+
+@media only screen and (max-width: 450px) {
+  #home {
+    padding: 40% 0px 10% 0px !important;
+  }
+
+  .welcome-logo {
+    width: 75%;
+  }
+
+  .welcome-text h2 {
+    font-size: 8vw;
+    margin: 30px 0px 10px 0px;
+  }
+
+  .welcome-text h4 {
+    margin: 10px 0px 10px 0px;
+    font-size: 4vw;
+  }
+
+  .welcome-sign-up .signup-button {
+    margin: 30px 0px 0px 0px;
+    font-size: 3.2vw;
+  }
+
+  #services {
+    padding: 10% 0px 5% 0px !important;
+  }
+
+  .service-heading h2 {
+    font-weight: 500;
+    font-size: 7vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .service-sub-heading h5 {
+    font-weight: 400;
+    font-size: 4vw;
+  }
+
+  .service-services h6 {
+    font-weight: 300;
+    font-size: 3vw;
+    margin: 0px;
+  }
+
+  #universe {
+    padding: 5% 0px 5% 0px !important;
+  }
+
+  .universe-text {
+    padding: 0px 12px !important;
+  }
+
+  .universe-heading h2 {
+    font-weight: 500;
+    font-size: 7vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .universe-sub-heading h5 {
+    font-weight: 400;
+    font-size: 4vw;
+  }
+
+  .universe-have-a-look a {
+    font-weight: 300;
+    font-size: 3vw;
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  #home {
+    padding: 40% 0px 10% 0px !important;
+  }
+
+  .welcome-logo {
+    width: 50%;
+  }
+
+  .welcome-text h2 {
+    font-size: 5vw;
+    margin: 30px 0px 10px 0px;
+  }
+
+  .welcome-text h4 {
+    margin: 10px 0px 10px 0px;
+    font-size: 2.5vw;
+  }
+
+  .welcome-sign-up .signup-button {
+    margin: 30px 0px 0px 0px;
+    font-size: 2vw;
+  }
+
+  #services {
+    padding: 20% 0px 5% 0px !important;
+  }
+
+  .service-logo {
+    width: 40%;
+    margin: 20px 0px 40px 0px;
+  }
+
+  .service-heading h2 {
+    font-weight: 500;
+    font-size: 4vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .service-sub-heading h5 {
+    font-size: 2.7vw;
+  }
+
+  .service-services h6 {
+    font-size: 2.7vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  #universe {
+    padding: 5% 0px 5% 0px !important;
+  }
+
+  .universe-text {
+    padding: 0px 12px !important;
+  }
+
+  .universe-logo {
+    width: 40%;
+    margin: 20px 0px 40px 0px;
+  }
+
+  .universe-heading h2 {
+    font-weight: 500;
+    font-size: 4vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .universe-sub-heading h5 {
+    font-size: 2.7vw;
+  }
+
+  .universe-have-a-look a {
+    font-size: 2.7vw;
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  #home {
+    padding: 10% 0px 10% 0px !important;
+  }
+
+  .welcome-logo {
+    width: 40%;
+  }
+
+  .welcome-text h2 {
+    font-size: 5vw;
+    margin: 30px 0px 10px 0px;
+  }
+
+  .welcome-text h4 {
+    margin: 10px 0px 10px 0px;
+    font-size: 2.5vw;
+  }
+
+  .welcome-sign-up .signup-button {
+    margin: 30px 0px 0px 0px;
+    font-size: 2vw;
+  }
+
+  #services {
+    padding: 10% 0px 10% 0px !important;
+  }
+
+  .service-logo {
+    width: 60%;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .service-heading h2 {
+    font-weight: 500;
+    font-size: 4vw;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .service-sub-heading h5 {
+    font-size: 2.5vw;
+  }
+
+  .service-services h6 {
+    font-size: 2.3vw;
+    margin: 0px 0px 10px 0px;
+  }
+}

@@ -1,0 +1,138 @@
+/* ________________ */
+/* Footer */
+/* _______________ */
+
+.footer-logo {
+  width: 50px;
+  padding: 0px 10px 0px 0px;
+}
+
+.footer-brand {
+  font-weight: 400px;
+  font-size: 1.3vw;
+}
+
+.footer-design {
+  padding: 15px 0px 5px 0px;
+}
+
+.footer-item i {
+  padding: 0px 10px 0px 0px;
+}
+
+.footer-heading h4 {
+  font-weight: 400px;
+  font-size: 1.5vw;
+  padding: 10px 0px;
+  margin: 10px;
+  color: #424242;
+}
+
+.footer-item {
+  list-style-type: none;
+  padding: 5px 0px;
+}
+
+.footer-list ul {
+  padding: 0px;
+  font-weight: 400px;
+  margin: 10px;
+}
+
+.footer-item a {
+  color: #424242;
+  text-decoration: none;
+  font-weight: 400px;
+  font-size: 1vw;
+}
+
+.footer-item h5,
+h6 {
+  color: #424242;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 450px) {
+  .footer-logo {
+    width: 15%;
+  }
+
+  .footer-brand {
+    font-size: 3vw;
+  }
+
+  .footer-item i {
+    padding: 0px 10px 0px 0px;
+  }
+
+  .footer-heading h4 {
+    font-size: 3.5vw;
+    padding: 25px 0px 0px 0px;
+    margin: 0px;
+  }
+
+  .footer-item {
+    list-style-type: none;
+    padding: 0px 0px;
+  }
+
+  .footer-list ul {
+    padding: 0px;
+    margin: 0px 0px;
+  }
+
+  .footer-item a {
+    font-size: 2.5vw;
+    padding: 0px 0px 0px 20px;
+  }
+
+  .footer-item h5,
+  h6 {
+    font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  .footer-logo {
+    width: 10%;
+  }
+
+  .footer-brand {
+    font-size: 1.7vw;
+  }
+
+  .footer-item i {
+    padding: 0px 10px 0px 0px;
+  }
+
+  .footer-heading h4 {
+    font-size: 2vw;
+    margin: 0px;
+  }
+
+  .footer-item {
+    list-style-type: none;
+    padding: 0px 0px;
+  }
+
+  .footer-design {
+    padding: 5px 0px 5px 0px;
+  }
+
+  .footer-list ul {
+    padding: 0px;
+    margin: 0px 0px;
+  }
+
+  .footer-item a {
+    font-size: 1.5vw;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .footer-item h5,
+  h6 {
+    font-size: 1vw;
+    margin: 0px 0px 5px 0px;
+  }
+}
