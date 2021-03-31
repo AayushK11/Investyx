@@ -19,7 +19,7 @@ export default class NavigationBar extends React.Component {
         about: this.state.url.concat("/about"),
         products: this.state.url.concat("/products"),
         pricing: this.state.url.concat("/pricing"),
-        support: this.state.url.concat("/support"),
+        support: this.state.url.concat("/contactus"),
       });
     }
     if (window.location.pathname === "/about") {
@@ -27,7 +27,7 @@ export default class NavigationBar extends React.Component {
         about: window.location.href,
         products: this.state.url.concat("/products"),
         pricing: this.state.url.concat("/pricing"),
-        support: this.state.url.concat("/support"),
+        support: this.state.url.concat("/contactus"),
       });
       document.getElementsByClassName("nav-link")[0].style.color = "#387ed1";
     }
@@ -36,7 +36,7 @@ export default class NavigationBar extends React.Component {
         about: this.state.url.concat("/about"),
         products: window.location.href,
         pricing: this.state.url.concat("/pricing"),
-        support: this.state.url.concat("/support"),
+        support: this.state.url.concat("/contactus"),
       });
       document.getElementsByClassName("nav-link")[1].style.color = "#387ed1";
     }
@@ -45,9 +45,18 @@ export default class NavigationBar extends React.Component {
         about: this.state.url.concat("/about"),
         products: this.state.url.concat("/products"),
         pricing: window.location.href,
-        support: this.state.url.concat("/support"),
+        support: this.state.url.concat("/contactus"),
       });
       document.getElementsByClassName("nav-link")[2].style.color = "#387ed1";
+    }
+    if (window.location.pathname === "/contactus") {
+      this.setState({
+        about: this.state.url.concat("/about"),
+        products: this.state.url.concat("/products"),
+        pricing: this.state.url.concat("/pricing"),
+        support: window.location.href,
+      });
+      document.getElementsByClassName("nav-link")[3].style.color = "#387ed1";
     }
   }
 

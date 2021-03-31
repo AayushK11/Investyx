@@ -54,6 +54,16 @@ export default class Footer extends React.Component {
         videos: this.state.url.concat("/videos"),
       });
     }
+    if (window.location.pathname === "/contactus") {
+      this.setState({
+        about: this.state.url.concat("/about"),
+        products: this.state.url.concat("/products"),
+        pricing: this.state.url.concat("/pricing"),
+        contactus: window.location.href,
+        signup: this.state.url.concat("/signup"),
+        videos: this.state.url.concat("/videos"),
+      });
+    }
   }
 
   componentDidMount() {

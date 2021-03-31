@@ -1,0 +1,5 @@
+Backend/.vscode/settings.json
+Backend/API/__pycache__/
+Backend/API/migrations/__pycache__/
+Backend/Investyx/__pycache__/
+Backend/BackendScripts/__pycache__/

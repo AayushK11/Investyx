@@ -5,6 +5,7 @@ import Landing from "./Components/Pages/Landing.js";
 import About from "./Components/Pages/About.js";
 import Products from "./Components/Pages/Products.js";
 import Pricing from "./Components/Pages/Pricing.js";
+import ContactUs from "./Components/Pages/ContactUs.js";
 
 export default class App extends React.Component {
   render() {
@@ -31,6 +32,11 @@ export default class App extends React.Component {
               exact
               path={"/pricing"}
               render={(props) => <Pricing {...props} />}
+            />
+            <Route
+              exact
+              path={"/contactus"}
+              render={(props) => <ContactUs {...props} />}
             />
           </Switch>
         </BrowserRouter>
