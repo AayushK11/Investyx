@@ -11,20 +11,6 @@ export default class About extends React.Component {
     this.state = {
       url: window.location.href,
     };
-    this.generateURLs = this.generateURLs.bind(this);
-  }
-
-  generateURLs() {
-    if (window.location.pathname === "/") {
-      this.setState({
-        signup: this.state.url.concat("signup"),
-        products: this.state.url.concat("products"),
-      });
-    }
-  }
-
-  componentDidMount() {
-    this.generateURLs();
   }
 
   render() {
@@ -120,7 +106,7 @@ export default class About extends React.Component {
                               href="https://github.com/AayushK11"
                               className="social-link"
                             >
-                              <i class="fab fa-github"></i>
+                              <i className="fab fa-github"></i>
                             </a>
                           </div>
                         </div>
@@ -130,7 +116,7 @@ export default class About extends React.Component {
                               href="https://www.linkedin.com/in/aayushkumaria/"
                               className="social-link"
                             >
-                              <i class="fab fa-linkedin"></i>
+                              <i className="fab fa-linkedin"></i>
                             </a>
                           </div>
                         </div>
@@ -140,7 +126,7 @@ export default class About extends React.Component {
                               href="https://twitter.com/aayushkumaria11"
                               className="social-link"
                             >
-                              <i class="fab fa-twitter"></i>
+                              <i className="fab fa-twitter"></i>
                             </a>
                           </div>
                         </div>
@@ -164,7 +150,7 @@ export default class About extends React.Component {
                               href="https://github.com/ajinkyarajkar"
                               className="social-link"
                             >
-                              <i class="fab fa-github"></i>
+                              <i className="fab fa-github"></i>
                             </a>
                           </div>
                         </div>
@@ -174,7 +160,7 @@ export default class About extends React.Component {
                               href="https://www.linkedin.com/in/ajinkya-rajkar-69553a1a7/"
                               className="social-link"
                             >
-                              <i class="fab fa-linkedin"></i>
+                              <i className="fab fa-linkedin"></i>
                             </a>
                           </div>
                         </div>
@@ -184,7 +170,7 @@ export default class About extends React.Component {
                               href="https://twitter.com/RajkarAjinkya"
                               className="social-link"
                             >
-                              <i class="fab fa-twitter"></i>
+                              <i className="fab fa-twitter"></i>
                             </a>
                           </div>
                         </div>
@@ -208,7 +194,7 @@ export default class About extends React.Component {
                               href="https://github.com/aniketraut6465"
                               className="social-link"
                             >
-                              <i class="fab fa-github"></i>
+                              <i className="fab fa-github"></i>
                             </a>
                           </div>
                         </div>
@@ -218,7 +204,7 @@ export default class About extends React.Component {
                               href="https://www.linkedin.com/in/aniket-raut-9915a8205/"
                               className="social-link"
                             >
-                              <i class="fab fa-linkedin"></i>
+                              <i className="fab fa-linkedin"></i>
                             </a>
                           </div>
                         </div>

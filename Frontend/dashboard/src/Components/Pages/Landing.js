@@ -81,7 +81,7 @@ export default class Landing extends React.Component {
                     <div className="col-6">
                       <ul className="Finanical-UL">
                         <li>
-                          <h6>Mutual Funds</h6>
+                          <h6>Small Case</h6>
                         </li>
                         <li>
                           <h6>Currency Trends</h6>

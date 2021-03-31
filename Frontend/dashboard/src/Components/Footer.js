@@ -34,6 +34,26 @@ export default class Footer extends React.Component {
         videos: this.state.url.concat("/videos"),
       });
     }
+    if (window.location.pathname === "/products") {
+      this.setState({
+        about: this.state.url.concat("/about"),
+        products: window.location.href,
+        pricing: this.state.url.concat("/pricing"),
+        contactus: this.state.url.concat("/contactus"),
+        signup: this.state.url.concat("/signup"),
+        videos: this.state.url.concat("/videos"),
+      });
+    }
+    if (window.location.pathname === "/pricing") {
+      this.setState({
+        about: this.state.url.concat("/about"),
+        products: this.state.url.concat("/products"),
+        pricing: window.location.href,
+        contactus: this.state.url.concat("/contactus"),
+        signup: this.state.url.concat("/signup"),
+        videos: this.state.url.concat("/videos"),
+      });
+    }
   }
 
   componentDidMount() {
@@ -44,11 +64,11 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div className="footer-container">
-        <hr class="footer-horoizontal-line" />
-        <footer class="page-footer pt-4">
-          <div class="container text-md-left">
-            <div class="row space-between">
-              <div class="col-sm-3 footer-section-1">
+        <hr className="footer-horoizontal-line" />
+        <footer className="page-footer pt-4">
+          <div className="container text-md-left">
+            <div className="row space-between">
+              <div className="col-sm-3 footer-section-1">
                 <div className="footer-design">
                   <a className="footer-brand" href={this.state.url}>
                     <img
@@ -63,13 +83,13 @@ export default class Footer extends React.Component {
                   <ul>
                     <li className="footer-item">
                       <h5>
-                        <i class="fas fa-phone-alt"></i>
+                        <i className="fas fa-phone-alt"></i>
                         6969-Call-Your-Mom
                       </h5>
                     </li>
                     <li className="footer-item">
                       <h6>
-                        <i class="far fa-copyright"></i>
+                        <i className="far fa-copyright"></i>
                         2021 - Your Mom's Pussy
                       </h6>
                     </li>
@@ -79,7 +99,7 @@ export default class Footer extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div class="col-sm-3 footer-section-2">
+              <div className="col-sm-3 footer-section-2">
                 <div className="footer-heading">
                   <h4>Company</h4>
                 </div>
@@ -103,7 +123,7 @@ export default class Footer extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div class="col-sm-3 footer-section-3">
+              <div className="col-sm-3 footer-section-3">
                 <div className="footer-heading">
                   <h4>Support</h4>
                 </div>
@@ -122,7 +142,7 @@ export default class Footer extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div class="col-sm-3 footer-section-4">
+              <div className="col-sm-3 footer-section-4">
                 <div className="footer-heading">
                   <h4>Account</h4>
                 </div>
@@ -138,7 +158,7 @@ export default class Footer extends React.Component {
               </div>
             </div>
           </div>
-          <hr class="footer-horoizontal-line" />
+          <hr className="footer-horoizontal-line" />
         </footer>
       </div>
     );

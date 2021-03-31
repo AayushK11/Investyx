@@ -1,0 +1,238 @@
+/* ________________ */
+/* Pricing */
+/* _______________ */
+
+#pricing-text {
+  background-color: #f5f5f5;
+  padding: 140px 0px 40px 0px !important;
+  display: flex;
+}
+
+#pricing-charges {
+  background-color: #f5f5f5;
+  padding: 60px 0px 40px 0px !important;
+  display: flex;
+}
+
+.pricing-heading {
+  text-align: center;
+  padding: 10px 0px 30px 0px;
+}
+
+.pricing-heading h2 {
+  font-size: 2.5vw;
+}
+
+.pricing-sub-heading {
+  display: flex;
+  justify-content: center;
+  padding: 0px 0px 70px 0px;
+}
+
+.pricing-sub-heading h4 {
+  font-size: 1.5vw;
+}
+
+.pricing-horizontal-line {
+  margin: auto;
+  width: 80%;
+}
+
+.pricing-column img {
+  display: block;
+  width: 70%;
+}
+
+.pricing-column {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  padding: 0px 0px 0px 0px;
+}
+
+.pricing-image-text h4 {
+  text-align: center;
+  font-size: 1.4vw;
+  margin: 10px 0px 10px 0px;
+}
+
+.pricing-sign-up {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-sign-up .signup-button {
+  padding: 10px 30px;
+  font-size: 1.2vw;
+  font-weight: 500rem;
+  margin: 65px 0px 0px 0px;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: #3d7ed1;
+  color: #f5f5f5;
+}
+
+.pricing-sign-up .signup-button a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 450px) {
+  #pricing-charges {
+    background-color: #f5f5f5;
+    padding: 0px 0px 40px 0px !important;
+    display: flex;
+  }
+
+  .pricing-heading {
+    padding: 10px 0px 10px 0px;
+  }
+
+  .pricing-heading h2 {
+    font-size: 5vw;
+  }
+
+  .pricing-sub-heading {
+    padding: 0px 0px 40px 0px;
+  }
+
+  .pricing-sub-heading h4 {
+    font-size: 3.5vw;
+  }
+
+  .pricing-horizontal-line {
+    margin: auto;
+    width: 80%;
+  }
+
+  .pricing-column img {
+    display: block;
+    width: 40%;
+  }
+
+  .pricing-column {
+    height: 200px;
+  }
+
+  .pricing-image-text h4 {
+    font-size: 3.5vw;
+  }
+
+  .pricing-sign-up {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pricing-sign-up .signup-button {
+    font-size: 3vw;
+    margin: 30px 0px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  #pricing-charges {
+    background-color: #f5f5f5;
+    padding: 40px 0px 40px 0px !important;
+    display: flex;
+  }
+
+  .pricing-heading {
+    padding: 60px 0px 10px 0px;
+  }
+
+  .pricing-heading h2 {
+    font-size: 4.5vw;
+  }
+
+  .pricing-sub-heading {
+    padding: 0px 0px 60px 0px;
+  }
+
+  .pricing-sub-heading h4 {
+    font-size: 3vw;
+  }
+
+  .pricing-horizontal-line {
+    margin: auto;
+    width: 80%;
+  }
+
+  .pricing-column img {
+    display: block;
+    width: 40%;
+  }
+
+  .pricing-column {
+    height: 250px;
+  }
+
+  .pricing-image-text h4 {
+    font-size: 2.5vw;
+  }
+
+  .pricing-sign-up {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pricing-sign-up .signup-button {
+    font-size: 2.5vw;
+    margin: 10px 0px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  #pricing-charges {
+    background-color: #f5f5f5;
+    padding: 60px 0px 40px 0px !important;
+    display: flex;
+  }
+
+  .pricing-heading {
+    padding: 60px 0px 10px 0px;
+  }
+
+  .pricing-heading h2 {
+    font-size: 4vw;
+  }
+
+  .pricing-sub-heading {
+    padding: 0px 0px 60px 0px;
+  }
+
+  .pricing-sub-heading h4 {
+    font-size: 2.5vw;
+  }
+
+  .pricing-horizontal-line {
+    margin: auto;
+    width: 100%;
+  }
+
+  .pricing-column img {
+    display: block;
+    width: 70%;
+  }
+
+  .pricing-column {
+    height: 300px;
+  }
+
+  .pricing-image-text h4 {
+    font-size: 2vw;
+  }
+
+  .pricing-sign-up {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pricing-sign-up .signup-button {
+    font-size: 2vw;
+    margin: 0px 0px 0px 0px;
+  }
+}
