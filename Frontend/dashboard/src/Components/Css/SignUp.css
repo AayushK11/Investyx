@@ -1,0 +1,270 @@
+/* ________________ */
+/* Sign Up */
+/* _______________ */
+
+#registration-section {
+  background-color: #f5f5f5;
+  padding: 120px 0px 40px 0px !important;
+  display: flex;
+}
+
+.required-star {
+  color: red;
+}
+
+.register-form {
+  padding: 10px;
+}
+
+.register-form .register-heading {
+  text-align: left;
+  padding: 10px 0px 15px 0px;
+}
+
+.register-form .register-heading h2 {
+  font-size: 2vw;
+}
+
+.register-form .register-input-form .register-form-column input {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.register-form .register-input-form .register-form-column-button button {
+  padding: 5px 20px;
+  margin: 20px 0px 0px 0px;
+  font-size: 1vw;
+  font-weight: 500rem;
+  border: 1px solid transparent !important;
+  border-radius: 5px;
+  background-color: #3d7ed1;
+  color: #f5f5f5;
+}
+
+.register-form .register-input-form .register-form-column-button .next-button {
+  float: right;
+}
+
+.register-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-graphic img {
+  width: 70%;
+}
+
+.register-form-plan {
+  background-color: #76a9eb;
+  border: 1px solid grey;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.register-form-plan .register-plan-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form-plan .register-plan-price h4 {
+  font-size: 1.2vw;
+  text-align: center;
+}
+
+.register-form-plan .register-plan-details ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.register-form-plan .register-plan-details li {
+  font-size: 0.9vw;
+  text-align: left;
+}
+
+.register-form-plan .register-plan-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form-plan .register-plan-select button {
+  padding: 5px 20px;
+  font-size: 1vw;
+  font-weight: 500rem;
+  border: 1px solid transparent !important;
+  border-radius: 5px;
+  background-color: #3d7ed1;
+  color: #f5f5f5;
+}
+
+.register-completion-graphic .register-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-completion-graphic .register-graphic img {
+  width: 30%;
+}
+
+.register-completion-graphic .register-completion-text h2 {
+  margin: 10px;
+  font-size: 2.2vw;
+}
+
+.register-completion-graphic .register-completion-text h4 {
+  margin: 10px;
+  font-size: 1.5vw;
+}
+
+@media only screen and (max-width: 450px) {
+  #registration-section {
+    padding: 80px 0px 40px 0px !important;
+  }
+
+  .register-form .register-heading h2 {
+    font-size: 5.5vw;
+  }
+
+  .register-form .register-input-form .register-form-column-button button {
+    font-size: 4vw;
+  }
+
+  .register-graphic {
+    display: none;
+  }
+
+  .register-form-plan .register-plan-price h4 {
+    font-size: 3.4vw;
+  }
+
+  .register-form-plan .register-plan-details li {
+    font-size: 2vw;
+    text-align: left;
+  }
+
+  .register-form-plan .register-plan-select button {
+    font-size: 3vw;
+  }
+
+  .register-completion-graphic .register-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register-completion-graphic .register-graphic img {
+    width: 60%;
+  }
+
+  .register-completion-graphic .register-completion-text h2 {
+    font-size: 5.5vw;
+  }
+
+  .register-completion-graphic .register-completion-text h4 {
+    font-size: 3.4vw;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  #registration-section {
+    padding: 150px 0px 40px 0px !important;
+  }
+
+  .register-form .register-heading h2 {
+    font-size: 3.5vw;
+  }
+
+  .register-form .register-input-form .register-form-column-button button {
+    font-size: 2.3vw;
+  }
+
+  .register-graphic {
+    display: none;
+  }
+
+  .register-form-plan .register-plan-price h4 {
+    font-size: 2vw;
+  }
+
+  .register-form-plan .register-plan-details li {
+    font-size: 1.5vw;
+    text-align: left;
+  }
+
+  .register-form-plan .register-plan-select button {
+    font-size: 1.75vw;
+  }
+
+  .register-completion-graphic .register-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register-completion-graphic .register-graphic img {
+    width: 50%;
+  }
+
+  .register-completion-graphic .register-completion-text h2 {
+    font-size: 3.5vw;
+  }
+
+  .register-completion-graphic .register-completion-text h4 {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .register-form .register-heading h2 {
+    font-size: 2.4vw;
+  }
+
+  .register-form .register-input-form .register-form-column-button button {
+    font-size: 1.5vw;
+  }
+
+  .register-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register-graphic img {
+    width: 50%;
+  }
+
+  .register-form-plan .register-plan-price h4 {
+    font-size: 1.7vw;
+  }
+
+  .register-form-plan .register-plan-details li {
+    font-size: 1vw;
+    text-align: left;
+  }
+
+  .register-form-plan .register-plan-select button {
+    font-size: 1.5vw;
+  }
+
+  .register-completion-graphic .register-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register-completion-graphic .register-graphic img {
+    width: 40%;
+  }
+
+  .register-completion-graphic .register-completion-text h2 {
+    font-size: 2.4vw;
+  }
+
+  .register-completion-graphic .register-completion-text h4 {
+    font-size: 1.7vw;
+  }
+}

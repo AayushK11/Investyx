@@ -43,6 +43,18 @@ export default class ContactUs extends React.Component {
             );
             $(".contactus").fadeTo(500, 1);
             $(".cssload-loader").fadeTo(500, 0);
+          } else {
+            alert("Something went Wrong");
+            $(".contactus").fadeTo(500, 1);
+            $(".cssload-loader").fadeTo(500, 0);
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+          if (!e.Status) {
+            alert("Something Went Wrong");
+            $(".contactus").fadeTo(500, 1);
+            $(".cssload-loader").fadeTo(500, 0);
           }
         });
     }
@@ -50,7 +62,7 @@ export default class ContactUs extends React.Component {
 
   checkFields() {
     var flag = 0;
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var reg = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
 
     Array.from(document.getElementsByTagName("label")).forEach(function (
       element
@@ -58,7 +70,7 @@ export default class ContactUs extends React.Component {
       element.style.color = "#212529";
     });
 
-    if (!Number(this.state.phoneno) || this.state.phoneno.length != 10) {
+    if (!Number(this.state.phoneno) || this.state.phoneno.length !== 10) {
       document.getElementsByTagName("label")[2].style.color = "red";
       flag = 1;
     }
@@ -83,10 +95,10 @@ export default class ContactUs extends React.Component {
         <div className="container-fluid">
           <Navbar />
           <section id="loader">
-            <div class="cssload-loader">
-              <div class="cssload-inner cssload-one"></div>
-              <div class="cssload-inner cssload-two"></div>
-              <div class="cssload-inner cssload-three"></div>
+            <div className="cssload-loader">
+              <div className="cssload-inner cssload-one"></div>
+              <div className="cssload-inner cssload-two"></div>
+              <div className="cssload-inner cssload-three"></div>
             </div>
           </section>
           <section id="contactus-section">
@@ -105,16 +117,16 @@ export default class ContactUs extends React.Component {
                   </div>
                 </div>
                 <div className="col-md-6 contactus-form">
-                  <div class="col-md-9 mb-md-0 mb-5">
+                  <div className="col-md-9 mb-md-0 mb-5">
                     <form
                       id="contact-form"
                       name="contact-form"
                       onSubmit={this.handleSubmit}
                     >
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="md-form mb-0">
-                            <label for="name" class="">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="md-form mb-0">
+                            <label htmlFor="name" className="">
                               Your name
                             </label>
                             <input
@@ -122,15 +134,15 @@ export default class ContactUs extends React.Component {
                               type="text"
                               id="name"
                               name="name"
-                              class="form-control"
+                              className="form-control"
                             />
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="md-form mb-0">
-                            <label for="email" class="">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="md-form mb-0">
+                            <label htmlFor="email" className="">
                               Your email
                             </label>
                             <input
@@ -138,15 +150,15 @@ export default class ContactUs extends React.Component {
                               type="email"
                               id="emailid"
                               name="emailid"
-                              class="form-control"
+                              className="form-control"
                             />
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="md-form mb-0">
-                            <label for="phoneno" class="">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="md-form mb-0">
+                            <label htmlFor="phoneno" className="">
                               Your Phone Number
                             </label>
                             <input
@@ -155,27 +167,27 @@ export default class ContactUs extends React.Component {
                               id="phoneno"
                               maxLength="10"
                               name="phoneno"
-                              class="form-control"
+                              className="form-control"
                             />
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="md-form">
-                            <label for="issue">Your message</label>
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="md-form">
+                            <label htmlFor="issue">Your message</label>
                             <textarea
                               onChange={this.onChange}
                               type="text"
                               id="issue"
                               name="issue"
                               rows="3"
-                              class="form-control md-textarea"
+                              className="form-control md-textarea"
                             ></textarea>
                           </div>
                         </div>
                       </div>
-                      <div class="text-center text-md-left">
+                      <div className="text-center text-md-left">
                         <div className="contactus-submit col-12 text-center">
                           <input
                             onChange={this.onChange}
@@ -186,7 +198,7 @@ export default class ContactUs extends React.Component {
                         </div>
                       </div>
                     </form>
-                    <div class="status"></div>
+                    <div className="status"></div>
                   </div>
                 </div>
               </div>

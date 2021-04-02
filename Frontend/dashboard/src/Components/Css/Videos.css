@@ -1,0 +1,130 @@
+/* ________________ */
+/* Videos */
+/* _______________ */
+
+#video {
+  background-color: #f5f5f5;
+  padding: 180px 0px 70px 0px !important;
+  display: flex;
+}
+
+.video-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-column iframe {
+  height: 315px;
+  width: 420px;
+}
+
+.video-heading h2 {
+  text-align: justify;
+  font-weight: 500;
+  color: #424242;
+  font-size: 2.5vw;
+  margin: 0px 0px 20px 0px;
+}
+
+.video-sub-heading h5 {
+  text-align: justify;
+  font-weight: 400;
+  color: #424242;
+  font-size: 1.4vw;
+  margin: 0px 0px 20px 0px;
+}
+
+.video-have-a-look {
+  display: flex;
+  justify-content: left;
+  margin: 15px 0px 0px 0px;
+}
+
+.video-have-a-look .video-watch {
+  padding: 0px;
+}
+
+.video-have-a-look .video-watch .video-watch-button {
+  padding: 10px 30px;
+  font-size: 1.2vw;
+  font-weight: 500rem;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: #3d7ed1;
+  color: #f5f5f5;
+}
+
+@media only screen and (max-width: 450px) {
+  #video {
+    padding: 100px 0px 70px 0px !important;
+  }
+
+  .video-column {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .video-heading h2 {
+    font-size: 6vw;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .video-sub-heading h5 {
+    font-size: 4vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .video-have-a-look {
+    margin: 20px 0px 10px 0px;
+  }
+
+  .video-have-a-look .video-watch .video-watch-button {
+    padding: 10px 30px;
+    font-size: 3.5vw;
+    font-weight: 500rem;
+    border: 1px solid transparent !important;
+    border-radius: 3px;
+    background-color: #3d7ed1;
+    color: #f5f5f5;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  #video {
+    padding: 140px 0px 70px 0px !important;
+  }
+
+  .video-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
+
+  .video-heading h2 {
+    font-size: 3vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .video-sub-heading h5 {
+    font-size: 2vw;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .video-have-a-look {
+    margin: 10px 0px 0px 0px;
+  }
+
+  .video-have-a-look .video-watch {
+    padding: 0px;
+  }
+
+  .video-have-a-look .video-watch .video-watch-button {
+    padding: 10px 20px;
+    font-size: 1.5vw;
+    font-weight: 500rem;
+  }
+}

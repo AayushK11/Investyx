@@ -14,56 +14,14 @@ export default class Footer extends React.Component {
   }
 
   generateURLs() {
-    if (window.location.pathname === "/") {
-      this.setState({
-        about: this.state.url.concat("/about"),
-        products: this.state.url.concat("/products"),
-        pricing: this.state.url.concat("/pricing"),
-        contactus: this.state.url.concat("/contactus"),
-        signup: this.state.url.concat("/signup"),
-        videos: this.state.url.concat("/videos"),
-      });
-    }
-    if (window.location.pathname === "/about") {
-      this.setState({
-        about: window.location.href,
-        products: this.state.url.concat("/products"),
-        pricing: this.state.url.concat("/pricing"),
-        contactus: this.state.url.concat("/contactus"),
-        signup: this.state.url.concat("/signup"),
-        videos: this.state.url.concat("/videos"),
-      });
-    }
-    if (window.location.pathname === "/products") {
-      this.setState({
-        about: this.state.url.concat("/about"),
-        products: window.location.href,
-        pricing: this.state.url.concat("/pricing"),
-        contactus: this.state.url.concat("/contactus"),
-        signup: this.state.url.concat("/signup"),
-        videos: this.state.url.concat("/videos"),
-      });
-    }
-    if (window.location.pathname === "/pricing") {
-      this.setState({
-        about: this.state.url.concat("/about"),
-        products: this.state.url.concat("/products"),
-        pricing: window.location.href,
-        contactus: this.state.url.concat("/contactus"),
-        signup: this.state.url.concat("/signup"),
-        videos: this.state.url.concat("/videos"),
-      });
-    }
-    if (window.location.pathname === "/contactus") {
-      this.setState({
-        about: this.state.url.concat("/about"),
-        products: this.state.url.concat("/products"),
-        pricing: this.state.url.concat("/pricing"),
-        contactus: window.location.href,
-        signup: this.state.url.concat("/signup"),
-        videos: this.state.url.concat("/videos"),
-      });
-    }
+    this.setState({
+      about: this.state.url.concat("/about"),
+      products: this.state.url.concat("/products"),
+      pricing: this.state.url.concat("/pricing"),
+      contactus: this.state.url.concat("/contactus"),
+      signup: this.state.url.concat("/signup"),
+      videos: this.state.url.concat("/videos"),
+    });
   }
 
   componentDidMount() {

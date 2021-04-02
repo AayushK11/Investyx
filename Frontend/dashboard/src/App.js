@@ -6,6 +6,10 @@ import About from "./Components/Pages/About.js";
 import Products from "./Components/Pages/Products.js";
 import Pricing from "./Components/Pages/Pricing.js";
 import ContactUs from "./Components/Pages/ContactUs.js";
+import Videos from "./Components/Pages/Videos.js";
+import SignUp from "./Components/Pages/SignUp.js";
+import TermsAndConditions from "./Components/Pages/TermsAndConditions";
+import PrivacyPolicy from "./Components/Pages/PrivacyPolicy";
 
 export default class App extends React.Component {
   render() {
@@ -37,6 +41,26 @@ export default class App extends React.Component {
               exact
               path={"/contactus"}
               render={(props) => <ContactUs {...props} />}
+            />
+            <Route
+              exact
+              path={"/videos"}
+              render={(props) => <Videos {...props} />}
+            />
+            <Route
+              exact
+              path={"/signup"}
+              render={(props) => <SignUp {...props} />}
+            />
+            <Route
+              exact
+              path={"/termsandconditions"}
+              render={(props) => <TermsAndConditions {...props} />}
+            />
+            <Route
+              exact
+              path={"/privacypolicy"}
+              render={(props) => <PrivacyPolicy {...props} />}
             />
           </Switch>
         </BrowserRouter>
