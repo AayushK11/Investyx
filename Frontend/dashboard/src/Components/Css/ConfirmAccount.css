@@ -1,0 +1,132 @@
+/* ________________ */
+/* Confirm Account */
+/* _______________ */
+
+.confirm-account-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-account-column {
+  width: 50%;
+}
+
+#confirmaccount-form {
+  background-color: #b2d3fa !important;
+  padding: 30px 40px 30px 40px;
+  margin: 150px 0px 0px 0px;
+  border-radius: 5%;
+}
+
+.confirmaccount-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.confirmaccount-logo img {
+  width: 35%;
+}
+
+.confirmaccout-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmaccount-text h5 {
+  font-size: 1.5vw;
+}
+
+.confirm-account-form-contents {
+  margin: 50px 10px 10px 0px;
+}
+
+.confirm-account-form-contents .col-md-12 {
+  margin: 5px 0px;
+}
+
+@media only screen and (max-width: 450px) {
+  .confirm-account-column {
+    width: 90%;
+  }
+
+  #confirmaccount-form {
+    margin: 150px 0px 0px 0px;
+  }
+
+  .confirmaccount-logo img {
+    width: 50%;
+  }
+
+  .confirmaccount-text h5 {
+    font-size: 2.7vw;
+    margin: 0px;
+  }
+
+  .confirm-account-form-contents {
+    margin: 30px 10px 10px 0px;
+  }
+
+  .confirm-account-form-contents .col-md-12,
+  .confirm-account-form-contents .col-md-6 {
+    margin: 5px 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  .confirm-account-column {
+    width: 90%;
+  }
+
+  #confirmaccount-form {
+    margin: 300px 0px 0px 0px;
+  }
+
+  .confirmaccount-logo img {
+    width: 50%;
+  }
+
+  .confirmaccount-text h5 {
+    font-size: 2.7vw;
+    margin: 0px;
+  }
+
+  .confirm-account-form-contents {
+    margin: 30px 10px 10px 0px;
+  }
+
+  .confirm-account-form-contents .col-md-12,
+  .confirm-account-form-contents .col-md-6 {
+    margin: 5px 0px;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .confirm-account-column {
+    width: 90%;
+  }
+
+  #confirmaccount-form {
+    margin: 350px 0px 0px 0px;
+  }
+
+  .confirmaccount-logo img {
+    width: 40%;
+  }
+
+  .confirmaccount-text h5 {
+    font-size: 2vw;
+    margin: 0px;
+  }
+
+  .confirm-account-form-contents {
+    margin: 30px 10px 10px 0px;
+  }
+
+  .confirm-account-form-contents .col-md-12,
+  .confirm-account-form-contents .col-md-6 {
+    margin: 5px 0px;
+  }
+}

@@ -143,7 +143,7 @@ def send_email(name, email, usercode):
                                             </tr>
                                             <tr>
                                                 <td align="right" style="font-size:0px;padding:0 10px;word-break:break-word">
-                                                <div style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:14px;font-weight:normal;line-height:20px;text-align:right;color:#535b62">© Smart Stox - 2021</div>
+                                                <div style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:14px;font-weight:normal;line-height:20px;text-align:right;color:#535b62">© Investyx - 2021</div>
                                                 </td>
                                             </tr>
                                             

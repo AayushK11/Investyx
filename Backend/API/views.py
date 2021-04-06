@@ -10,8 +10,6 @@ from BackendScripts.authentication_tasks import (
 )
 from BackendScripts.email_tasks import send_email
 
-# Create your views here.
-
 
 @api_view(["POST"])
 def support(request):
@@ -117,3 +115,13 @@ def register(request):
                 )
                 break
         return Response({"Status": "Success"})
+
+    elif len(request.data.keys()) == 2 and "Usercode" in request.data.keys():
+        if Authentication.objects.filter(Usercode=request.data["Usercode"]).exists():
+            user_details = Authentication.objects.get(Usercode=request.data["Usercode"])
+            pin = hash_details(request.data["Pin"])
+            user_details.Pin = pin
+            user_details.save()
+            return Response({"Status": "Success"})
+        else:
+            return Response({"Status": "Failed"})

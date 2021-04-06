@@ -10,6 +10,7 @@ import Videos from "./Components/Pages/Videos.js";
 import SignUp from "./Components/Pages/SignUp.js";
 import TermsAndConditions from "./Components/Pages/TermsAndConditions";
 import PrivacyPolicy from "./Components/Pages/PrivacyPolicy";
+import ConfirmAccount from "./Components/Pages/ConfirmAccount";
 
 export default class App extends React.Component {
   render() {
@@ -61,6 +62,11 @@ export default class App extends React.Component {
               exact
               path={"/privacypolicy"}
               render={(props) => <PrivacyPolicy {...props} />}
+            />
+            <Route
+              exact
+              path={"/confirm-account"}
+              render={(props) => <ConfirmAccount {...props} />}
             />
           </Switch>
         </BrowserRouter>
