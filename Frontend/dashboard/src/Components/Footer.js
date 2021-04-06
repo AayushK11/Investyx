@@ -39,12 +39,8 @@ export default class Footer extends React.Component {
               <div className="col-sm-3 footer-section-1">
                 <div className="footer-design">
                   <a className="footer-brand" href={this.state.url}>
-                    <img
-                      src={logo512}
-                      alt="INWASTEMENt"
-                      className="footer-logo"
-                    />
-                    Prostitution-Is-Life
+                    <img src={logo512} alt="Investyx" className="footer-logo" />
+                    Investyx
                   </a>
                 </div>
                 <div className="footer-list">
@@ -52,13 +48,13 @@ export default class Footer extends React.Component {
                     <li className="footer-item">
                       <h5>
                         <i className="fas fa-phone-alt"></i>
-                        6969-Call-Your-Mom
+                        +91 9988776655
                       </h5>
                     </li>
                     <li className="footer-item">
                       <h6>
                         <i className="far fa-copyright"></i>
-                        2021 - Your Mom's Pussy
+                        2021 - Investyx
                       </h6>
                     </li>
                     <li className="footer-item">
@@ -127,6 +123,28 @@ export default class Footer extends React.Component {
             </div>
           </div>
           <hr className="footer-horoizontal-line" />
+          <div className="container under-the-footer">
+            <div className="row text-center">
+              <div className="col-sm-6 text-lg-end">
+                <a
+                  target="_blank"
+                  href="/termsandconditions"
+                  title="Opens in a new tab"
+                >
+                  Terms and Conditions
+                </a>
+              </div>
+              <div className="col-sm-6 text-lg-start">
+                <a
+                  target="_blank"
+                  href="/privacypolicy"
+                  title="Opens in a new tab"
+                >
+                  Privacy Policy
+                </a>
+              </div>
+            </div>
+          </div>
         </footer>
       </div>
     );

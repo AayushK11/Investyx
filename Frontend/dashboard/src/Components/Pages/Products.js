@@ -26,7 +26,11 @@ export default class Products extends React.Component {
                     className="products-image-button"
                     href="https://smartstox.netlify.app/"
                   >
-                    <img src={logo512} alt="LODA" className="products-logo" />
+                    <img
+                      src={logo512}
+                      alt="Smart Stox"
+                      className="products-logo"
+                    />
                   </a>
                 </div>
                 <div className="products-text col-md-6 my-auto">
@@ -36,7 +40,7 @@ export default class Products extends React.Component {
                   <div className="row products-sub-heading me-5">
                     <h5>
                       Predict how each stock will perform over a period of a
-                      time. Plan your investment in stocks the right way
+                      time. Plan your investment in stocks the right way.
                     </h5>
                   </div>
                   <div className="row products-have-a-look ">
@@ -57,25 +61,29 @@ export default class Products extends React.Component {
                 <div className="products-design order-first order-md-last col-md-6 col-12">
                   <a
                     className="products-image-button"
-                    href="https://smartsips.netlify.app/"
+                    href="https://smartfunds.netlify.app/"
                   >
-                    <img src={logo512} alt="LODA" className="products-logo" />
+                    <img
+                      src={logo512}
+                      alt="Smart Funds"
+                      className="products-logo"
+                    />
                   </a>
                 </div>
                 <div className="products-text col-md-6 my-auto">
                   <div className="row products-heading">
-                    <h2>Smart SIPs</h2>
+                    <h2>Smart Funds</h2>
                   </div>
                   <div className="row products-sub-heading me-5">
                     <h5>
-                      Find out how much will each SIP give in returns. Invest
-                      with sureity
+                      Mutual Funds may be subject to Market Risk, but with our
+                      predictions, the risk definitely comes down.
                     </h5>
                   </div>
                   <div className="row products-have-a-look ">
                     <a
                       className="products-button"
-                      href="https://smartsips.netlify.app/"
+                      href="https://smartfunds.netlify.app/"
                     >
                       Take Me There
                     </a>
@@ -92,7 +100,11 @@ export default class Products extends React.Component {
                     className="products-image-button"
                     href="https://smartcase.netlify.app/"
                   >
-                    <img src={logo512} alt="LODA" className="products-logo" />
+                    <img
+                      src={logo512}
+                      alt="Smart Case"
+                      className="products-logo"
+                    />
                   </a>
                 </div>
                 <div className="products-text col-md-6 my-auto">
@@ -101,8 +113,8 @@ export default class Products extends React.Component {
                   </div>
                   <div className="row products-sub-heading me-5">
                     <h5>
-                      Invest in a Bucket of Stocks knowing which will yield how
-                      much. Make the currect basket
+                      Invest in a Basket of Stocks knowing which stock will
+                      yield how much. Create the best possible basket.
                     </h5>
                   </div>
                   <div className="row products-have-a-look ">
@@ -123,22 +135,29 @@ export default class Products extends React.Component {
                 <div className="products-design order-first order-md-last col-md-6 col-12">
                   <a
                     className="products-image-button"
-                    href="https://smartcurrency.netlify.app/"
+                    href="https://smart-notes.netlify.app/"
                   >
-                    <img src={logo512} alt="LODA" className="products-logo" />
+                    <img
+                      src={logo512}
+                      alt="Smart Notes"
+                      className="products-logo"
+                    />
                   </a>
                 </div>
                 <div className="products-text col-md-6 my-auto">
                   <div className="row products-heading">
-                    <h2>Smart Currency</h2>
+                    <h2>Smart Notes</h2>
                   </div>
                   <div className="row products-sub-heading me-5">
-                    <h5>Invest in Currency and float in cash tomorrow</h5>
+                    <h5>
+                      Investing in Currency is Highly Profitable if you know
+                      which Currency to trade. That's where we come in.
+                    </h5>
                   </div>
                   <div className="row products-have-a-look ">
                     <a
                       className="products-button"
-                      href="https://smartcurrency.netlify.app/"
+                      href="https://smart-notes.netlify.app/"
                     >
                       Take Me There
                     </a>

@@ -23,8 +23,7 @@ export default class About extends React.Component {
               <div className="row">
                 <div className="about-heading">
                   <h2>
-                    Using Artificial Intelligence to Make the Pull Out Game
-                    Strong
+                    Using Artificial Intelligence to Make Investing Easier
                   </h2>
                 </div>
                 <hr className="about-horizontal-line" />
@@ -32,45 +31,41 @@ export default class About extends React.Component {
                   <div className="row">
                     <div className="col-md-6">
                       <p>
-                        We started creating this baby by having sex on 6th
-                        September, 2069 with a goal of creating a single unique
-                        platform that can solve all the issues when it comes to
-                        investing.
+                        We started creating Investyx on the 1st of March 2021
+                        with a clear Goal. To create a single unique platform
+                        that could answer all the "When", "Where" and, "How
+                        Much" kind of questions when it comes to Investing.
                       </p>
                       <p>
-                        After Suffering Innumerable losses at the hands of
-                        Stocks such as Indian Tobacco Company (ITC) and
-                        Prostitue Village (PVR) we decided to use our technical
-                        skills to solve all our money problems
+                        When we started Investing, we suffered innumerable
+                        losses at the hands of various stocks, mainly because of
+                        the lack of knowledge. To get back on our feet, we
+                        decided to use our Technical Skills to solve all our
+                        Financial Questions.
                       </p>
                       <p>
                         We created this platform as a submission for our Mini
-                        Project where we showcased it to Randi Nilima Maam with
-                        a classy advertisement video. But the only thing she was
-                        concerned about is a Research Paper with her name on it.
-                        So we took matters into our own hands and went to Shri.
-                        Lord. Mangu Karad and showed him how to earn more money.
-                        As expected, he became wet at the idea and supported us
-                        with all his resources
+                        Project in our 3rd Year but decided, why stop there? We
+                        realized the Potential and Possible Future of this Idea,
+                        and that's why we presented this to MIT ADT University's
+                        Incubation Center.
                       </p>
                     </div>
                     <div className="col-md-6">
                       <p>
-                        MIT Incubation Center which looks sexy as fuck from
-                        outside but could be as chutiya as MIT from the inside
-                        has helped us harness our skills and increase our
-                        stamina to last longer in Bed. They have done absolutely
-                        nothing but advertise about their place and show that
-                        same video of Lord Mangu cutting the ribbon for that
-                        place
+                        MIT ADT University's Incubation Center has helped us
+                        harness our skills and create something that could be
+                        loved and used all over India. Along with Guidance and
+                        Support, they have mentored us and helped in creating
+                        the Start-Up we are today.
                       </p>
                       <p>
-                        After a long and hard struggle, we have finally been
-                        able to predict which stock to buy, which SIP to invest
-                        in, and which Hoe to Fuck. But our journey does not end
-                        there. We plan on creating more features where we can
-                        use our technical skills to make people richer and
-                        hopefully, make the world a better place
+                        After a long and hard struggle, we have achieved a
+                        Milestone in being one of the very few companies that
+                        provide Financial Support at a Cheap Price. But our
+                        journey does not end there. We plan on creating more
+                        features using our technical skills to make people
+                        wealthier and, hopefully, make the world a better place.
                       </p>
                     </div>
                   </div>
@@ -82,7 +77,7 @@ export default class About extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="about-people-heading">
-                  <h2>Parents of this Baby</h2>
+                  <h2>Founders</h2>
                 </div>
                 <hr className="about-horizontal-line" />
                 <div className="row about-people-photos justify-content-around align-items-center ">
@@ -94,10 +89,12 @@ export default class About extends React.Component {
                     />
                     <div className="about-overlay-text">
                       <h4>Aayush Kumaria</h4>
+                      <h6>Co-Founder, CTO</h6>
                       <br></br>
                       <h5>
-                        The Guy Who Realized that buying a Fake Taxi is not a
-                        Money Making Opportunity
+                        Aayush specializes in Deep Learning and is the Lead
+                        Backend and API Developer. So if anything goes wrong,
+                        you know who to blame
                       </h5>
                       <div className="social-row row justify-content-center align-items-center">
                         <div className="social-list col-3">
@@ -141,8 +138,13 @@ export default class About extends React.Component {
                     />
                     <div className="about-overlay-text">
                       <h4>Ajinkya Rajkar</h4>
+                      <h6>Co-Founder, COO</h6>
                       <br></br>
-                      <h5>What are you Doing Step Bro</h5>
+                      <h5>
+                        Ajinkya is good (like Really Good) in the Frontend
+                        Aspect of a Project and is the Lead Frontend Developer
+                        for Investyx.
+                      </h5>
                       <div className="social-row row justify-content-center align-items-center">
                         <div className="social-list col-3">
                           <div className="social-item">
@@ -180,13 +182,18 @@ export default class About extends React.Component {
                   <div className="col-md-3 col-sm-6 about-person">
                     <img
                       src={logo512}
-                      alt="Ajinkya Rajkar"
+                      alt="Aniket Raut"
                       className="about-photo"
                     />
                     <div className="about-overlay-text">
                       <h4>Aniket Raut</h4>
+                      <h6>Co-Founder, CFO</h6>
                       <br></br>
-                      <h5>The Real Reality King</h5>
+                      <h5>
+                        Aniket's strengths include managing Financial Risk,
+                        giving Financial Advice, and basically ensuring we get
+                        paid well enough
+                      </h5>
                       <div className="social-row row justify-content-center align-items-center">
                         <div className="social-list col-3">
                           <div className="social-item">

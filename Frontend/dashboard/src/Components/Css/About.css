@@ -82,12 +82,21 @@
 .about-overlay-text h4 {
   text-align: center;
   font-size: 1.7vw;
+  font-weight: 400;
+  margin: 0px 0px 0px 0px;
+}
+
+.about-overlay-text h6 {
+  text-align: center;
+  font-size: 1vw;
+  font-weight: 200;
   margin: 10px 0px 0px 0px;
 }
 
 .about-overlay-text h5 {
   text-align: justify;
   font-size: 1.1vw;
+  font-weight: 400;
   padding: 10px 30px;
 }
 
@@ -132,6 +141,13 @@
     text-align: justify;
     font-size: 3.5vw;
     padding: 10px 70px;
+  }
+
+  .about-overlay-text h6 {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 200;
+    margin: 5px 0px 0px 0px;
   }
 
   .social-row {
@@ -180,6 +196,13 @@
     padding: 0px 30px;
   }
 
+  .about-overlay-text h6 {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 200;
+    margin: 10px 0px 0px 0px;
+  }
+
   .social-row {
     text-align: center;
     margin: 20px 0px 0px 0px;
@@ -211,13 +234,20 @@
   }
 
   .about-person {
-    padding: 0px 0px 150px 0px;
+    padding: 0px 0px 50px 0px;
     margin: 30px 10px;
-    height: 300px;
+    height: 200px;
   }
 
   .about-overlay-text h4 {
-    font-size: 2.5vw;
+    font-size: 2vw;
+  }
+
+  .about-overlay-text h6 {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: 200;
+    margin: 10px 0px 0px 0px;
   }
 
   .about-overlay-text h5 {

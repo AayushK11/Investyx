@@ -24,6 +24,13 @@
 .contactus-text-passage h5 {
   font-size: 1.3vw;
   width: 75%;
+  font-weight: 400;
+}
+
+.contactus-text-passage h6 {
+  font-size: 1vw;
+  width: 75%;
+  font-weight: 300;
 }
 
 #contact-form {
@@ -75,6 +82,12 @@
     width: 90%;
   }
 
+  .contactus-text-passage h6 {
+    font-size: 3vw;
+    width: 75%;
+    font-weight: 300;
+  }
+
   .contactus-submit .submit-button {
     font-size: 3.5vw;
   }
@@ -98,6 +111,12 @@
     width: 90%;
   }
 
+  .contactus-text-passage h6 {
+    font-size: 2vw;
+    width: 75%;
+    font-weight: 300;
+  }
+
   .contactus-submit .submit-button {
     font-size: 2.5vw;
   }
@@ -117,8 +136,14 @@
   }
 
   .contactus-text-passage h5 {
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     width: 90%;
+  }
+
+  .contactus-text-passage h6 {
+    font-size: 1.5vw;
+    width: 75%;
+    font-weight: 300;
   }
 
   .contactus-submit .submit-button {

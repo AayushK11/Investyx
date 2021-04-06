@@ -110,10 +110,11 @@ export default class ContactUs extends React.Component {
                   </div>
                   <div className="row contactus-text-passage">
                     <h5>
-                      Fill out the corresponding form and try to be as precise
-                      as possible. One of our team members will get back to you
-                      as soon as they wake the fuck up from sleep
+                      Fill out the form and try to be as precise as possible.
+                      One of our team members will get back to you as soon as
+                      possible.
                     </h5>
+                    <h6>Expected Reply Time : 1 Day</h6>
                   </div>
                 </div>
                 <div className="col-md-6 contactus-form">

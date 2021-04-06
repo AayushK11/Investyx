@@ -36,16 +36,16 @@ export default class Landing extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="welcome-design col-12 ">
-                  <img src={logo512} alt="LODA" className="welcome-logo" />
+                  <img src={logo512} alt="Landing" className="welcome-logo" />
                 </div>
               </div>
               <div className="welcome-text col-12 text-center">
-                <h2>Welcome to Smart Sex</h2>
-                <h4>The one platform which provides free sex</h4>
+                <h2>Welcome to Investyx</h2>
+                <h4>One Platform for all your Financial Advice</h4>
               </div>
               <div className="welcome-sign-up col-12 text-center">
                 <a className="signup-button" href={this.state.signup}>
-                  Join the Prostitute Family Now
+                  Join the Family Now
                 </a>
               </div>
             </div>
@@ -54,17 +54,21 @@ export default class Landing extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="service-design col-md-6 col-12">
-                  <img src={logo512} alt="LODA" className="service-logo" />
+                  <img
+                    src={logo512}
+                    alt="Invest Dont In-Waste"
+                    className="service-logo"
+                  />
                 </div>
                 <div className="service-text col-md-6 my-auto">
                   <div className="row service-heading">
-                    <h2>Invest dont (In)Waste</h2>
+                    <h2>Invest dont In-Waste</h2>
                   </div>
                   <div className="row service-sub-heading me-5">
                     <h5>
-                      Smart Sex tells you place your dick and the possible
-                      returns you can receive from it to help you plan your next
-                      Goa Vacation
+                      Investyx Tells you When and Where to Invest and the
+                      possible returns you can receive from it to help you reach
+                      your Dream Vacation Faster.
                     </h5>
                   </div>
                   <div className="row service-services">
@@ -74,14 +78,14 @@ export default class Landing extends React.Component {
                           <h6>Stocks</h6>
                         </li>
                         <li>
-                          <h6>Systematic Investment Plans</h6>
+                          <h6>Mutual Funds</h6>
                         </li>
                       </ul>
                     </div>
                     <div className="col-6">
                       <ul className="Finanical-UL">
                         <li>
-                          <h6>Small Case</h6>
+                          <h6>SmallCases</h6>
                         </li>
                         <li>
                           <h6>Currency Trends</h6>
@@ -98,22 +102,23 @@ export default class Landing extends React.Component {
               <div className="row">
                 <div className="universe-text col-md-6 col-12 my-auto px-5">
                   <div className="row universe-heading">
-                    <h2>The Prostitute Family</h2>
+                    <h2>The Investyx Family</h2>
                   </div>
                   <div className="row universe-sub-heading ">
                     <h5>
                       A Variety of Products all Powered by a Powerful Machine
-                      Learning Alogorithm helping you fuck the correct place
+                      Learning Algorithm helping you Invest in the Correct Place
+                      at the Correct Time.
                     </h5>
                   </div>
                   <div className="row universe-have-a-look ">
                     <a className="products-button" href={this.state.products}>
-                      Have a Look at the Prostitutes
+                      Have a Look at the Products
                     </a>
                   </div>
                 </div>
                 <div className="universe-design order-first order-md-last col-md-6 col-12">
-                  <img src={logo512} alt="LODA" className="universe-logo" />
+                  <img src={logo512} alt="Products" className="universe-logo" />
                 </div>
               </div>
             </div>

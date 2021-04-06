@@ -45,7 +45,7 @@ export default class NavigationBar extends React.Component {
         <nav className="navbar navbar-custom navbar-expand-lg navbar-static-top">
           <div className="container">
             <a className="navbar-brand" href={this.state.url}>
-              <img src={logo512} alt="INWASTEMENt" className="navbar-logo" />
+              <img src={logo512} alt="Investyx" className="navbar-logo" />
             </a>
             <button
               className="navbar-toggler"

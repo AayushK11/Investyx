@@ -436,7 +436,12 @@ export default class ContactUs extends React.Component {
                             />
                           </div>
                           <div className="register-form-column col-sm-4 col-12">
-                            <label htmlFor="dateofbirth" className="">
+                            <label
+                              htmlFor="dateofbirth"
+                              className=""
+                              data-toggle="tooltip"
+                              title="You Should be 18+ Years of Age to use this platform"
+                            >
                               Date Of Birth
                               <span className="required-star">*</span>
                             </label>
@@ -610,7 +615,12 @@ export default class ContactUs extends React.Component {
                         </div>
                         <div className="register-input-form row">
                           <div className="register-form-column col-sm-6 col-12">
-                            <label htmlFor="password" className="">
+                            <label
+                              htmlFor="password"
+                              className=""
+                              data-toggle="tooltip"
+                              title="Password Should be 8+ Characters Long with Numbers and Special Symbols"
+                            >
                               Password<span className="required-star">*</span>
                             </label>
                             <input
