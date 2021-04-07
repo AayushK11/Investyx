@@ -52,7 +52,7 @@ export default class PaymentPortal extends React.Component {
                 </div>
                 <div class="tab-content">
                   <div id="credit-card" class="tab-pane fade show active pt-3">
-                    <form role="form">
+                    <form>
                       <div class="form-group">
                         <label for="username">
                           <h6>Card Owner</h6>
