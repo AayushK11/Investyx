@@ -1,0 +1,601 @@
+/* ________________ */
+/* LANDING */
+/* _______________ */
+
+.landing {
+  background-color: #ffeeee;
+}
+
+#smartstox-intro {
+  padding: 100px 0px 25px 0px;
+}
+
+#smartstox-intro .intro-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smartstox-intro .intro-design img {
+  width: 50%;
+  margin: 0px 100px 0px 0px;
+}
+
+#smartstox-intro .intro-text {
+  text-align: start;
+  padding: 0px 0px 0px 150px;
+}
+
+#smartstox-intro .intro-text .intro-heading h2 {
+  font-weight: 400;
+}
+
+#smartstox-intro .intro-text .intro-sub-heading h5 {
+  margin: 10px 0px;
+  font-weight: 350;
+}
+
+#smartstox-intro .intro-text .intro-have-a-look .intro-button {
+  font-weight: 450;
+  padding: 5px 10px;
+  margin: 10px 0px 10px 12px;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: #3d7ed1;
+  width: auto;
+  color: #f5f5f5;
+}
+
+#smartstox-search {
+  padding: 25px 0px;
+}
+
+#smartstox-search .search-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smartstox-search .search-design img {
+  width: 50%;
+}
+
+#smartstox-search .search-text {
+  text-align: start;
+  padding: 0px 150px 0px 0px;
+}
+
+#smartstox-search .search-text .search-heading h2 {
+  font-weight: 400;
+}
+
+#smartstox-search .search-text .search-sub-heading h5 {
+  margin: 10px 0px;
+  font-weight: 350;
+}
+
+#smartstox-ui {
+  padding: 25px 0px;
+}
+
+#smartstox-ui .ui-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smartstox-ui .ui-design img {
+  width: 50%;
+  margin: 0px 100px 0px 0px;
+}
+
+#smartstox-ui .ui-text {
+  text-align: start;
+  padding: 0px 0px 0px 150px;
+}
+
+#smartstox-ui .ui-text .ui-heading h2 {
+  font-weight: 400;
+}
+
+#smartstox-ui .ui-text .ui-sub-heading h5 {
+  margin: 10px 0px;
+  font-weight: 350;
+}
+
+#smartstox-ml {
+  padding: 25px 0px;
+}
+
+#smartstox-ml .ml-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smartstox-ml .ml-design img {
+  width: 50%;
+}
+
+#smartstox-ml .ml-text {
+  text-align: start;
+  padding: 0px 150px 0px 0px;
+}
+
+#smartstox-ml .ml-text .ml-heading h2 {
+  font-weight: 400;
+}
+
+#smartstox-ml .ml-text .ml-sub-heading h5 {
+  margin: 10px 0px;
+  font-weight: 350;
+}
+
+#smartstox-chart {
+  padding: 25px 0px;
+}
+
+#smartstox-chart .chart-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smartstox-chart .chart-design img {
+  width: 50%;
+  margin: 0px 100px 0px 0px;
+}
+
+#smartstox-chart .chart-text {
+  text-align: start;
+  padding: 0px 0px 0px 150px;
+}
+
+#smartstox-chart .chart-text .chart-heading h2 {
+  font-weight: 400;
+}
+
+#smartstox-chart .chart-text .chart-sub-heading h5 {
+  margin: 10px 0px;
+  font-weight: 350;
+}
+
+#smartstox-prices {
+  padding: 25px 0px;
+}
+
+#smartstox-prices .prices-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smartstox-prices .prices-design img {
+  width: 50%;
+}
+
+#smartstox-prices .prices-text {
+  text-align: start;
+  padding: 0px 150px 0px 0px;
+}
+
+#smartstox-prices .prices-text .prices-heading h2 {
+  font-weight: 400;
+}
+
+#smartstox-prices .prices-text .prices-sub-heading h5 {
+  margin: 10px 0px;
+  font-weight: 350;
+}
+
+#smartstox-mobile {
+  padding: 25px 0px;
+}
+
+#smartstox-mobile .mobile-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smartstox-mobile .mobile-design img {
+  width: 50%;
+  margin: 0px 100px 0px 0px;
+}
+
+#smartstox-mobile .mobile-text {
+  text-align: start;
+  padding: 0px 0px 0px 150px;
+}
+
+#smartstox-mobile .mobile-text .mobile-heading h2 {
+  font-weight: 400;
+}
+
+#smartstox-mobile .mobile-text .mobile-sub-heading h5 {
+  margin: 10px 0px;
+  font-weight: 350;
+}
+
+#smartstox-register-now {
+  padding: 50px 0px;
+}
+
+#smartstox-register-now .register-text {
+  text-align: start;
+}
+
+#smartstox-register-now .register-text h2 {
+  font-weight: 450;
+  margin: 0px 0px 10px 0px;
+}
+
+#smartstox-register-now .register-text h5 {
+  font-weight: 350;
+  margin: 0px 0px 30px 0px;
+}
+
+#smartstox-register-now .register-button-row .register-button {
+  font-weight: 450;
+  padding: 10px 30px;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: #3d7ed1;
+  width: auto;
+  color: #f5f5f5;
+}
+
+@media only screen and (max-width: 450px) {
+  #smartstox-intro {
+    padding: 150px 0px 25px 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #smartstox-intro .intro-design img {
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-intro .intro-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-intro .intro-text .intro-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-intro .intro-text .intro-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-intro .intro-text .intro-have-a-look {
+    display: flex;
+    justify-content: center;
+  }
+
+  #smartstox-intro .intro-text .intro-have-a-look .intro-button {
+    font-weight: 450;
+    padding: 5px 10px;
+    margin: 10px 0px 10px 12px;
+    text-decoration: none;
+    border: 1px solid transparent !important;
+    border-radius: 3px;
+    background-color: #3d7ed1;
+    width: auto;
+    color: #f5f5f5;
+  }
+
+  #smartstox-search .search-text {
+    padding: 0px 00px 0px 0px;
+  }
+
+  #smartstox-search .search-text .search-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-search .search-text .search-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-ui .ui-design img {
+    width: 50%;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-ui .ui-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-ui .ui-text .ui-heading h2 {
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #smartstox-ui .ui-text .ui-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-ml .ml-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-ml .ml-text .ml-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-ml .ml-text .ml-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-chart .chart-design img {
+    width: 50%;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-chart .chart-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-chart .chart-text .chart-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-chart .chart-text .chart-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-prices .prices-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-prices .prices-text .prices-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-prices .prices-text .prices-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-mobile .mobile-design img {
+    width: 50%;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-mobile .mobile-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-mobile .mobile-text .mobile-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-mobile .mobile-text .mobile-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-register-now .register-text h2 {
+    font-weight: 450;
+    margin: 0px 0px 10px 0px;
+  }
+
+  #smartstox-register-now .register-text h5 {
+    font-weight: 350;
+    margin: 0px 0px 30px 0px;
+  }
+
+  #smartstox-register-now .register-button-row .register-button {
+    font-weight: 450;
+    padding: 10px 30px;
+    text-decoration: none;
+    border: 1px solid transparent !important;
+    border-radius: 3px;
+    background-color: #3d7ed1;
+    width: auto;
+    color: #f5f5f5;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  #smartstox-intro {
+    padding: 150px 0px 25px 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #smartstox-intro .intro-design img {
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-intro .intro-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-intro .intro-text .intro-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-intro .intro-text .intro-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-intro .intro-text .intro-have-a-look {
+    display: flex;
+    justify-content: center;
+  }
+
+  #smartstox-intro .intro-text .intro-have-a-look .intro-button {
+    font-weight: 450;
+    padding: 5px 10px;
+    margin: 10px 0px 10px 12px;
+    text-decoration: none;
+    border: 1px solid transparent !important;
+    border-radius: 3px;
+    background-color: #3d7ed1;
+    width: auto;
+    color: #f5f5f5;
+  }
+
+  #smartstox-search .search-text {
+    padding: 0px 00px 0px 0px;
+  }
+
+  #smartstox-search .search-text .search-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-search .search-text .search-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-ui .ui-design img {
+    width: 50%;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-ui .ui-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-ui .ui-text .ui-heading h2 {
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #smartstox-ui .ui-text .ui-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-ml .ml-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-ml .ml-text .ml-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-ml .ml-text .ml-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-chart .chart-design img {
+    width: 50%;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-chart .chart-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-chart .chart-text .chart-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-chart .chart-text .chart-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-prices .prices-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-prices .prices-text .prices-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-prices .prices-text .prices-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-mobile .mobile-design img {
+    width: 50%;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #smartstox-mobile .mobile-text {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #smartstox-mobile .mobile-text .mobile-heading h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #smartstox-mobile .mobile-text .mobile-sub-heading h5 {
+    margin: 10px 40px;
+    font-weight: 350;
+  }
+
+  #smartstox-register-now .register-text h2 {
+    font-weight: 450;
+    margin: 0px 0px 10px 0px;
+  }
+
+  #smartstox-register-now .register-text h5 {
+    font-weight: 350;
+    margin: 0px 0px 30px 0px;
+  }
+
+  #smartstox-register-now .register-button-row .register-button {
+    font-weight: 450;
+    padding: 10px 30px;
+    text-decoration: none;
+    border: 1px solid transparent !important;
+    border-radius: 3px;
+    background-color: #3d7ed1;
+    width: auto;
+    color: #f5f5f5;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  #smartstox-intro {
+    padding: 150px 0px 25px 0px;
+  }
+  #smartstox-search {
+    padding: 75px 0px;
+  }
+  #smartstox-ui {
+    padding: 75px 0px;
+  }
+  #smartstox-ml {
+    padding: 75px 0px;
+  }
+  #smartstox-chart {
+    padding: 75px 0px;
+  }
+  #smartstox-prices {
+    padding: 75px 0px;
+  }
+  #smartstox-mobile {
+    padding: 75px 0px;
+  }
+  #smartstox-register-now {
+    padding: 75px 0px;
+  }
+}
