@@ -9,7 +9,8 @@ import { Helmet } from "react-helmet";
 import img1 from "../Images/never.png";
 import img2 from "../Images/compound.png";
 import img3 from "../Images/pricep.png";
-import logo512 from "../Images/logo512.png";
+import logo from "../Images/investyx_vertical.png";
+import logo512 from "../Images/investyx_vertical.png";
 import axios from "axios";
 import Server_Path from "../Server.js";
 import $ from "jquery";
@@ -18,7 +19,7 @@ export default class ContactUs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      registrationLevel: 3,
+      registrationLevel: 0,
       firstname: "",
       lastname: "",
       address1: "",
@@ -1142,8 +1143,8 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={logo512}
-                          alt="LODA"
+                          src={logo}
+                          alt="LOGO"
                           className="register-graphic-design"
                         />
                       </div>
