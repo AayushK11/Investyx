@@ -3,6 +3,7 @@ import Navbar from "../Navbar.js";
 import Footer from "../Footer.js";
 import "bootstrap";
 import "../Css/Products.css";
+import { Helmet } from "react-helmet";
 import logo512 from "../Images/logo512.png";
 
 export default class Products extends React.Component {
@@ -15,7 +16,10 @@ export default class Products extends React.Component {
 
   render() {
     return (
-      <div className="landing">
+      <div className="products">
+        <Helmet>
+          <title>Investyx | Products</title>
+        </Helmet>
         <div className="container-fluid">
           <Navbar />
           <section id="products-stocks">

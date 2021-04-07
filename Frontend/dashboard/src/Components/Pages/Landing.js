@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar.js";
 import Footer from "../Footer.js";
+import { Helmet } from "react-helmet";
 import "bootstrap";
 import "../Css/Landing.css";
 import logo512 from "../Images/logo512.png";
@@ -30,6 +31,9 @@ export default class Landing extends React.Component {
   render() {
     return (
       <div className="landing">
+        <Helmet>
+          <title>Investyx</title>
+        </Helmet>
         <div className="container-fluid">
           <Navbar />
           <section id="home">

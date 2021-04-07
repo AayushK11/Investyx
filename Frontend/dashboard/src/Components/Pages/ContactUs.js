@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar.js";
 import Footer from "../Footer.js";
+import { Helmet } from "react-helmet";
 import "bootstrap";
 import "../Css/ContactUs.css";
 import "../Css/Loader.css";
@@ -92,6 +93,9 @@ export default class ContactUs extends React.Component {
   render() {
     return (
       <div className="contactus">
+        <Helmet>
+          <title>Investyx | Contact Us</title>
+        </Helmet>
         <div className="container-fluid">
           <Navbar />
           <section id="loader">

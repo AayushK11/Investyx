@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap";
 import "../Css/ConfirmAccount.css";
 import "../Css/Loader.css";
+import { Helmet } from "react-helmet";
 import logo512 from "../Images/logo512.png";
 import axios from "axios";
 import Server_Path from "../Server.js";
@@ -85,6 +86,9 @@ export default class ConfirmAccount extends React.Component {
   render() {
     return (
       <div className="confirmaccount">
+        <Helmet>
+          <title>Investyx | Confirm Account</title>
+        </Helmet>
         <div className="container-fluid">
           <section id="loader">
             <div className="cssload-loader">

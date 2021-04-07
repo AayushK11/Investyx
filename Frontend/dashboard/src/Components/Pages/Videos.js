@@ -3,6 +3,7 @@ import Navbar from "../Navbar.js";
 import Footer from "../Footer.js";
 import "bootstrap";
 import "../Css/Videos.css";
+import { Helmet } from "react-helmet";
 
 export default class ContactUs extends React.Component {
   constructor(props) {
@@ -13,6 +14,9 @@ export default class ContactUs extends React.Component {
   render() {
     return (
       <div className="videos">
+        <Helmet>
+          <title>Investyx | Videos</title>
+        </Helmet>
         <div className="container-fluid">
           <Navbar />
           <section id="video">

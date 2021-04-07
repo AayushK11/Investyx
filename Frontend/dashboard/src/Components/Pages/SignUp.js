@@ -5,6 +5,7 @@ import PaymentPortal from "./PaymentPortal.js";
 import "bootstrap";
 import "../Css/SignUp.css";
 import "../Css/Loader.css";
+import { Helmet } from "react-helmet";
 import logo512 from "../Images/logo512.png";
 import axios from "axios";
 import Server_Path from "../Server.js";
@@ -361,6 +362,9 @@ export default class ContactUs extends React.Component {
   render() {
     return (
       <div className="signup">
+        <Helmet>
+          <title>Investyx | Register</title>
+        </Helmet>
         <section id="loader">
           <div className="cssload-loader">
             <div className="cssload-inner cssload-one"></div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "../Css/Terms.css";
+import { Helmet } from "react-helmet";
 
 export default class TermsAndConditions extends React.Component {
   constructor(props) {
@@ -10,6 +11,9 @@ export default class TermsAndConditions extends React.Component {
   render() {
     return (
       <div className="tandc">
+        <Helmet>
+          <title>Investyx | Terms and Conditions</title>
+        </Helmet>
         <div className="container-fluid">
           <h2>
             <strong>Terms and Conditions</strong>

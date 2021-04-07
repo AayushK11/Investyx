@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar.js";
 import Footer from "../Footer.js";
+import { Helmet } from "react-helmet";
 import "bootstrap";
 import "../Css/About.css";
 import logo512 from "../Images/logo512.png";
@@ -16,6 +17,9 @@ export default class About extends React.Component {
   render() {
     return (
       <div className="about">
+        <Helmet>
+          <title>Investyx | About</title>
+        </Helmet>
         <div className="container-fluid">
           <Navbar />
           <section id="about-text">
