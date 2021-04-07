@@ -1,7 +1,8 @@
 import React from "react";
 import "./Css/Navbar_PreAuth.css";
 import "bootstrap";
-import logo512 from "./Images/logo512.png";
+import smartstox from "./Images/hlogo.png";
+
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class NavigationBar extends React.Component {
         <nav className="navbar navbar-custom navbar-expand-lg fixed-top">
           <div className="container">
             <a className="navbar-brand" href={this.state.url}>
-              <img src={logo512} alt="Smart Stox" className="navbar-logo" />
+              <img src={smartstox} alt="Smart Stox" className="navbar-logo" />
             </a>
             <button
               className="navbar-toggler"

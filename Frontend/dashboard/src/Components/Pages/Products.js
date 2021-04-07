@@ -4,7 +4,10 @@ import Footer from "../Footer.js";
 import "bootstrap";
 import "../Css/Products.css";
 import { Helmet } from "react-helmet";
-import logo512 from "../Images/logo512.png";
+import smartstox from "../Images/smartstox.png";
+import mutual from "../Images/mutual.png";
+import coin from "../Images/coin.png";
+import case_ from "../Images/case_.png";
 
 export default class Products extends React.Component {
   constructor(props) {
@@ -31,7 +34,7 @@ export default class Products extends React.Component {
                     href="https://smartstox.netlify.app/"
                   >
                     <img
-                      src={logo512}
+                      src={smartstox}
                       alt="Smart Stox"
                       className="products-logo"
                     />
@@ -68,7 +71,7 @@ export default class Products extends React.Component {
                     href="https://smartfunds.netlify.app/"
                   >
                     <img
-                      src={logo512}
+                      src={mutual}
                       alt="Smart Funds"
                       className="products-logo"
                     />
@@ -105,7 +108,7 @@ export default class Products extends React.Component {
                     href="https://smartcase.netlify.app/"
                   >
                     <img
-                      src={logo512}
+                      src={case_}
                       alt="Smart Case"
                       className="products-logo"
                     />
@@ -142,7 +145,7 @@ export default class Products extends React.Component {
                     href="https://smart-notes.netlify.app/"
                   >
                     <img
-                      src={logo512}
+                      src={coin}
                       alt="Smart Notes"
                       className="products-logo"
                     />

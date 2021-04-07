@@ -48,14 +48,19 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 300px;
-  padding: 0px 0px 0px 0px;
+  border-radius: 5%;
+  padding: 20px;
+  background-color: aqua;
 }
 
 .pricing-image-text h4 {
   text-align: center;
   font-size: 1.4vw;
   margin: 10px 0px 10px 0px;
+}
+.pricing-image-text h6 {
+  text-align: left;
+ 
 }
 
 .pricing-sign-up {

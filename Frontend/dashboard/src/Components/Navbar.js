@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap";
 import "./Css/Navbar.css";
-import logo512 from "./Images/logo512.png";
+import logo512 from "./Images/investyx_line.png";
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
@@ -42,7 +42,7 @@ export default class NavigationBar extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <nav className="navbar navbar-custom navbar-expand-lg navbar-static-top">
+        <nav className="navbar navbar-custom navbar-expand-lg navbar-fixed-top">
           <div className="container">
             <a className="navbar-brand" href={this.state.url}>
               <img src={logo512} alt="Investyx" className="navbar-logo" />

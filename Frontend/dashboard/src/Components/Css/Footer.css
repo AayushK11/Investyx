@@ -2,15 +2,13 @@
 /* Footer */
 /* _______________ */
 
+
 .footer-logo {
-  width: 50px;
+  height: 40px;
   padding: 0px 10px 0px 0px;
 }
 
-.footer-brand {
-  font-weight: 400px;
-  font-size: 1.3vw;
-}
+
 
 .footer-design {
   padding: 15px 0px 5px 0px;
@@ -21,12 +19,19 @@
 }
 
 .footer-heading h4 {
-  font-weight: 400px;
-  font-size: 1.5vw;
+  font-size: 1.125rem;
+  font-weight: 500;
   padding: 10px 0px;
   margin: 10px;
   color: #424242;
 }
+
+.footer-item h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #424242;
+}
+
 
 .footer-item {
   list-style-type: none;
@@ -43,39 +48,34 @@
   color: #424242;
   text-decoration: none;
   font-weight: 400px;
-  font-size: 1vw;
+  font-size: 1rem;
+  
 }
 
-.footer-item h5,
-h6 {
-  color: #424242;
-  text-decoration: none;
-  font-size: 1vw;
+.under-the-footer{
+  padding-bottom: 20px;
 }
-
 .under-the-footer a {
   color: #424242;
   text-decoration: none;
   font-weight: 400px;
-  font-size: 1vw;
+  font-size: .85rem;
 }
 
 @media only screen and (max-width: 450px) {
+ 
   .footer-logo {
-    width: 15%;
-  }
-
-  .footer-brand {
-    font-size: 3vw;
+    height: 25px;
   }
 
   .footer-item i {
     padding: 0px 10px 0px 0px;
   }
 
-  .footer-heading h4 {
-    font-size: 3.5vw;
-    padding: 25px 0px 0px 0px;
+  .footer-heading h4{
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 15px 0px 0px 10px;
     margin: 0px;
   }
 
@@ -90,26 +90,28 @@ h6 {
   }
 
   .footer-item a {
-    font-size: 2.5vw;
+    font-size: .85rem;
+    font-weight: 400;
     padding: 0px 0px 0px 20px;
   }
 
-  .footer-item h5,
-  h6 {
-    font-size: 2.5vw;
+  .footer-item h4 {
+    font-size: .85rem;
+    font-weight: 500;
+    color: #424242;
   }
 
   .under-the-footer a {
     color: #424242;
     text-decoration: none;
     font-weight: 400px;
-    font-size: 2.5vw;
+  font-size: .85rem;
   }
 }
 
 @media only screen and (max-width: 768px) and (min-width: 450px) {
   .footer-logo {
-    width: 10%;
+   height: 20px;
   }
 
   .footer-brand {
@@ -121,7 +123,8 @@ h6 {
   }
 
   .footer-heading h4 {
-    font-size: 2vw;
+    font-size: 1.125rem;
+    font-weight: 500;
     margin: 0px;
   }
 
@@ -140,20 +143,20 @@ h6 {
   }
 
   .footer-item a {
-    font-size: 1.5vw;
+    font-size: .85rem;
+    font-weight: 400;
     padding: 0px 0px 0px 0px;
   }
 
-  .footer-item h5,
-  h6 {
-    font-size: 1vw;
-    margin: 0px 0px 5px 0px;
+  .footer-item h4 {
+    font-size: .85rem;
+    font-weight: 500;
+    color: #424242;
   }
-
   .under-the-footer a {
     color: #424242;
     text-decoration: none;
     font-weight: 400px;
-    font-size: 1.5vw;
+    font-size: .85rem;
   }
 }

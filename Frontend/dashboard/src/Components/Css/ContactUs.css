@@ -36,6 +36,7 @@
 #contact-form {
   background-color: #b2d3fa !important;
   padding: 30px 40px 30px 40px;
+  border-radius: 5%;
 }
 
 #contact-form input,

@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap";
 import "./Css/Footer.css";
-import logo512 from "./Images/logo512.png";
+import footer_logo from "./Images/investyx_line.png";
 
 export default class Footer extends React.Component {
   constructor(props) {
@@ -35,35 +35,35 @@ export default class Footer extends React.Component {
         <hr className="footer-horoizontal-line" />
         <footer className="page-footer pt-4">
           <div className="container text-md-left">
-            <div className="row space-between">
-              <div className="col-sm-3 footer-section-1">
+            <div className="row custom_align ">
+              <div className="col-sm-3 col-6 footer-section-1">
                 <div className="footer-design">
                   <a className="footer-brand" href={this.state.url}>
-                    <img src={logo512} alt="Investyx" className="footer-logo" />
-                    Investyx
+                    <img src={footer_logo} alt="Investyx" className="footer-logo" />
+                    
                   </a>
                 </div>
                 <div className="footer-list">
                   <ul>
                     <li className="footer-item">
-                      <h5>
+                      <h4>
                         <i className="fas fa-phone-alt"></i>
                         +91 9988776655
-                      </h5>
+                      </h4>
                     </li>
                     <li className="footer-item">
-                      <h6>
+                      <h4>
                         <i className="far fa-copyright"></i>
                         2021 - Investyx
-                      </h6>
+                      </h4>
                     </li>
                     <li className="footer-item">
-                      <h6>All Rights Reserved</h6>
+                      <h4>All Rights Reserved</h4>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="col-sm-3 footer-section-2">
+              <div className="col-sm-3 col-6 footer-section-2">
                 <div className="footer-heading">
                   <h4>Company</h4>
                 </div>
@@ -87,7 +87,7 @@ export default class Footer extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div className="col-sm-3 footer-section-3">
+              <div className="col-sm-3 col-6 footer-section-3">
                 <div className="footer-heading">
                   <h4>Support</h4>
                 </div>
@@ -106,7 +106,7 @@ export default class Footer extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div className="col-sm-3 footer-section-4">
+              <div className="col-sm-3 col-6 footer-section-4">
                 <div className="footer-heading">
                   <h4>Account</h4>
                 </div>

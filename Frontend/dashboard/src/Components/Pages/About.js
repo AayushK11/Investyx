@@ -93,7 +93,9 @@ export default class About extends React.Component {
                     />
                     <div className="about-overlay-text">
                       <h4>Aayush Kumaria</h4>
+                      <div class="founder">
                       <h6>Co-Founder, CTO</h6>
+                      </div>
                       <br></br>
                       <h5>
                         Aayush specializes in Deep Learning and is the Lead

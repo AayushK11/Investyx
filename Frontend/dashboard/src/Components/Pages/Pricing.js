@@ -52,49 +52,121 @@ export default class Pricing extends React.Component {
             </div>
           </section>
           <section id="pricing-charges">
-            <div className="container">
-              <div className="row">
-                <div className="row pricing-row justify-content-around align-items-center mx-auto">
-                  <div className="col-md-3 col-sm-6 pricing-column align-items-center mx-auto">
-                    <img
-                      src={logo512}
-                      alt="0 Intraday Prediction Fee"
-                      className="pricing-photo align-items-center mx-auto"
-                    />
-                    <div className="pricing-image-text">
-                      <h4>0 Intraday Prediction Fee</h4>
+          <div className="container">
+                        <div className="row">
+                        <div className="register-input-form col-lg-4 col-sm-4 ">
+                          <div className="register-form-column ">
+                            <div className="register-form-plan ">
+                              <div className="register-plan-price ">
+                                <h4>Amateur Plan</h4>
+                              </div>
+                              <div className="register-plan-details">
+                                <ul className="register-plan-details-list my-auto px-0">
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Set
+                                    triggers for upto 5 Stocks
+                                  </li>
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Predict
+                                    Future of Select Stock Prices
+                                  </li>
+                                  <hr></hr>
+                                  <h4>Additional Benefits</h4>
+                                  <li className="register-plan-detail-item text-muted">
+                                    <i class="fas fa-times-circle"></i> Predict
+                                    Performance of SIP / Mutual Fund
+                                  </li>
+                                  <li className="register-plan-detail-item text-muted">
+                                    <i class="fas fa-times-circle"></i> Predict
+                                    Performance of SmallCase
+                                  </li>
+                                  <li className="register-plan-detail-item text-muted">
+                                    <i class="fas fa-times-circle"></i> Predict
+                                    Performance of a Currency
+                                  </li>
+                                </ul>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div className="register-input-form col-lg-4 col-sm-4 ">
+                          <div className="register-form-column ">
+                            <div className="register-form-plan ">
+                              <div className="register-plan-price ">
+                                <h4>Pro Plan</h4>
+                              </div>
+                              <div className="register-plan-details">
+                                <ul className="register-plan-details-list my-auto px-0">
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Set
+                                    triggers for upto 10 Stocks
+                                  </li>
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Predict
+                                    Future of Select Stock Prices
+                                  </li>
+                                  <hr></hr>
+                                  <h4>Additional Benefits</h4>
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Predict
+                                    Performance of SIP / Mutual Fund
+                                  </li>
+                                  <li className="register-plan-detail-item text-muted">
+                                    <i class="fas fa-times-circle"></i> Predict
+                                    Performance of SmallCase
+                                  </li>
+                                  <li className="register-plan-detail-item text-muted">
+                                    <i class="fas fa-times-circle"></i> Predict
+                                    Performance of a Currency
+                                  </li>
+                                </ul>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div className="register-input-form col-lg-4 col-sm-4 ">
+                          <div className="register-form-column ">
+                            <div className="register-form-plan">
+                              <div className="register-plan-price ">
+                                <h4>Ultra Pro Max Plan</h4>
+                              </div>
+                              <div className="register-plan-details ">
+                                <ul className="register-plan-details-list my-auto px-0">
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Set
+                                    triggers for upto 20 Stocks
+                                  </li>
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Predict
+                                    Future of Select Stock Prices
+                                  </li>
+                                  <hr></hr>
+                                  <h4>Additional Benefits</h4>
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Predict
+                                    Performance of SIP / Mutual Fund
+                                  </li>
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Predict
+                                    Performance of SmallCase
+                                  </li>
+                                  <li className="register-plan-detail-item text-primary">
+                                    <i class="fas fa-check-circle"></i> Predict
+                                    Performance of a Currency
+                                  </li>
+                                </ul>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                       
+                       
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-md-3 col-sm-6 pricing-column align-items-center mx-auto">
-                    <img
-                      src={logo512}
-                      alt="0 SIP Prediction Charges"
-                      className="pricing-photo align-items-center mx-auto"
-                    />
-                    <div className="pricing-image-text">
-                      <h4>0 SIP Prediction Charges</h4>
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-sm-6 pricing-column align-items-center mx-auto">
-                    <img
-                      src={logo512}
-                      alt="0 SmallCase Prediction Charges"
-                      className="pricing-photo align-items-center mx-auto"
-                    />
-                    <div className="pricing-image-text">
-                      <h4>0 SmallCase Prediction Charges</h4>
-                    </div>
-                  </div>
-                </div>
-                <div className="row pricing-join-now align-items-center align-items-center mx-auto">
-                  <div className="pricing-sign-up col-12 text-center">
-                    <a className="signup-button" href={this.state.signup}>
-                      Join the Prostitute Family Now
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+              
           </section>
           <Footer />
         </div>

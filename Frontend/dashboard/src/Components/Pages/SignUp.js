@@ -6,6 +6,9 @@ import "bootstrap";
 import "../Css/SignUp.css";
 import "../Css/Loader.css";
 import { Helmet } from "react-helmet";
+import img1 from "../Images/never.png";
+import img2 from "../Images/compound.png";
+import img3 from "../Images/pricep.png";
 import logo512 from "../Images/logo512.png";
 import axios from "axios";
 import Server_Path from "../Server.js";
@@ -15,7 +18,7 @@ export default class ContactUs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      registrationLevel: 0,
+      registrationLevel: 3,
       firstname: "",
       lastname: "",
       address1: "",
@@ -581,8 +584,8 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={logo512}
-                          alt="LODA"
+                          src={img1}
+                          alt="quote"
                           className="register-graphic-design"
                         />
                       </div>
@@ -676,8 +679,8 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={logo512}
-                          alt="LODA"
+                          src={img2}
+                          alt="Quote"
                           className="register-graphic-design"
                         />
                       </div>
@@ -863,8 +866,8 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={logo512}
-                          alt="LODA"
+                          src={img3}
+                          alt="quote"
                           className="register-graphic-design"
                         />
                       </div>
@@ -878,43 +881,46 @@ export default class ContactUs extends React.Component {
               return (
                 <div className="container-fluid">
                   <Navbar />
-                  <div className="container">
-                    <div className="row">
-                      <div className="register-form col-md-6 col-12 my-auto">
-                        <div className="register-heading row">
+                 
+                      <div className="register-form ">
+                        <div className="register-heading ">
                           <h2>Choose a Plan Right For You</h2>
                         </div>
-                        <div className="register-input-form row">
-                          <div className="register-form-column col-sm-12 col-12">
-                            <div className="register-form-plan row">
-                              <div className="register-plan-price col-3">
+                      <div className="container">
+                        <div className="row">
+                        <div className="register-input-form col-lg-4 col-sm-4 ">
+                          <div className="register-form-column ">
+                            <div className="register-form-plan ">
+                              <div className="register-plan-price ">
                                 <h4>Amateur Plan</h4>
                               </div>
-                              <div className="register-plan-details col-6">
+                              <div className="register-plan-details">
                                 <ul className="register-plan-details-list my-auto px-0">
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Set
                                     triggers for upto 5 Stocks
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
                                     Future of Select Stock Prices
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <hr></hr>
+                                  <h4>Additional Benefits</h4>
+                                  <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
                                     Performance of SIP / Mutual Fund
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
                                     Performance of SmallCase
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
                                     Performance of a Currency
                                   </li>
                                 </ul>
                               </div>
-                              <div className="register-plan-select col-3">
+                              <div className="register-plan-select ">
                                 <button
                                   className="next-button"
                                   name="next"
@@ -922,43 +928,45 @@ export default class ContactUs extends React.Component {
                                   id="previous"
                                   onClick={this.onClick}
                                 >
-                                  Free
+                                  ₹99
                                 </button>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="register-input-form row">
-                          <div className="register-form-column col-sm-12 col-12">
-                            <div className="register-form-plan row">
-                              <div className="register-plan-price col-3">
+                        <div className="register-input-form col-lg-4 col-sm-4 ">
+                          <div className="register-form-column ">
+                            <div className="register-form-plan ">
+                              <div className="register-plan-price ">
                                 <h4>Pro Plan</h4>
                               </div>
-                              <div className="register-plan-details col-6">
+                              <div className="register-plan-details">
                                 <ul className="register-plan-details-list my-auto px-0">
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Set
                                     triggers for upto 10 Stocks
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
                                     Future of Select Stock Prices
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <hr></hr>
+                                  <h4>Additional Benefits</h4>
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
                                     Performance of SIP / Mutual Fund
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
                                     Performance of SmallCase
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
                                     Performance of a Currency
                                   </li>
                                 </ul>
                               </div>
-                              <div className="register-plan-select col-3">
+                              <div className="register-plan-select ">
                                 <button
                                   className="next-button"
                                   name="next"
@@ -972,37 +980,39 @@ export default class ContactUs extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <div className="register-input-form row">
-                          <div className="register-form-column col-sm-12 col-12">
-                            <div className="register-form-plan row">
-                              <div className="register-plan-price col-3">
+                        <div className="register-input-form col-lg-4 col-sm-4 ">
+                          <div className="register-form-column ">
+                            <div className="register-form-plan">
+                              <div className="register-plan-price ">
                                 <h4>Ultra Pro Max Plan</h4>
                               </div>
-                              <div className="register-plan-details col-6">
+                              <div className="register-plan-details ">
                                 <ul className="register-plan-details-list my-auto px-0">
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Set
                                     triggers for upto 20 Stocks
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
                                     Future of Select Stock Prices
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <hr></hr>
+                                  <h4>Additional Benefits</h4>
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
                                     Performance of SIP / Mutual Fund
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
                                     Performance of SmallCase
                                   </li>
-                                  <li className="register-plan-detail-item">
+                                  <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
                                     Performance of a Currency
                                   </li>
                                 </ul>
                               </div>
-                              <div className="register-plan-select col-3">
+                              <div className="register-plan-select ">
                                 <button
                                   className="next-button"
                                   name="next"
@@ -1029,13 +1039,6 @@ export default class ContactUs extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="register-graphic col-md-6">
-                        <img
-                          src={logo512}
-                          alt="LODA"
-                          className="register-graphic-design"
-                        />
-                      </div>
                     </div>
                   </div>
                   <Footer />
@@ -1044,7 +1047,7 @@ export default class ContactUs extends React.Component {
             }
             if (this.state.registrationLevel === 4) {
               return (
-                <div className="container-fluid">
+                <div className="container-fluid fullpage">
                   <Navbar />
                   <div className="container">
                     <div className="row">
