@@ -8,7 +8,7 @@ from BackendScripts.authentication_tasks import (
     generate_usercode,
     find_due_date,
 )
-from BackendScripts.email_tasks import send_email
+from BackendScripts.email_tasks import registration_email
 
 
 @api_view(["POST"])
@@ -108,7 +108,7 @@ def register(request):
                     MarketRisk=request.data["UserDetails"]["RiskNotice"],
                     PaymentDueDate=paymentduedate,
                 )
-                send_email(
+                registration_email(
                     request.data["UserDetails"]["firstname"],
                     request.data["UserDetails"]["emailid"],
                     usercode,

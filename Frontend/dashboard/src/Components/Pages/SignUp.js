@@ -925,7 +925,7 @@ export default class ContactUs extends React.Component {
                                 <button
                                   className="next-button"
                                   name="next"
-                                  value="0"
+                                  value="99"
                                   id="previous"
                                   onClick={this.onClick}
                                 >
