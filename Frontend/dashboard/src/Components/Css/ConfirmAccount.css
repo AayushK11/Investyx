@@ -13,10 +13,10 @@
 }
 
 #confirmaccount-form {
-  background-color: #b2d3fa !important;
+  background-color: #dcdff7 !important;
   padding: 30px 40px 30px 40px;
   margin: 150px 0px 0px 0px;
-  border-radius: 5%;
+  border-radius: 20px;
 }
 
 .confirmaccount-logo {
