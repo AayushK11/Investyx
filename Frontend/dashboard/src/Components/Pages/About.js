@@ -4,7 +4,7 @@ import Footer from "../Footer.js";
 import { Helmet } from "react-helmet";
 import "bootstrap";
 import "../Css/About.css";
-import logo512 from "../Images/logo512.png";
+import logo512 from "../Images/investyx_symbol.png";
 
 export default class About extends React.Component {
   constructor(props) {
