@@ -3,7 +3,7 @@ import "bootstrap";
 import "../Css/ConfirmAccount.css";
 import "../Css/Loader.css";
 import { Helmet } from "react-helmet";
-import logo512 from "../Images/logo512.png";
+import logo from "../Images/investyx_line.png";
 import axios from "axios";
 import Server_Path from "../Server.js";
 import $ from "jquery";
@@ -110,7 +110,7 @@ export default class ConfirmAccount extends React.Component {
                     <div className="row">
                       <div className="col-6">
                         <div className="confirmaccount-logo">
-                          <img src={logo512} alt="LODA" className="" />
+                          <img src={logo} alt="LODA" className="" />
                         </div>
                       </div>
                       <div className="col-6 confirmaccout-header">

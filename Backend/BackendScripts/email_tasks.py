@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 import os
-
+import logo from "../Images/investyx_line.png";
 BASE_PATH = Path(__file__).parent.parent
 WEBSITE_PATH = "http://localhost:3000/"
 # WEBSITE_PATH = "https://smart-stox.netlify.app/"
@@ -40,7 +40,7 @@ def send_email(name, email, usercode):
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                         <tbody>
                                             <tr>
-                                                <td style="width:200px"><a href="{link}"><img alt="Investyx" height="auto" src="cid:image1" style="border:none;border-radius:6px;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:14px" width="135" ></a></td>
+                                                <td style="width:200px"><a href="{logo}"><img alt="Investyx" height="auto" src="cid:image1" style="border:none;border-radius:6px;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:14px" width="135" ></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
