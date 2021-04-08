@@ -1,0 +1,258 @@
+/* ________________ */
+/* Login  */
+/* _______________ */
+
+.login {
+  background-color: #ffeeee;
+}
+
+.required-star {
+  color: red;
+}
+
+.login .login-card-row {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login .login-card-row .login-card-column .login-heading-design-row {
+  border: 1px solid gray;
+  height: 400px;
+  width: 400px;
+  background-color: #ffecec;
+  border-radius: 2%;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-heading-design
+  img {
+  width: 60px;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-heading {
+  text-align: center;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-heading
+  h5 {
+  font-weight: 400;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-heading
+  h6 {
+  font-weight: 100;
+  color: red;
+  opacity: 0;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-form {
+  padding: 0px 48px;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-form
+  label {
+  margin: 5px 0px 0px 0px;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-form
+  .login-button {
+  margin-top: 20px;
+  font-weight: 450;
+  padding: 5px;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: #3d7ed1;
+  width: auto;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-form
+  .login-button
+  .login-button-inner {
+  margin-top: 0px;
+  font-weight: 450;
+  padding: 0px;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  background-color: #3d7ed1;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-forgot-password {
+  height: 10px;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-forgot-password
+  a {
+  text-decoration: none;
+  color: #999999;
+  font-weight: 400;
+}
+
+.login .under-card-row {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login
+  .under-card-row
+  .under-the-card-column
+  .under-the-card-footer
+  .footer-design
+  img {
+  width: 30px;
+  margin: 0px 0px 10px 0px;
+}
+
+.login
+  .under-card-row
+  .under-the-card-column
+  .under-the-card-footer
+  .footer-sign-up
+  a {
+  text-decoration: none;
+  color: #999999;
+  font-weight: 400;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-form
+  h4 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.login
+  .login-card-row
+  .login-card-column
+  .login-heading-design-row
+  .login-another-account
+  button {
+  text-decoration: none;
+  background: transparent;
+  border: 0px transparent;
+  color: #999999;
+  margin: 0px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 450px) {
+  .login .login-card-row .login-card-column .login-heading-design-row {
+    border: 1px solid gray;
+    height: 400px;
+    width: 300px;
+    background-color: #ffecec;
+    border-radius: 2%;
+  }
+
+  .login .login-card-row {
+    position: fixed;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+
+  .login .under-card-row {
+    position: fixed;
+    top: 75%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px) {
+  .login .login-card-row .login-card-column .login-heading-design-row {
+    border: 1px solid gray;
+    height: 400px;
+    width: 400px;
+    background-color: #ffecec;
+    border-radius: 2%;
+  }
+
+  .login .login-card-row {
+    position: fixed;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+
+  .login .under-card-row {
+    position: fixed;
+    top: 65%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .login .login-card-row .login-card-column .login-heading-design-row {
+    border: 1px solid gray;
+    height: 400px;
+    width: 400px;
+    background-color: #ffecec;
+    border-radius: 2%;
+  }
+
+  .login .login-card-row {
+    position: fixed;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+
+  .login .under-card-row {
+    position: fixed;
+    top: 65%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+}

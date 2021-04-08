@@ -882,13 +882,13 @@ export default class ContactUs extends React.Component {
               return (
                 <div className="container-fluid">
                   <Navbar />
-                 
-                      <div className="register-form ">
-                        <div className="register-heading ">
-                          <h2>Choose a Plan Right For You</h2>
-                        </div>
-                      <div className="container">
-                        <div className="row">
+
+                  <div className="register-form ">
+                    <div className="register-heading ">
+                      <h2>Choose a Plan Right For You</h2>
+                    </div>
+                    <div className="container">
+                      <div className="row">
                         <div className="register-input-form col-lg-4 col-sm-4 ">
                           <div className="register-form-column ">
                             <div className="register-form-plan ">

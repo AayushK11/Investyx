@@ -184,3 +184,11 @@ def send_email(name, email, usercode):
     server.login(message["from"], password)
     server.sendmail(message["from"], message["to"], message.as_string())
     server.quit()
+
+
+def account_blocked(name, email, usercode):
+    print(name, email, usercode)
+
+
+def smart_stox_email(name, email):
+    print(name, email)
