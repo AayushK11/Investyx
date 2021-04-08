@@ -913,7 +913,7 @@ export default class ContactUs extends React.Component {
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
-                                    Performance of SmallCase
+                                    Performance of SmartCase
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
@@ -959,7 +959,7 @@ export default class ContactUs extends React.Component {
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
-                                    Performance of SmallCase
+                                    Performance of SmartCase
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
                                     <i class="fas fa-times-circle"></i> Predict
@@ -1005,7 +1005,7 @@ export default class ContactUs extends React.Component {
                                   </li>
                                   <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
-                                    Performance of SmallCase
+                                    Performance of SmartCase
                                   </li>
                                   <li className="register-plan-detail-item text-primary">
                                     <i class="fas fa-check-circle"></i> Predict
