@@ -26,7 +26,7 @@ export default class Login extends React.Component {
 
   generateURLs() {
     this.setState({
-      forgotpassword: this.state.url.concat("/forgotpassword"),
+      forgotpassword: "http://investyx.netlify.app/forgot-password",
       dashboard: this.state.url.concat("/dashboard"),
     });
   }

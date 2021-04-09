@@ -11,6 +11,8 @@ import SignUp from "./Components/Pages/SignUp.js";
 import TermsAndConditions from "./Components/Pages/TermsAndConditions";
 import PrivacyPolicy from "./Components/Pages/PrivacyPolicy";
 import ConfirmAccount from "./Components/Pages/ConfirmAccount";
+import ForgotPassword from "./Components/Pages/ForgotPassword";
+import ResetPassword from "./Components/Pages/ResetPassword";
 
 export default class App extends React.Component {
   render() {
@@ -67,6 +69,16 @@ export default class App extends React.Component {
               exact
               path={"/confirm-account"}
               render={(props) => <ConfirmAccount {...props} />}
+            />
+            <Route
+              exact
+              path={"/forgot-password"}
+              render={(props) => <ForgotPassword {...props} />}
+            />
+            <Route
+              exact
+              path={"/reset-password"}
+              render={(props) => <ResetPassword {...props} />}
             />
           </Switch>
         </BrowserRouter>

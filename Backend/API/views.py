@@ -8,7 +8,11 @@ from BackendScripts.authentication_tasks import (
     generate_usercode,
     find_due_date,
 )
-from BackendScripts.email_tasks import registration_email
+from BackendScripts.email_tasks import (
+    registration_email,
+    reset_email,
+    forgot_password_email,
+)
 
 
 @api_view(["POST"])
@@ -38,21 +42,26 @@ def register(request):
             return Response({"Status": "Success"})
 
     elif len(request.data.keys()) == 1 and "Username" in request.data.keys():
-        if Authentication.objects.filter(Username=request.data["Username"]).exists():
+        if Authentication.objects.filter(
+            Username=hash_details(request.data["Username"])
+        ).exists():
             return Response({"Status": "Failed"})
         else:
             return Response({"Status": "Success"})
 
     elif len(request.data.keys()) == 3 and "AadharNumber" in request.data.keys():
+
+        print(request.data)
+
         if (
             Authentication.objects.filter(
-                AadharNumber=request.data["AadharNumber"]
+                AadharNumber=hash_details(request.data["AadharNumber"])
             ).exists()
             or Authentication.objects.filter(
-                PanNumber=request.data["PanNumber"]
+                PanNumber=hash_details(request.data["PanNumber"])
             ).exists()
             or Authentication.objects.filter(
-                AccountNumber=request.data["AccountNumber"]
+                AccountNumber=hash_details(request.data["AccountNumber"])
             ).exists()
         ):
             return Response({"Status": "Failed"})
@@ -128,5 +137,49 @@ def register(request):
                 return Response({"Status": "Success"})
             else:
                 return Response({"Status": "Exists"})
+        else:
+            return Response({"Status": "Failed"})
+
+
+@api_view(["POST"])
+def forgotpassword(request):
+
+    if len(request.data.keys()) == 3 and "PanNumber" in request.data.keys():
+
+        if Authentication.objects.filter(
+            Username=hash_details(request.data["Username"]),
+            Pin=hash_details(request.data["Pin"]),
+            PanNumber=hash_details(request.data["PanNumber"]),
+        ).exists():
+
+            user_details = Authentication.objects.get(
+                Username=hash_details(request.data["Username"]),
+                Pin=hash_details(request.data["Pin"]),
+                PanNumber=hash_details(request.data["PanNumber"]),
+            )
+
+            forgot_password_email(user_details.FirstName, user_details.EmailID)
+
+            return Response({"Status": "Success"})
+        else:
+            return Response({"Status": "Failed"})
+
+    if len(request.data.keys()) == 2 and "Username" in request.data.keys():
+
+        if Authentication.objects.filter(
+            Username=hash_details(request.data["Username"]),
+        ).exists():
+
+            user_details = Authentication.objects.get(
+                Username=hash_details(request.data["Username"])
+            )
+
+            Password = hash_details(request.data["Password"])
+            user_details.Password = Password
+            user_details.save()
+
+            reset_email(user_details.FirstName, user_details.EmailID)
+
+            return Response({"Status": "Success"})
         else:
             return Response({"Status": "Failed"})
