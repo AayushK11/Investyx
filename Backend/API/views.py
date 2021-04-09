@@ -118,10 +118,15 @@ def register(request):
 
     elif len(request.data.keys()) == 2 and "Usercode" in request.data.keys():
         if Authentication.objects.filter(Usercode=request.data["Usercode"]).exists():
+
             user_details = Authentication.objects.get(Usercode=request.data["Usercode"])
-            pin = hash_details(request.data["Pin"])
-            user_details.Pin = pin
-            user_details.save()
-            return Response({"Status": "Success"})
+
+            if user_details.Pin == "":
+                pin = hash_details(request.data["Pin"])
+                user_details.Pin = pin
+                user_details.save()
+                return Response({"Status": "Success"})
+            else:
+                return Response({"Status": "Exists"})
         else:
             return Response({"Status": "Failed"})

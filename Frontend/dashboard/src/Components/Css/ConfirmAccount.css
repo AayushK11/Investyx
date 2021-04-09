@@ -1,132 +1,160 @@
 /* ________________ */
-/* Confirm Account */
+/* confirmaccount  */
 /* _______________ */
 
-.confirm-account-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.confirmaccount {
+  background-color: #ffeeee;
 }
 
-.confirm-account-column {
-  width: 50%;
+.required-star {
+  color: red;
 }
 
-#confirmaccount-form {
-  background-color: #dcdff7 !important;
-  padding: 30px 40px 30px 40px;
-  margin: 150px 0px 0px 0px;
-  border-radius: 20px;
+.confirmaccount .confirmaccount-card-row {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.confirmaccount-logo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.confirmaccount
+  .confirmaccount-card-row
+  .confirmaccount-card-column
+  .confirmaccount-heading-design-row {
+  border: 1px solid gray;
+  height: 400px;
+  width: 400px;
+  background-color: #ffecec;
+  border-radius: 2%;
 }
 
-.confirmaccount-logo img {
-  width: 35%;
+.confirmaccount
+  .confirmaccount-card-row
+  .confirmaccount-card-column
+  .confirmaccount-heading-design-row
+  .confirmaccount-heading-design
+  img {
+  width: 60px;
 }
 
-.confirmaccout-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.confirmaccount
+  .confirmaccount-card-row
+  .confirmaccount-card-column
+  .confirmaccount-heading-design-row
+  .confirmaccount-heading-design
+  h5 {
+  width: 150px;
+  font-weight: 400;
 }
 
-.confirmaccount-text h5 {
-  font-size: 1.5vw;
+.confirmaccount
+  .confirmaccount-card-row
+  .confirmaccount-card-column
+  .confirmaccount-heading-design-row
+  .confirmaccount-form {
+  padding: 0px 48px;
 }
 
-.confirm-account-form-contents {
-  margin: 50px 10px 10px 0px;
+.confirmaccount
+  .confirmaccount-card-row
+  .confirmaccount-card-column
+  .confirmaccount-heading-design-row
+  .confirmaccount-form
+  label {
+  margin: 5px 0px 0px 0px;
 }
 
-.confirm-account-form-contents .col-md-12 {
-  margin: 5px 0px;
+.confirmaccount
+  .confirmaccount-card-row
+  .confirmaccount-card-column
+  .confirmaccount-heading-design-row
+  .confirmaccount-form
+  .confirmaccount-button {
+  margin-top: 20px;
+  font-weight: 450;
+  padding: 5px;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: #3d7ed1;
+  width: auto;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.confirmaccount
+  .confirmaccount-card-row
+  .confirmaccount-card-column
+  .confirmaccount-heading-design-row
+  .confirmaccount-form
+  .confirmaccount-button
+  .confirmaccount-button-inner {
+  margin-top: 0px;
+  font-weight: 450;
+  padding: 0px;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  background-color: #3d7ed1;
+  color: #f5f5f5;
+  text-align: center;
 }
 
 @media only screen and (max-width: 450px) {
-  .confirm-account-column {
-    width: 90%;
+  .confirmaccount
+    .confirmaccount-card-row
+    .confirmaccount-card-column
+    .confirmaccount-heading-design-row {
+    border: 1px solid gray;
+    height: 400px;
+    width: 300px;
+    background-color: #ffecec;
+    border-radius: 2%;
   }
 
-  #confirmaccount-form {
-    margin: 150px 0px 0px 0px;
-  }
-
-  .confirmaccount-logo img {
-    width: 50%;
-  }
-
-  .confirmaccount-text h5 {
-    font-size: 2.7vw;
-    margin: 0px;
-  }
-
-  .confirm-account-form-contents {
-    margin: 30px 10px 10px 0px;
-  }
-
-  .confirm-account-form-contents .col-md-12,
-  .confirm-account-form-contents .col-md-6 {
-    margin: 5px 0px;
+  .confirmaccount .confirmaccount-card-row {
+    position: fixed;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @media only screen and (max-width: 768px) and (min-width: 450px) {
-  .confirm-account-column {
-    width: 90%;
+  .confirmaccount
+    .confirmaccount-card-row
+    .confirmaccount-card-column
+    .confirmaccount-heading-design-row {
+    border: 1px solid gray;
+    height: 400px;
+    width: 400px;
+    background-color: #ffecec;
+    border-radius: 2%;
   }
 
-  #confirmaccount-form {
-    margin: 300px 0px 0px 0px;
-  }
-
-  .confirmaccount-logo img {
-    width: 50%;
-  }
-
-  .confirmaccount-text h5 {
-    font-size: 2.7vw;
-    margin: 0px;
-  }
-
-  .confirm-account-form-contents {
-    margin: 30px 10px 10px 0px;
-  }
-
-  .confirm-account-form-contents .col-md-12,
-  .confirm-account-form-contents .col-md-6 {
-    margin: 5px 0px;
+  .confirmaccount .confirmaccount-card-row {
+    position: fixed;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @media only screen and (max-width: 992px) and (min-width: 769px) {
-  .confirm-account-column {
-    width: 90%;
+  .confirmaccount
+    .confirmaccount-card-row
+    .confirmaccount-card-column
+    .confirmaccount-heading-design-row {
+    border: 1px solid gray;
+    height: 400px;
+    width: 400px;
+    background-color: #ffecec;
+    border-radius: 2%;
   }
 
-  #confirmaccount-form {
-    margin: 350px 0px 0px 0px;
-  }
-
-  .confirmaccount-logo img {
-    width: 40%;
-  }
-
-  .confirmaccount-text h5 {
-    font-size: 2vw;
-    margin: 0px;
-  }
-
-  .confirm-account-form-contents {
-    margin: 30px 10px 10px 0px;
-  }
-
-  .confirm-account-form-contents .col-md-12,
-  .confirm-account-form-contents .col-md-6 {
-    margin: 5px 0px;
+  .confirmaccount .confirmaccount-card-row {
+    position: fixed;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%);
   }
 }

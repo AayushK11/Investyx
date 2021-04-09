@@ -4,7 +4,7 @@ import Footer from "../Footer.js";
 import { Helmet } from "react-helmet";
 import "bootstrap";
 import "../Css/About.css";
-import logo512 from "../Images/investyx_symbol.png";
+import Investyx_S from "../Images/Investyx_S.png";
 
 export default class About extends React.Component {
   constructor(props) {
@@ -87,14 +87,14 @@ export default class About extends React.Component {
                 <div className="row about-people-photos justify-content-around align-items-center ">
                   <div className="col-md-3 col-sm-6 about-person">
                     <img
-                      src={logo512}
+                      src={Investyx_S}
                       alt="Aayush Kumaria"
                       className="about-photo"
                     />
                     <div className="about-overlay-text">
                       <h4>Aayush Kumaria</h4>
-                      <div class="founder">
-                      <h6>Co-Founder, CTO</h6>
+                      <div className="founder">
+                        <h6>Co-Founder, CTO</h6>
                       </div>
                       <br></br>
                       <h5>
@@ -138,7 +138,7 @@ export default class About extends React.Component {
                   </div>
                   <div className="col-md-3 col-sm-6 about-person">
                     <img
-                      src={logo512}
+                      src={Investyx_S}
                       alt="Ajinkya Rajkar"
                       className="about-photo"
                     />
@@ -187,7 +187,7 @@ export default class About extends React.Component {
                   </div>
                   <div className="col-md-3 col-sm-6 about-person">
                     <img
-                      src={logo512}
+                      src={Investyx_S}
                       alt="Aniket Raut"
                       className="about-photo"
                     />

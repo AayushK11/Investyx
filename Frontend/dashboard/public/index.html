@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/investyx_symbol.png" />
+    <link rel="icon" href="%PUBLIC_URL%/logo192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/investyx_symbol.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>Investyx - A Smarter Way To Invest</title>
@@ -20,7 +20,7 @@
       itemprop="description"
       content="Investyx is a one-stop portal to solve all your financial questions such as when and where to invest using a powerful Machine Learning Algorithm"
     />
-    <meta itemprop="image" content="%PUBLIC_URL%/investyx_vertical.png" />
+    <meta itemprop="image" content="%PUBLIC_URL%/logo192.png" />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://investyx.netlify.app" />
@@ -30,16 +30,16 @@
       property="og:description"
       content="Investyx is a one-stop portal to solve all your financial questions such as when and where to invest using a powerful Machine Learning Algorithm"
     />
-    <meta property="og:image" content="%PUBLIC_URL%/investyx_vertical.png" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
 
     <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="%PUBLIC_URL%/investyx_vertical.png" />
+    <meta name="twitter:card" content="%PUBLIC_URL%/logo192.png" />
     <meta name="twitter:title" content="Investyx" />
     <meta
       name="twitter:description"
       content="Investyx is a one-stop portal to solve all your financial questions such as when and where to invest using a powerful Machine Learning Algorithm"
     />
-    <meta name="twitter:image" content="%PUBLIC_URL%/investyx_vertical.png" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo192.png" />
 
     <!-- Extras -->
     <meta
@@ -59,8 +59,8 @@
       content="Investyx is a one-stop portal to solve all your financial questions such as when and where to invest using a powerful Machine Learning Algorithm"
     />
     <meta name="og:url" href="https://investyx.netlify.app/" />
-    <meta name="og:image" content="%PUBLIC_URL%/investyx_vertical.png" />
-    <meta name="og:image:secure_url" content="%PUBLIC_URL%/investyx_vertical.png" />
+    <meta name="og:image" content="%PUBLIC_URL%/logo192.png" />
+    <meta name="og:image:secure_url" content="%PUBLIC_URL%/logo192.png" />
 
     <!-- CSS only -->
     <link
@@ -70,26 +70,44 @@
       crossorigin="anonymous"
     />
     <link
-      rel="stylesheet"
+      rel="preconnect"
+      as="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="preload" as="image" src="Components/Images/Investyx_S" />
+
+    <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("worker.js")
+            .then(
+              function (registration) {
+                console.log(
+                  "Worker registration successful",
+                  registration.scope
+                );
+              },
+              function (err) {
+                console.log("Worker registration failed", err);
+              }
+            )
+            .catch(function (err) {
+              console.log(err);
+            });
+        });
+      } else {
+        console.log("Service Worker is not supported by browser.");
+      }
+    </script>
   </body>
 </html>

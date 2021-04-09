@@ -6,11 +6,10 @@ import "bootstrap";
 import "../Css/SignUp.css";
 import "../Css/Loader.css";
 import { Helmet } from "react-helmet";
-import img1 from "../Images/never.png";
-import img2 from "../Images/compound.png";
-import img3 from "../Images/pricep.png";
-import logo from "../Images/investyx_vertical.png";
-import logo512 from "../Images/investyx_vertical.png";
+import Register_Image_1 from "../Images/Register_Image_1.png";
+import Register_Image_2 from "../Images/Register_Image_2.png";
+import Register_Image_3 from "../Images/Register_Image_3.png";
+import Investyx_V from "../Images/Investyx_V.png";
 import axios from "axios";
 import Server_Path from "../Server.js";
 import $ from "jquery";
@@ -51,7 +50,6 @@ export default class ContactUs extends React.Component {
 
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(this.state);
   }
 
   onClick(event) {
@@ -222,13 +220,11 @@ export default class ContactUs extends React.Component {
   }
 
   onChecked(e) {
-    console.log("Checked");
     if (e.target.checked === true) {
       this.setState({ [e.target.name]: 1 });
     } else {
       this.setState({ [e.target.name]: 0 });
     }
-    console.log(this.state);
   }
 
   checkFields(registrationLevel) {
@@ -585,7 +581,7 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={img1}
+                          src={Register_Image_1}
                           alt="quote"
                           className="register-graphic-design"
                         />
@@ -680,7 +676,7 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={img2}
+                          src={Register_Image_2}
                           alt="Quote"
                           className="register-graphic-design"
                         />
@@ -867,7 +863,7 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={img3}
+                          src={Register_Image_3}
                           alt="quote"
                           className="register-graphic-design"
                         />
@@ -898,26 +894,26 @@ export default class ContactUs extends React.Component {
                               <div className="register-plan-details">
                                 <ul className="register-plan-details-list my-auto px-0">
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Set
+                                    <i className="fas fa-check-circle"></i> Set
                                     triggers for upto 5 Stocks
                                   </li>
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Predict
-                                    Future of Select Stock Prices
+                                    <i className="fas fa-check-circle"></i>{" "}
+                                    Predict Future of Select Stock Prices
                                   </li>
                                   <hr></hr>
                                   <h4>Additional Benefits</h4>
                                   <li className="register-plan-detail-item text-muted">
-                                    <i class="fas fa-times-circle"></i> Predict
-                                    Performance of SIP / Mutual Fund
+                                    <i className="fas fa-times-circle"></i>{" "}
+                                    Predict Performance of SIP / Mutual Fund
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
-                                    <i class="fas fa-times-circle"></i> Predict
-                                    Performance of SmartCase
+                                    <i className="fas fa-times-circle"></i>{" "}
+                                    Predict Performance of SmartCase
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
-                                    <i class="fas fa-times-circle"></i> Predict
-                                    Performance of a Currency
+                                    <i className="fas fa-times-circle"></i>{" "}
+                                    Predict Performance of a Currency
                                   </li>
                                 </ul>
                               </div>
@@ -944,26 +940,26 @@ export default class ContactUs extends React.Component {
                               <div className="register-plan-details">
                                 <ul className="register-plan-details-list my-auto px-0">
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Set
+                                    <i className="fas fa-check-circle"></i> Set
                                     triggers for upto 10 Stocks
                                   </li>
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Predict
-                                    Future of Select Stock Prices
+                                    <i className="fas fa-check-circle"></i>{" "}
+                                    Predict Future of Select Stock Prices
                                   </li>
                                   <hr></hr>
                                   <h4>Additional Benefits</h4>
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Predict
-                                    Performance of SIP / Mutual Fund
+                                    <i className="fas fa-check-circle"></i>{" "}
+                                    Predict Performance of SIP / Mutual Fund
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
-                                    <i class="fas fa-times-circle"></i> Predict
-                                    Performance of SmartCase
+                                    <i className="fas fa-times-circle"></i>{" "}
+                                    Predict Performance of SmartCase
                                   </li>
                                   <li className="register-plan-detail-item text-muted">
-                                    <i class="fas fa-times-circle"></i> Predict
-                                    Performance of a Currency
+                                    <i className="fas fa-times-circle"></i>{" "}
+                                    Predict Performance of a Currency
                                   </li>
                                 </ul>
                               </div>
@@ -990,26 +986,26 @@ export default class ContactUs extends React.Component {
                               <div className="register-plan-details ">
                                 <ul className="register-plan-details-list my-auto px-0">
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Set
+                                    <i className="fas fa-check-circle"></i> Set
                                     triggers for upto 20 Stocks
                                   </li>
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Predict
-                                    Future of Select Stock Prices
+                                    <i className="fas fa-check-circle"></i>{" "}
+                                    Predict Future of Select Stock Prices
                                   </li>
                                   <hr></hr>
                                   <h4>Additional Benefits</h4>
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Predict
-                                    Performance of SIP / Mutual Fund
+                                    <i className="fas fa-check-circle"></i>{" "}
+                                    Predict Performance of SIP / Mutual Fund
                                   </li>
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Predict
-                                    Performance of SmartCase
+                                    <i className="fas fa-check-circle"></i>{" "}
+                                    Predict Performance of SmartCase
                                   </li>
                                   <li className="register-plan-detail-item text-primary">
-                                    <i class="fas fa-check-circle"></i> Predict
-                                    Performance of a Currency
+                                    <i className="fas fa-check-circle"></i>{" "}
+                                    Predict Performance of a Currency
                                   </li>
                                 </ul>
                               </div>
@@ -1143,8 +1139,8 @@ export default class ContactUs extends React.Component {
                       </div>
                       <div className="register-graphic col-md-6">
                         <img
-                          src={logo}
-                          alt="LOGO"
+                          src={Investyx_V}
+                          alt="Investyx_V"
                           className="register-graphic-design"
                         />
                       </div>
@@ -1177,7 +1173,7 @@ export default class ContactUs extends React.Component {
                       <div className="register-completion-graphic col-12">
                         <div className="register-graphic col-12">
                           <img
-                            src={logo512}
+                            src={Investyx_V}
                             alt="LODA"
                             className="register-graphic-design"
                           />

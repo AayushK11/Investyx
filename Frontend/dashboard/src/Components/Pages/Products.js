@@ -4,10 +4,10 @@ import Footer from "../Footer.js";
 import "bootstrap";
 import "../Css/Products.css";
 import { Helmet } from "react-helmet";
-import smartstox from "../Images/smartstox.png";
-import mutual from "../Images/mutual.png";
-import coin from "../Images/coin.png";
-import case_ from "../Images/case_.png";
+import Smart_Stox_Symbol from "../Images/Smart_Stox_Symbol.png";
+import Smart_Funds_Symbol from "../Images/Smart_Funds_Symbol.png";
+import Smart_Coin_Symbol from "../Images/Smart_Coin_Symbol.png";
+import Smart_Case_Symbol from "../Images/Smart_Case_Symbol.png";
 
 export default class Products extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ export default class Products extends React.Component {
                     href="https://smartstox.netlify.app/"
                   >
                     <img
-                      src={smartstox}
+                      src={Smart_Stox_Symbol}
                       alt="Smart Stox"
                       className="products-logo"
                     />
@@ -71,7 +71,7 @@ export default class Products extends React.Component {
                     href="https://smartfunds.netlify.app/"
                   >
                     <img
-                      src={mutual}
+                      src={Smart_Funds_Symbol}
                       alt="Smart Funds"
                       className="products-logo"
                     />
@@ -108,7 +108,7 @@ export default class Products extends React.Component {
                     href="https://smartcase.netlify.app/"
                   >
                     <img
-                      src={case_}
+                      src={Smart_Case_Symbol}
                       alt="Smart Case"
                       className="products-logo"
                     />
@@ -142,18 +142,18 @@ export default class Products extends React.Component {
                 <div className="products-design order-first order-md-last col-md-6 col-12">
                   <a
                     className="products-image-button"
-                    href="https://smart-notes.netlify.app/"
+                    href="https://smartcoin.netlify.app/"
                   >
                     <img
-                      src={coin}
-                      alt="Smart Notes"
+                      src={Smart_Coin_Symbol}
+                      alt="Smart Coin"
                       className="products-logo"
                     />
                   </a>
                 </div>
                 <div className="products-text col-md-6 my-auto">
                   <div className="row products-heading">
-                    <h2>Smart Notes</h2>
+                    <h2>Smart Coin</h2>
                   </div>
                   <div className="row products-sub-heading me-5">
                     <h5>
@@ -164,7 +164,7 @@ export default class Products extends React.Component {
                   <div className="row products-have-a-look ">
                     <a
                       className="products-button"
-                      href="https://smart-notes.netlify.app/"
+                      href="https://smartcoin.netlify.app/"
                     >
                       Take Me There
                     </a>

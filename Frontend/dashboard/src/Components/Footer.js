@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap";
 import "./Css/Footer.css";
-import footer_logo from "./Images/investyx_line.png";
+import Investyx_H_1 from "./Images/Investyx_H_1.png";
 
 export default class Footer extends React.Component {
   constructor(props) {
@@ -39,8 +39,11 @@ export default class Footer extends React.Component {
               <div className="col-sm-3 col-6 footer-section-1">
                 <div className="footer-design">
                   <a className="footer-brand" href={this.state.url}>
-                    <img src={footer_logo} alt="Investyx" className="footer-logo" />
-                    
+                    <img
+                      src={Investyx_H_1}
+                      alt="Investyx"
+                      className="footer-logo"
+                    />
                   </a>
                 </div>
                 <div className="footer-list">

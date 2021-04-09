@@ -4,9 +4,9 @@ import Footer from "../Footer.js";
 import { Helmet } from "react-helmet";
 import "bootstrap";
 import "../Css/Landing.css";
-import logo from "../Images/investyx_symbol.png";
-import pic1 from "../Images/bigstock1.jpg";
-import pic2 from "../Images/bg.jpg";
+import Investyx_S from "../Images/Investyx_S.png";
+import Background_Image_1 from "../Images/Background_Image_1.jpg";
+import Background_Image_2 from "../Images/Background_Image_2.jpg";
 
 export default class Landing extends React.Component {
   constructor(props) {
@@ -42,7 +42,11 @@ export default class Landing extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="welcome-design col-12 ">
-                  <img src={logo} alt="Landing" className="welcome-logo" />
+                  <img
+                    src={Investyx_S}
+                    alt="Landing"
+                    className="welcome-logo"
+                  />
                 </div>
               </div>
               <div className="welcome-text col-12 text-center">
@@ -61,7 +65,7 @@ export default class Landing extends React.Component {
               <div className="row">
                 <div className="service-design col-md-6 col-12">
                   <img
-                    src={pic1}
+                    src={Background_Image_2}
                     alt="Invest Dont In-Waste"
                     className="service-logo"
                   />
@@ -124,7 +128,11 @@ export default class Landing extends React.Component {
                   </div>
                 </div>
                 <div className="universe-design order-first order-md-last col-md-6 col-12">
-                  <img src={pic2} alt="Products" className="universe-logo" />
+                  <img
+                    src={Background_Image_1}
+                    alt="Products"
+                    className="universe-logo"
+                  />
                 </div>
               </div>
             </div>
