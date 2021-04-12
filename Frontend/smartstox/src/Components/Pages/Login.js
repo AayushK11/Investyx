@@ -88,7 +88,7 @@ export default class Login extends React.Component {
             .then((res) => {
               if (res.data["Status"] === "Success") {
                 this.props.handleLogin(this.state.Usercode);
-                this.props.history.push("/landing");
+                this.props.history.push("/dashboard");
               } else {
                 alert("Invalid Details");
 

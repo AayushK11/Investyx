@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 class Authentication(models.Model):
 
+    UserImage = models.ImageField(upload_to="UserImages", null=True, blank=True)
+
     FirstName = models.CharField(max_length=15)
     LastName = models.CharField(max_length=15)
     EmailID = models.EmailField(max_length=30)

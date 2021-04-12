@@ -3,8 +3,7 @@ import "./Css/Navbar_PreAuth.css";
 import "bootstrap";
 import smartstox from "./Images/hlogo.png";
 
-
-export default class NavigationBar extends React.Component {
+export default class NavbarPreAuth extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from API.models import Authentication
 from BackendScripts.authentication_tasks import hash_details
 from BackendScripts.email_tasks import smart_stox_email, account_blocked
+from PIL import Image
 
 # Create your views here.
 @api_view(["POST"])
@@ -59,3 +60,20 @@ def login(request):
         user_details.AccountActive = False
         user_details.save()
         return Response({"Status": "Success",})
+
+
+@api_view(["POST"])
+def userdetails(request):
+
+    if len(request.data.keys()) == 2 and request.data["Requirement"] == "UserImage":
+
+        UserImage = Authentication.objects.get(
+            Usercode=request.data["Usercode"]
+        ).UserImage
+
+        if str(UserImage) == "":
+            return Response({"Status": "No Image"})
+
+        else:
+            print(UserImage.url)
+            return Response({"Status": "Success", "UserImage": UserImage.url})

@@ -1,0 +1,101 @@
+/* ________________ */
+/* Navbar Post Auth  */
+/* _______________ */
+
+.navbar-custom-post {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  background-color: #ffeeee !important;
+}
+
+.navbar-custom-post .navbar-logo {
+  height: 50px;
+}
+
+.navbar-custom-post button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.navbar-custom-post .navbar-toggler {
+  border-color: #387ed1 !important;
+}
+
+.navbar-custom-post .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%2361dafb' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-custom-post .nav-item {
+  text-align: center;
+  display: inline-block;
+}
+
+.navbar-custom-post .navbar-collapse .navbar-nav .nav-link h6 {
+  margin: 0px;
+  padding: 0px 10px 0px 0px;
+}
+
+.navbar-custom-post .navbar-collapse .navbar-nav .nav-link {
+  align-items: center;
+  display: inline-flex;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.navbar-custom-post
+  .navbar-collapse
+  .navbar-nav
+  .nav-item
+  .user-profile-picture {
+  height: 30px;
+}
+
+.dropdown .dropdown-menu {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown.show .dropdown-menu {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.sidebar-custom-post {
+  top: 75px;
+  left: 0;
+  width: 15%;
+  z-index: 1;
+  position: fixed;
+  background-color: #ffeeee !important;
+}
+
+.sidebar-custom-post .sidebar-nav {
+  padding: 0px;
+}
+
+.sidebar-custom-post .sidebar-nav .nav-item {
+  margin: 10px 0px;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar-custom-post .navbar-logo {
+    margin: 0px 0px 0px 20px;
+  }
+
+  .navbar-custom-post .navbar-collapse .navbar-nav .nav-link {
+    margin: 0px 50px 0px 20px;
+  }
+}
