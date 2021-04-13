@@ -1,0 +1,32 @@
+/* ________________ */
+/* Dashboard  */
+/* _______________ */
+
+.dashboard-main {
+  position: absolute;
+  top: 76px;
+  left: 15%;
+  min-width: 85% !important;
+  padding: 20px;
+}
+
+.dashboard-main .dashboard-main-card-row .dashboard-main-card-col {
+  padding: 0px 20px 0px 0px;
+}
+
+.Dashboard-Card {
+  background-color: #ffffbf;
+  height: auto;
+}
+
+.Dashboard-Card h6 {
+  margin: 7% 0px 0px 0px;
+}
+
+.Dashboard-Card h3 {
+  margin: 3% 0%;
+}
+
+.Dashboard-Card .Card-Stock-Price-Change .badge {
+  background-color: gray;
+}

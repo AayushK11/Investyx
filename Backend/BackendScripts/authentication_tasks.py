@@ -23,3 +23,8 @@ def generate_usercode():
 
 def find_due_date():
     return (datetime.today() + relativedelta(months=+1)).strftime("%Y-%m-%d")
+
+
+def days_remaining(due_date):
+    return (due_date - datetime.today().date()).days
+

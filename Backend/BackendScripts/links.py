@@ -1,0 +1,8 @@
+YAHOOFIN = "https://in.finance.yahoo.com/"
+NIFTY50 = "https://in.finance.yahoo.com/quote/%5ENSEI?p=%5ENSEI"
+SENSEX = "https://in.finance.yahoo.com/quote/%5EBSESN?p=%5EBSESN"
+NIFTYBANK = "https://in.finance.yahoo.com/quote/%5ENSEBANK?p=%5ENSEBANK"
+NIFTY100 = "https://in.finance.yahoo.com/quote/%5ECNX100?p=%5ECNX100"
+PROFILE = "https://in.finance.yahoo.com/quote/{}.NS/profile?p={}.NS"
+LIVE_STOCK_PRICE_NSE = "https://in.finance.yahoo.com/quote/{}.NS/p={}.NS"
+LIVE_STOCK_PRICE_BSE = "https://in.finance.yahoo.com/quote/{}.BO/p={}.BO"

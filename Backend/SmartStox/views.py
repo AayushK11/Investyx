@@ -2,9 +2,15 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from API.models import Authentication
-from BackendScripts.authentication_tasks import hash_details
+from BackendScripts.authentication_tasks import hash_details, days_remaining
 from BackendScripts.email_tasks import smart_stox_email, account_blocked
-from PIL import Image
+from BackendScripts.indice_scraping import (
+    live_nifty_50_data,
+    live_sensex_data,
+    live_nifty_bank_data,
+    live_nifty_100_data,
+)
+from multiprocessing.pool import ThreadPool
 
 # Create your views here.
 @api_view(["POST"])
@@ -65,12 +71,13 @@ def login(request):
 @api_view(["POST"])
 def userdetails(request):
 
-    if (
-        len(request.data.keys()) == 2
-        and request.data["Requirement"] == "UserImage, Notifications"
-    ):
+    try:
+        live_plan_check(request.data["Usercode"])
 
-        try:
+        if (
+            len(request.data.keys()) == 2
+            and request.data["Requirement"] == "UserImage, Notifications"
+        ):
             UserImage = Authentication.objects.get(
                 Usercode=request.data["Usercode"]
             ).UserImage
@@ -79,8 +86,6 @@ def userdetails(request):
             ).Notifications
 
             if str(UserImage) == "" and str(Notifications) == "":
-
-                print("1")
 
                 return Response(
                     {
@@ -128,23 +133,76 @@ def userdetails(request):
                     }
                 )
 
-        except Authentication.DoesNotExist:
-            return Response({"Status": "Session Expired"})
+        if (
+            len(request.data.keys()) == 3
+            and request.data["Requirement"] == "Clear Notification"
+        ):
+            user_details = Authentication.objects.get(Usercode=request.data["Usercode"])
 
-    if (
-        len(request.data.keys()) == 3
-        and request.data["Requirement"] == "Clear Notification"
-    ):
-        user_details = Authentication.objects.get(Usercode=request.data["Usercode"])
+            Notifications = user_details.Notifications.replace(
+                str(request.data["NotificationValue"] + "$$$"), ""
+            )
+            user_details.Notifications = Notifications
+            user_details.save()
 
-        Notifications = user_details.Notifications.replace(
-            str(request.data["NotificationValue"] + "$$$"), ""
+            Notifications = list(str(Notifications).split("$$$"))
+            Notifications = Notifications[:-1]
+
+            return Response({"Status": "Success", "Notifications": Notifications})
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+
+
+def live_plan_check(usercode):
+
+    user_details = Authentication.objects.get(Usercode=usercode)
+    LastPaidDate = user_details.PaymentDueDate
+    DaysRemaining = days_remaining(LastPaidDate)
+
+    if DaysRemaining == 10:
+        user_details.Notifications = (
+            user_details.Notifications + "Your Monthly Plan Expires in 10 Days$$$"
         )
-        user_details.Notifications = Notifications
-        user_details.save()
+    if DaysRemaining == 5:
+        user_details.Notifications = (
+            user_details.Notifications + "Your Monthly Plan Expires in 5 Days$$$"
+        )
+    if DaysRemaining == 1:
+        user_details.Notifications = (
+            user_details.Notifications + "Your Monthly Plan Expires Tomorrow$$$"
+        )
 
-        Notifications = list(str(Notifications).split("$$$"))
-        Notifications = Notifications[:-1]
+    user_details.save()
 
-        return Response({"Status": "Success", "Notifications": Notifications})
 
+@api_view(["POST"])
+def dashboardcards(request):
+
+    try:
+
+        if (
+            len(request.data.keys()) == 2
+            and request.data["Requirement"] == "Dashboard Cards"
+        ):
+            # Get User 4 Card Stocks
+
+            pool = ThreadPool(processes=4)
+
+            Nifty50 = pool.apply_async(live_nifty_50_data).get()
+            Sensex = pool.apply_async(live_sensex_data).get()
+            NiftyBank = pool.apply_async(live_nifty_bank_data).get()
+            Nifty100 = pool.apply_async(live_nifty_100_data).get()
+
+            return Response(
+                {
+                    "Status": "Success",
+                    "Card1": Nifty50,
+                    "Card2": Sensex,
+                    "Card3": NiftyBank,
+                    "Card4": Nifty100,
+                }
+            )
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
