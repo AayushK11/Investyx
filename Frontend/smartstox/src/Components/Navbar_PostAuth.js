@@ -15,8 +15,10 @@ export default class NavbarPostAuth extends React.Component {
       url: window.location.origin,
       Usercode: this.props.Usercode,
       UserImage: this.props.UserImage,
+      Notifications: [],
     };
     this.getUserData = this.getUserData.bind(this);
+    this.clearNotif = this.clearNotif.bind(this);
   }
 
   generateURLs() {
@@ -40,13 +42,63 @@ export default class NavbarPostAuth extends React.Component {
     axios
       .post(Server_Path.concat("userdetails/"), {
         Usercode: this.state.Usercode,
-        Requirement: "UserImage",
+        Requirement: "UserImage, Notifications",
       })
       .then((res) => {
         if (res.data["Status"] === "Success") {
           this.setState({
             UserImage: Server_Root.concat(res.data["UserImage"]),
+            Notifications: res.data["Notifications"],
           });
+        } else if (res.data["Status"] === "Notifications") {
+          console.log(res.data);
+          this.setState({
+            Notifications: res.data["Notifications"],
+          });
+        } else if (res.data["Status"] === "Image") {
+          this.setState({
+            UserImage: Server_Root.concat(res.data["UserImage"]),
+          });
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+        if (!e.Status) {
+          alert("Something Went Wrong");
+        }
+      });
+    $("#dashboard").fadeTo(500, 1);
+    $(".cssload-loader").fadeTo(500, 0);
+  }
+
+  updateNotifications() {
+    console.log(this.state.Notifications);
+    if (this.state.Notifications.length === 0) {
+      this.setState({
+        Notifications: ["No Notifications To Display"],
+      });
+    }
+  }
+
+  clearNotif(event) {
+    event.preventDefault();
+    axios
+      .post(Server_Path.concat("userdetails/"), {
+        Usercode: this.state.Usercode,
+        Requirement: "Clear Notification",
+        NotificationValue: event.target.id,
+      })
+      .then((res) => {
+        if (res.data["Status"] === "Success") {
+          if (res.data["Notifications"].length === 0) {
+            this.setState({
+              Notifications: ["No Notifications To Display"],
+            });
+          } else {
+            this.setState({
+              Notifications: res.data["Notifications"],
+            });
+          }
         }
       })
       .catch((e) => {
@@ -63,6 +115,7 @@ export default class NavbarPostAuth extends React.Component {
     this.generateURLs();
     this.getUserData();
     this.updateImage();
+    this.updateNotifications();
   }
 
   render() {
@@ -83,6 +136,42 @@ export default class NavbarPostAuth extends React.Component {
             </button>
             <div className="collapse navbar-collapse " id="navbarNav">
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item notification dropdown">
+                  <button
+                    type="button"
+                    class="btn dropdown-toggle notifications"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i className="fas fa-bell bell-icon d-none d-lg-inline-flex d-xl-inline-flex">
+                      <span class="badge bg-warning">
+                        {this.state.Notifications.length}
+                      </span>
+                    </i>
+                    <h6 className="d-lg-none d-inline-flex">
+                      Notifications <span class="badge bg-warning">0</span>
+                    </h6>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {this.state.Notifications.map((item) => (
+                      <div key={"div".concat(item)}>
+                        <button
+                          key={"a".concat(item)}
+                          id={item}
+                          onClick={this.clearNotif}
+                        >
+                          {item}
+                        </button>
+                        <div
+                          className="dropdown-divider"
+                          key={"divider".concat(item)}
+                        ></div>
+                      </div>
+                    ))}
+                  </div>
+                </li>
                 <li className="nav-item dropdown">
                   <button
                     className="nav-link dropdown-toggle"
@@ -94,7 +183,6 @@ export default class NavbarPostAuth extends React.Component {
                     <h6>{this.state.Usercode} </h6>
                     <img
                       src={this.state.UserImage}
-                      // src="/media/UserImages/Investyx_S.png"
                       alt="Profile"
                       className="user-profile-picture"
                     />

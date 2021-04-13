@@ -48,6 +48,39 @@ button:active {
   background-color: transparent;
 }
 
+.navbar-custom-post .navbar-collapse .navbar-nav .notification {
+  align-items: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.navbar-custom-post .navbar-collapse .navbar-nav .notification {
+  align-items: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.navbar-custom-post .navbar-collapse .navbar-nav .dropdown-menu {
+  padding: 0px;
+}
+
+.navbar-custom-post .navbar-collapse .navbar-nav .dropdown-menu button {
+  text-decoration: none;
+  border: 1px solid transparent !important;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.navbar-custom-post .navbar-collapse .navbar-nav .dropdown-divider {
+  margin: 9px 0px 0px 0px;
+}
+
 .navbar-custom-post
   .navbar-collapse
   .navbar-nav
@@ -97,5 +130,14 @@ button:active {
 
   .navbar-custom-post .navbar-collapse .navbar-nav .nav-link {
     margin: 0px 50px 0px 20px;
+  }
+
+  .navbar-custom-post .navbar-collapse .navbar-nav .notification {
+    align-items: center;
+    display: inline-flex;
+    text-decoration: none;
+    border: 1px solid transparent !important;
+    border-radius: 3px;
+    background-color: transparent;
   }
 }

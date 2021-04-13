@@ -34,6 +34,7 @@ class Authentication(models.Model):
     MarketRisk = models.BooleanField()
 
     PaymentDueDate = models.DateField(null=True, blank=True)
+    Notifications = models.TextField(null=True, blank=True)
 
     SmartStox = models.BooleanField(default=False)
 
