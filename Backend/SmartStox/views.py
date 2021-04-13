@@ -65,15 +65,86 @@ def login(request):
 @api_view(["POST"])
 def userdetails(request):
 
-    if len(request.data.keys()) == 2 and request.data["Requirement"] == "UserImage":
+    if (
+        len(request.data.keys()) == 2
+        and request.data["Requirement"] == "UserImage, Notifications"
+    ):
 
-        UserImage = Authentication.objects.get(
-            Usercode=request.data["Usercode"]
-        ).UserImage
+        try:
+            UserImage = Authentication.objects.get(
+                Usercode=request.data["Usercode"]
+            ).UserImage
+            Notifications = Authentication.objects.get(
+                Usercode=request.data["Usercode"]
+            ).Notifications
 
-        if str(UserImage) == "":
-            return Response({"Status": "No Image"})
+            if str(UserImage) == "" and str(Notifications) == "":
 
-        else:
-            print(UserImage.url)
-            return Response({"Status": "Success", "UserImage": UserImage.url})
+                print("1")
+
+                return Response(
+                    {
+                        "Status": "Failed",
+                        "UserImage": "No Image",
+                        "Notifications": "No Notifications",
+                    }
+                )
+
+            elif str(UserImage) == "" and str(Notifications) != "":
+
+                Notifications = list(str(Notifications).split("$$$"))
+                Notifications = Notifications[:-1]
+                print(Notifications)
+
+                return Response(
+                    {
+                        "Status": "Notifications",
+                        "UserImage": "No Image",
+                        "Notifications": Notifications,
+                    }
+                )
+
+            elif str(UserImage) != "" and str(Notifications) == "":
+
+                return Response(
+                    {
+                        "Status": "Image",
+                        "UserImage": UserImage.url,
+                        "Notifications": "No Notifications",
+                    }
+                )
+
+            else:
+
+                Notifications = list(str(Notifications).split("$$$"))
+                Notifications = Notifications[:-1]
+                print(Notifications)
+
+                return Response(
+                    {
+                        "Status": "Success",
+                        "UserImage": UserImage.url,
+                        "Notifications": Notifications,
+                    }
+                )
+
+        except Authentication.DoesNotExist:
+            return Response({"Status": "Session Expired"})
+
+    if (
+        len(request.data.keys()) == 3
+        and request.data["Requirement"] == "Clear Notification"
+    ):
+        user_details = Authentication.objects.get(Usercode=request.data["Usercode"])
+
+        Notifications = user_details.Notifications.replace(
+            str(request.data["NotificationValue"] + "$$$"), ""
+        )
+        user_details.Notifications = Notifications
+        user_details.save()
+
+        Notifications = list(str(Notifications).split("$$$"))
+        Notifications = Notifications[:-1]
+
+        return Response({"Status": "Success", "Notifications": Notifications})
+
