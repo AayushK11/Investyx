@@ -8,7 +8,7 @@
   width: 100%;
   z-index: 10;
   position: fixed;
-  background-color: #ffeeee !important;
+  background-color: #e0ebe7 !important;
 }
 
 .navbar-custom-post .navbar-logo {
@@ -112,7 +112,7 @@ button:active {
   width: 15%;
   z-index: 1;
   position: fixed;
-  background-color: #ffeeee !important;
+  background-color: #e0ebe7 !important;
 }
 
 .sidebar-custom-post .sidebar-nav {

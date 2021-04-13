@@ -21,7 +21,7 @@
   border: 1px solid gray;
   height: 400px;
   width: 400px;
-  background-color: #ffecec;
+  background-color: #e0ebe7;
   border-radius: 2%;
 }
 
@@ -146,7 +146,7 @@
   .under-the-card-footer
   .footer-design
   img {
-  width: 30px;
+  width: 150px;
   margin: 0px 0px 10px 0px;
 }
 
@@ -187,10 +187,10 @@
 
 @media only screen and (max-width: 450px) {
   .login .login-card-row .login-card-column .login-heading-design-row {
-    border: 1px solid gray;
+
     height: 400px;
     width: 300px;
-    background-color: #ffecec;
+
     border-radius: 2%;
   }
 
@@ -211,10 +211,10 @@
 
 @media only screen and (max-width: 768px) and (min-width: 450px) {
   .login .login-card-row .login-card-column .login-heading-design-row {
-    border: 1px solid gray;
+  
     height: 400px;
     width: 400px;
-    background-color: #ffecec;
+
     border-radius: 2%;
   }
 
@@ -235,10 +235,10 @@
 
 @media only screen and (max-width: 992px) and (min-width: 769px) {
   .login .login-card-row .login-card-column .login-heading-design-row {
-    border: 1px solid gray;
+  
     height: 400px;
     width: 400px;
-    background-color: #ffecec;
+   
     border-radius: 2%;
   }
 

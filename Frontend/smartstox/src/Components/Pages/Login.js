@@ -2,7 +2,9 @@ import React from "react";
 // import { Helmet } from "react-helmet";
 import "../Css/Login.css";
 import "../Css/Loader.css";
-import logo512 from "../Images/logo512.png";
+import smartstox from "../Images/symbol.png";
+import investyx_S from "../Images/Investyx_S.png";
+import investyx_H from "../Images/Investyx_H.png";
 import axios from "axios";
 import Server_Path from "../Server.js";
 import $ from "jquery";
@@ -209,7 +211,7 @@ export default class Login extends React.Component {
                           <div className="row login-heading-design-row">
                             <div className="col-12 login-heading-design d-flex justify-content-center align-items-center">
                               <img
-                                src={logo512}
+                                src={smartstox}
                                 alt="Smart Stox"
                                 className="login-design-left"
                               />
@@ -219,7 +221,7 @@ export default class Login extends React.Component {
                               <i className="bi bi-dot"></i>
                               <i className="bi bi-dot"></i>
                               <img
-                                src={logo512}
+                                src={investyx_S}
                                 alt="Investyx"
                                 className="login-design-right"
                               />
@@ -271,7 +273,7 @@ export default class Login extends React.Component {
                         <div className="col-12 under-the-card-column">
                           <div className="row under-the-card-footer">
                             <div className="col-12 footer-design d-flex justify-content-center align-items-center">
-                              <img src={logo512} alt="Investyx" />
+                              <img src={investyx_H} alt="Investyx" />
                             </div>
                             <div className="col-12 footer-sign-up text-center">
                               <a href="https://investyx.netlify.app/signup">
@@ -292,7 +294,7 @@ export default class Login extends React.Component {
                           <div className="row login-heading-design-row">
                             <div className="col-12 login-heading-design d-flex justify-content-center align-items-center">
                               <img
-                                src={logo512}
+                                src={smartstox}
                                 alt="Smart Stox"
                                 className="login-design-left"
                               />
@@ -302,7 +304,7 @@ export default class Login extends React.Component {
                               <i className="bi bi-dot"></i>
                               <i className="bi bi-dot"></i>
                               <img
-                                src={logo512}
+                                src={investyx_S}
                                 alt="Investyx"
                                 className="login-design-right"
                               />

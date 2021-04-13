@@ -3,7 +3,7 @@ import NavbarPreAuth from "../Navbar_PreAuth.js";
 // import Footer from "../Footer.js";
 import { Helmet } from "react-helmet";
 import "../Css/Landing.css";
-import logo512 from "../Images/logo512.png";
+import logo512 from "../Images/symbol.png";
 
 export default class Landing extends React.Component {
   constructor(props) {
