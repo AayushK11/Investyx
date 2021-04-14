@@ -1,0 +1,42 @@
+/* ________________ */
+/* Dashboard News  */
+/* _______________ */
+
+.dashboard-news .container-fluid {
+  display: inline-block;
+  align-items: flex-start;
+  width: 80%;
+  padding: 0px;
+}
+
+.dashboard-news .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-news .image img {
+  width: 100%;
+}
+
+.dashboard-news .news-section {
+  justify-content: start;
+  align-items: center;
+  text-align: start;
+}
+.dashboard-news .news-section .news-heading {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1% 0px 0px 1%;
+}
+
+.dashboard-news .news-section .news-time {
+  font-weight: 100;
+  font-size: 0.75rem;
+  padding: 1% 0px 0px 1%;
+}
+.dashboard-news .news-section .news-subheading {
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 1% 0px 0px 1%;
+}

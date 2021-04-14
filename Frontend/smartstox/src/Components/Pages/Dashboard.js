@@ -1,5 +1,6 @@
 import React from "react";
 import NavbarPostAuth from "../Navbar_PostAuth";
+import DashboardNews from "../Features/DashboardNews";
 import "../Css/Dashboard.css";
 import "../Css/Loader.css";
 import axios from "axios";
@@ -25,7 +26,7 @@ export default class Dashboard extends React.Component {
   componentDidMount() {
     this.validateUser();
     this.interval = setInterval(() => {
-      console.log("Start");
+      console.log("Start Cards");
       if (this.state.PinnedPrice[0] === "000.00") {
         $("#dashboard").fadeTo(500, 0.5);
         $(".cssload-loader").fadeTo(500, 1);
@@ -43,10 +44,10 @@ export default class Dashboard extends React.Component {
   }
 
   validateUser() {
-    if (this.state.Usercode === "") {
-      this.props.history.push("/login");
-      alert("Session Expired");
-    }
+    // if (this.state.Usercode === "") {
+    //   this.props.history.push("/login");
+    //   alert("Session Expired");
+    // }
   }
 
   updateChange() {
@@ -356,6 +357,14 @@ export default class Dashboard extends React.Component {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className="dashboard-main-content-row row">
+              <div className="dashboard-main-graph-col col-lg-6">
+                Some random gyan and graphs here
+              </div>
+              <div className="dashboard-main-news-col col-lg-6">
+                <DashboardNews />
               </div>
             </div>
           </div>

@@ -1,9 +1,11 @@
+from BackendScripts.links import NIFTY50
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from API.models import Authentication
 from BackendScripts.authentication_tasks import hash_details, days_remaining
 from BackendScripts.email_tasks import smart_stox_email, account_blocked
+from BackendScripts.news_extractor import live_news_scrape
 from BackendScripts.indice_scraping import (
     live_nifty_50_data,
     live_sensex_data,
@@ -161,17 +163,20 @@ def live_plan_check(usercode):
     DaysRemaining = days_remaining(LastPaidDate)
 
     if DaysRemaining == 10:
-        user_details.Notifications = (
-            user_details.Notifications + "Your Monthly Plan Expires in 10 Days$$$"
-        )
+        if "Your Monthly Plan Expires in 10 Days$$$" not in user_details.Notifications:
+            user_details.Notifications = (
+                user_details.Notifications + "Your Monthly Plan Expires in 10 Days$$$"
+            )
     if DaysRemaining == 5:
-        user_details.Notifications = (
-            user_details.Notifications + "Your Monthly Plan Expires in 5 Days$$$"
-        )
+        if "Your Monthly Plan Expires in 6 Days$$$" not in user_details.Notifications:
+            user_details.Notifications = (
+                user_details.Notifications + "Your Monthly Plan Expires in 5 Days$$$"
+            )
     if DaysRemaining == 1:
-        user_details.Notifications = (
-            user_details.Notifications + "Your Monthly Plan Expires Tomorrow$$$"
-        )
+        if "Your Monthly Plan Expires Tomorrow$$$" not in user_details.Notifications:
+            user_details.Notifications = (
+                user_details.Notifications + "Your Monthly Plan Expires Tomorrow$$$"
+            )
 
     user_details.save()
 
@@ -201,6 +206,33 @@ def dashboardcards(request):
                     "Card2": Sensex,
                     "Card3": NiftyBank,
                     "Card4": Nifty100,
+                }
+            )
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+
+
+@api_view(["POST"])
+def dashboardnews(request):
+    try:
+
+        if (
+            len(request.data.keys()) == 1
+            and request.data["Requirement"] == "Dashboard News"
+        ):
+
+            News = live_news_scrape()
+            print(News[0])
+
+            return Response(
+                {
+                    "Status": "Success",
+                    "News1": News[0],
+                    "News2": News[1],
+                    "News3": News[2],
+                    "News4": News[3],
+                    "News5": News[4],
                 }
             )
 

@@ -30,3 +30,7 @@
 .Dashboard-Card .Card-Stock-Price-Change .badge {
   background-color: gray;
 }
+
+.dashboard-main .dashboard-main-content-row .dashboard-main-news-col {
+  margin: 20px 0px 0px 0px;
+}
