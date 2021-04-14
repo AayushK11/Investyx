@@ -1,6 +1,8 @@
 import React from "react";
 import NavbarPostAuth from "../Navbar_PostAuth";
 import DashboardNews from "../Features/DashboardNews";
+import DashboardMood from "../Features/DashboardMood";
+import DashboardActive from "../Features/DashboardActive";
 import "../Css/Dashboard.css";
 import "../Css/Loader.css";
 import axios from "axios";
@@ -170,7 +172,6 @@ export default class Dashboard extends React.Component {
       .then((res) => {
         if (res.data["Status"] === "Success") {
           if (res.data["Card1"].includes(0)) {
-            console.log("Card1");
           } else {
             let PinnedStocks = this.state.PinnedStocks;
             let PinnedPrice = this.state.PinnedPrice;
@@ -188,7 +189,6 @@ export default class Dashboard extends React.Component {
             });
           }
           if (res.data["Card2"].includes(0)) {
-            console.log("Card2");
           } else {
             let PinnedStocks = this.state.PinnedStocks;
             let PinnedPrice = this.state.PinnedPrice;
@@ -206,7 +206,6 @@ export default class Dashboard extends React.Component {
             });
           }
           if (res.data["Card3"].includes(0)) {
-            console.log("Card3");
           } else {
             let PinnedStocks = this.state.PinnedStocks;
             let PinnedPrice = this.state.PinnedPrice;
@@ -224,7 +223,6 @@ export default class Dashboard extends React.Component {
             });
           }
           if (res.data["Card4"].includes(0)) {
-            console.log("Card4");
           } else {
             let PinnedStocks = this.state.PinnedStocks;
             let PinnedPrice = this.state.PinnedPrice;
@@ -360,8 +358,13 @@ export default class Dashboard extends React.Component {
               </div>
             </div>
             <div className="dashboard-main-content-row row">
-              <div className="dashboard-main-graph-col col-lg-6">
-                Some random gyan and graphs here
+              <div className="dashboard-main-stats-col col-lg-6">
+                <div className="dashboard-main-mood-row row">
+                  <DashboardMood />
+                </div>
+                <div className="dashboard-main-active-row row">
+                  <DashboardActive />
+                </div>
               </div>
               <div className="dashboard-main-news-col col-lg-6">
                 <DashboardNews />

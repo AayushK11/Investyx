@@ -5,7 +5,11 @@ from rest_framework.response import Response
 from API.models import Authentication
 from BackendScripts.authentication_tasks import hash_details, days_remaining
 from BackendScripts.email_tasks import smart_stox_email, account_blocked
-from BackendScripts.news_extractor import live_news_scrape
+from BackendScripts.extra_scrapes import (
+    live_news_scrape,
+    live_market_mood_scrape,
+    live_active_stocks,
+)
 from BackendScripts.indice_scraping import (
     live_nifty_50_data,
     live_sensex_data,
@@ -223,7 +227,6 @@ def dashboardnews(request):
         ):
 
             News = live_news_scrape()
-            print(News[0])
 
             return Response(
                 {
@@ -238,3 +241,47 @@ def dashboardnews(request):
 
     except Authentication.DoesNotExist:
         return Response({"Status": "Session Expired"})
+
+
+@api_view(["POST"])
+def dashboardmood(request):
+    try:
+
+        if (
+            len(request.data.keys()) == 1
+            and request.data["Requirement"] == "Dashboard Mood"
+        ):
+
+            mood = live_market_mood_scrape()
+
+            return Response({"Status": "Success", "Mood": mood})
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+
+
+@api_view(["POST"])
+def dashboardactive(request):
+    try:
+
+        if (
+            len(request.data.keys()) == 1
+            and request.data["Requirement"] == "Dashboard Active"
+        ):
+
+            activestocks = live_active_stocks()
+
+            return Response(
+                {
+                    "Status": "Success",
+                    "Active0": activestocks[0],
+                    "Active1": activestocks[1],
+                    "Active2": activestocks[2],
+                    "Active3": activestocks[3],
+                    "Active4": activestocks[4],
+                }
+            )
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+

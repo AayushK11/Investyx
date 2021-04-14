@@ -3,7 +3,6 @@ import axios from "axios";
 import Server_Path from "../Server.js";
 import logo512 from "../Images/logo512.png";
 import "../Css/DashboardNews.css";
-import $ from "jquery";
 
 export default class DashboardNews extends React.Component {
   constructor(props) {
@@ -51,7 +50,6 @@ export default class DashboardNews extends React.Component {
           });
         }
       });
-    console.log(this.state);
   }
 
   componentDidMount() {

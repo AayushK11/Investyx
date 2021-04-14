@@ -34,3 +34,7 @@
 .dashboard-main .dashboard-main-content-row .dashboard-main-news-col {
   margin: 20px 0px 0px 0px;
 }
+
+.dashboard-main .dashboard-main-content-row .dashboard-main-stats-col {
+  margin: 60px 0px 0px 0px;
+}
