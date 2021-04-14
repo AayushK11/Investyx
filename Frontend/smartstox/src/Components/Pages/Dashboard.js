@@ -44,10 +44,10 @@ export default class Dashboard extends React.Component {
   }
 
   validateUser() {
-    // if (this.state.Usercode === "") {
-    //   this.props.history.push("/login");
-    //   alert("Session Expired");
-    // }
+    if (this.state.Usercode === "") {
+      this.props.history.push("/login");
+      alert("Session Expired");
+    }
   }
 
   updateChange() {
