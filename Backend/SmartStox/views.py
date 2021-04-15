@@ -189,7 +189,6 @@ def dashboardcards(request):
             and request.data["Requirement"] == "Dashboard Cards"
         ):
 
-            # Get User 4 Card Stocks
             DashboardCards = get_dashboard_cards(request.data["Usercode"])
 
             return Response(
