@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import Server_Path from "../Server.js";
-import logo512 from "../Images/logo512.png";
 import "../Css/DashboardNews.css";
 
 export default class DashboardNews extends React.Component {
@@ -16,6 +15,7 @@ export default class DashboardNews extends React.Component {
       ],
       Time: [],
       Subheading: [],
+      Images: [],
       counter: 0,
     };
     this.updateNews = this.updateNews.bind(this);
@@ -47,6 +47,12 @@ export default class DashboardNews extends React.Component {
               res.data["News3"][2],
               res.data["News4"][2],
             ],
+            Images: [
+              res.data["News1"][3],
+              res.data["News2"][3],
+              res.data["News3"][3],
+              res.data["News4"][3],
+            ],
           });
         }
       });
@@ -65,7 +71,7 @@ export default class DashboardNews extends React.Component {
         <div className="container-fluid">
           <div className="row showing-news">
             <div className="col-3 image">
-              <img src={logo512} alt="News" />
+              <img src={this.state.Images[0]} alt="News" loading="lazy" />
             </div>
             <div className="col-9 news-section">
               <div className="row news-heading">{this.state.Headline[0]}</div>
@@ -77,7 +83,7 @@ export default class DashboardNews extends React.Component {
           </div>
           <div className="row showing-news">
             <div className="col-3 image">
-              <img src={logo512} alt="News" />
+              <img src={this.state.Images[1]} alt="News" loading="lazy" />
             </div>
             <div className="col-9 news-section">
               <div className="row news-heading">{this.state.Headline[1]}</div>
@@ -89,7 +95,7 @@ export default class DashboardNews extends React.Component {
           </div>
           <div className="row showing-news">
             <div className="col-3 image">
-              <img src={logo512} alt="News" />
+              <img src={this.state.Images[2]} alt="News" loading="lazy" />
             </div>
             <div className="col-9 news-section">
               <div className="row news-heading">{this.state.Headline[2]}</div>
@@ -101,7 +107,7 @@ export default class DashboardNews extends React.Component {
           </div>
           <div className="row showing-news">
             <div className="col-3 image">
-              <img src={logo512} alt="News" />
+              <img src={this.state.Images[3]} alt="News" loading="lazy" />
             </div>
             <div className="col-9 news-section">
               <div className="row news-heading">{this.state.Headline[3]}</div>

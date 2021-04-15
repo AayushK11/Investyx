@@ -12,7 +12,13 @@ def live_news_scrape():
         news = parser.find_all(class_="eachStory")
 
         for i in range(0, 5):
-            news_list.append(list(news[i].stripped_strings))
+
+            news_single = list(news[i].stripped_strings)
+            newsImage = news[i].find_all("img")
+            newsImage = newsImage[0]["data-original"]
+
+            news_single.append(newsImage)
+            news_list.append(news_single)
 
         return news_list
 
