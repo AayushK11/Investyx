@@ -361,7 +361,7 @@ export default class ContactUs extends React.Component {
 
   render() {
     return (
-      <div className="signup">
+      <div className="signup" >
         <Helmet>
           <title>Investyx | Register</title>
         </Helmet>
@@ -372,7 +372,7 @@ export default class ContactUs extends React.Component {
             <div className="cssload-inner cssload-three"></div>
           </div>
         </section>
-        <section id="registration-section">
+        <section id="registration-section" >
           {(() => {
             if (this.state.registrationLevel === 0) {
               return (
@@ -1152,7 +1152,7 @@ export default class ContactUs extends React.Component {
             }
             if (this.state.registrationLevel === 5) {
               return (
-                <div className="container-fluid">
+                <div className="container-fluid" >
                   <div className="container">
                     <div className="row">
                       <PaymentPortal

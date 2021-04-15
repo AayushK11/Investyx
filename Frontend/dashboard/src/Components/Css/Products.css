@@ -1,7 +1,9 @@
 /* ________________ */
 /* Products */
 /* _______________ */
-
+.products{
+  background-color:#f5f5f5;
+}
 #products-stocks {
   background-color: #f5f5f5;
   padding: 80px 0px 00px 0px !important;

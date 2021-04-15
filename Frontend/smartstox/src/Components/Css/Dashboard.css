@@ -15,8 +15,9 @@
 }
 
 .Dashboard-Card {
-  background-color: #ffffbf;
+  background-color: #e7f0ed;
   height: auto;
+  border-radius:10px;
 }
 
 .Dashboard-Card h6 {

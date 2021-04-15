@@ -78,6 +78,7 @@ a:active {
 
 .service-logo {
   width: 50%;
+  height: 80%;
   margin: 40px 0px 10px 0px;
 }
 
@@ -122,6 +123,7 @@ a:active {
 
 .universe-logo {
   width: 50%;
+  height: 80%;
   margin: 40px 0px 10px 0px;
 }
 
@@ -181,7 +183,16 @@ a:active {
     font-size: 7vw;
     margin: 0px 0px 10px 0px;
   }
-
+  .service-logo {
+    width: 70%;
+    height: 70%;
+    margin: 10px 0px 10px 0px;
+  }
+  .universe-logo {
+    width: 70%;
+    height: 70%;
+    margin: 10px 0px 10px 0px;
+  }
   .service-sub-heading h5 {
     font-weight: 400;
     font-size: 4vw;
@@ -248,8 +259,9 @@ a:active {
   }
 
   .service-logo {
-    width: 40%;
-    margin: 20px 0px 40px 0px;
+    width: 80%;
+    height: 60%;
+    margin: 10px 0px 10px 0px;
   }
 
   .service-heading h2 {
@@ -274,11 +286,12 @@ a:active {
   .universe-text {
     padding: 0px 12px !important;
   }
-
   .universe-logo {
-    width: 40%;
-    margin: 20px 0px 40px 0px;
+    width: 80%;
+    height: 60%;
+    margin: 10px 0px 10px 0px;
   }
+ 
 
   .universe-heading h2 {
     font-weight: 500;
@@ -326,6 +339,7 @@ a:active {
 
   .service-logo {
     width: 60%;
+    height: 80%;
     margin: 10px 0px 10px 0px;
   }
 

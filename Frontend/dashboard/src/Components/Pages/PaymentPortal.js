@@ -10,10 +10,10 @@ export default class PaymentPortal extends React.Component {
 
   render() {
     return (
-      <div className="payment">
+      <div className="payment" >
         <div className="row mb-4 payment-heading">
           <div className="col-lg-8 mx-auto text-center payment-heading-col">
-            <h1>Payment Gateway - {this.state.plan}</h1>
+            <h1>Total Amount - {this.state.plan}</h1>
           </div>
         </div>
         <div className="row mb-4 payment-form">

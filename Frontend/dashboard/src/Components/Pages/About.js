@@ -219,6 +219,17 @@ export default class About extends React.Component {
                             >
                               <i className="fab fa-linkedin"></i>
                             </a>
+                      
+                          </div>
+                        </div>
+                        <div className="social-list col-3">
+                          <div className="social-item">
+                            <a
+                              href="https://twitter.com/RajkarAjinkya"
+                              className="social-link"
+                            >
+                              <i className="fab fa-twitter"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
