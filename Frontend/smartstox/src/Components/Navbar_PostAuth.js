@@ -260,6 +260,7 @@ export default class NavbarPostAuth extends React.Component {
                     className="nav-link active join-now"
                     href={this.state.profile}
                   >
+                    
                     Dashboard
                   </a>
                 </li>
@@ -268,6 +269,7 @@ export default class NavbarPostAuth extends React.Component {
                     className="nav-link active join-now"
                     href={this.state.profile}
                   >
+                 
                     Watchlist
                   </a>
                 </li>

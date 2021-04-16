@@ -12,6 +12,7 @@ export default class DashboardNews extends React.Component {
         "Initializing News",
         "Initializing News",
         "Initializing News",
+        "Initializing News",
       ],
       Time: [],
       Subheading: [],
@@ -34,24 +35,28 @@ export default class DashboardNews extends React.Component {
               res.data["News2"][0],
               res.data["News3"][0],
               res.data["News4"][0],
+              res.data["News5"][0],
             ],
             Time: [
               res.data["News1"][1],
               res.data["News2"][1],
               res.data["News3"][1],
               res.data["News4"][1],
+              res.data["News5"][1],
             ],
             Subheading: [
               res.data["News1"][2],
               res.data["News2"][2],
               res.data["News3"][2],
               res.data["News4"][2],
+              res.data["News5"][2],
             ],
             Images: [
               res.data["News1"][3],
               res.data["News2"][3],
               res.data["News3"][3],
               res.data["News4"][3],
+              res.data["News5"][3],
             ],
           });
         }
@@ -114,6 +119,18 @@ export default class DashboardNews extends React.Component {
               <div className="row news-time">{this.state.Time[3]}</div>
               <div className="row news-subheading">
                 {this.state.Subheading[3]}
+              </div>
+            </div>
+          </div>
+          <div className="row showing-news">
+            <div className="col-3 image">
+              <img src={this.state.Images[4]} alt="News" loading="lazy" />
+            </div>
+            <div className="col-9 news-section">
+              <div className="row news-heading">{this.state.Headline[4]}</div>
+              <div className="row news-time">{this.state.Time[4]}</div>
+              <div className="row news-subheading">
+                {this.state.Subheading[4]}
               </div>
             </div>
           </div>

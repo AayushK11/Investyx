@@ -109,7 +109,7 @@ button:active {
 .sidebar-custom-post {
   top: 75px;
   left: 0;
-  width: 15%;
+  width: 14%;
   z-index: 1;
   position: fixed;
   background-color: #e0ebe7 !important;
@@ -122,6 +122,10 @@ button:active {
 .sidebar-custom-post .sidebar-nav .nav-item {
   margin: 10px 0px;
 }
+.sidebar-custom-post .sidebar-nav .nav-item:hover {
+background-color: #b3dfce;
+}
+
 
 @media only screen and (min-width: 992px) {
   .navbar-custom-post .navbar-logo {

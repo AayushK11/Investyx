@@ -37,6 +37,7 @@ export default class DashboardMood extends React.Component {
       <div className="dashboard-mood">
         <div className="container-fluid">
           <div className="mood-row row">
+            
             <div className="mood-heading">Market Live Sentiments</div>
             <div className="mood-col col-12">
               <div className="mood ">

@@ -11,6 +11,7 @@
 
 .dashboard-news .image {
   display: flex;
+  padding: 5px;
   justify-content: center;
   align-items: center;
 }
