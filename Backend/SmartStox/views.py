@@ -1,4 +1,3 @@
-from BackendScripts.links import NIFTY50
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -10,13 +9,8 @@ from BackendScripts.extra_scrapes import (
     live_market_mood_scrape,
     live_active_stocks,
 )
-from BackendScripts.indice_scraping import (
-    live_nifty_50_data,
-    live_sensex_data,
-    live_nifty_bank_data,
-    live_nifty_100_data,
-)
-from multiprocessing.pool import ThreadPool
+from BackendScripts.database_tasks import get_dashboard_cards
+
 
 # Create your views here.
 @api_view(["POST"])
@@ -194,22 +188,16 @@ def dashboardcards(request):
             len(request.data.keys()) == 2
             and request.data["Requirement"] == "Dashboard Cards"
         ):
-            # Get User 4 Card Stocks
 
-            pool = ThreadPool(processes=4)
-
-            Nifty50 = pool.apply_async(live_nifty_50_data).get()
-            Sensex = pool.apply_async(live_sensex_data).get()
-            NiftyBank = pool.apply_async(live_nifty_bank_data).get()
-            Nifty100 = pool.apply_async(live_nifty_100_data).get()
+            DashboardCards = get_dashboard_cards(request.data["Usercode"])
 
             return Response(
                 {
                     "Status": "Success",
-                    "Card1": Nifty50,
-                    "Card2": Sensex,
-                    "Card3": NiftyBank,
-                    "Card4": Nifty100,
+                    "Card1": DashboardCards[0],
+                    "Card2": DashboardCards[1],
+                    "Card3": DashboardCards[2],
+                    "Card4": DashboardCards[3],
                 }
             )
 

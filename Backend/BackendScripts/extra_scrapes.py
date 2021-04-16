@@ -68,4 +68,44 @@ def live_active_stocks():
         return ("Money Control", 0, 0, 0)
 
 
-live_news_scrape()
+def get_live_price(Code, Exchange):
+    if Exchange == "NSE":
+        response = requests.get(
+            links.LIVE_STOCK_PRICE_NSE.format(Code, Code), timeout=5
+        ).content
+
+    elif Exchange == "BSE":
+        response = requests.get(
+            links.LIVE_STOCK_PRICE_BSE.format(Code, Code), timeout=5
+        ).content
+
+    parser = BeautifulSoup(response, "html.parser")
+
+    current_price = parser.find_all(class_="Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)")
+    current_price = float(list(current_price[0].stripped_strings)[0])
+
+    previous_close = parser.find_all(class_="Ta(end) Fw(600) Lh(14px)")
+    previous_close = float(list(previous_close[0].stripped_strings)[0])
+
+    opening_price = parser.find_all(class_="Ta(end) Fw(600) Lh(14px)")
+    opening_price = float(list(opening_price[1].stripped_strings)[0])
+
+    value_change = round(float(current_price - previous_close), 2)
+
+    percentage_change = round(
+        ((current_price - previous_close) * 100 / previous_close), 2
+    )
+
+    return (
+        Code,
+        current_price,
+        percentage_change,
+        value_change,
+        opening_price,
+        previous_close,
+    )
+
+
+def get_personalised_dashboard_card(Code, Exchange):
+    Name, Current, Percentage, ValueChange, _, _ = get_live_price(Code, Exchange)
+    return [Name, Current, Percentage, ValueChange]
