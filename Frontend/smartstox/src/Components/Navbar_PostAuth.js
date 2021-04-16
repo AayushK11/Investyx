@@ -2,6 +2,7 @@ import React from "react";
 import "./Css/Navbar_PostAuth.css";
 import "bootstrap";
 import smartstox from "./Images/hlogo.png";
+import smartstoxsymbol from "./Images/symbol.png";
 import UserProfile from "./Images/User Profile.png";
 import axios from "axios";
 import Server_Path from "./Server.js";
@@ -16,9 +17,11 @@ export default class NavbarPostAuth extends React.Component {
       Usercode: this.props.Usercode,
       UserImage: this.props.UserImage,
       Notifications: [],
+      SearchList: [],
     };
     this.getUserData = this.getUserData.bind(this);
     this.clearNotif = this.clearNotif.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   generateURLs() {
@@ -113,6 +116,63 @@ export default class NavbarPostAuth extends React.Component {
     this.getUserData();
     this.updateImage();
     this.updateNotifications();
+
+    $("#searchbar").bind("input", function () {
+      if (checkExists($("#searchbar").val()) === true) {
+        onClick($("#searchbar").val());
+      }
+    });
+
+    function checkExists(inputValue) {
+      var x = document.getElementById("searchlist");
+      var i;
+      var flag;
+      for (i = 0; i < x.options.length; i++) {
+        if (inputValue === x.options[i].value) {
+          flag = true;
+        }
+      }
+      return flag;
+    }
+
+    function onClick(value) {
+      console.log(value);
+    }
+  }
+
+  onChange(event) {
+    if (String(event.target.value).length > 2) {
+      axios
+        .post(Server_Path.concat("searchbar/"), {
+          SearchQuery: String(event.target.value),
+          Requirement: "Search Words",
+        })
+        .then((res) => {
+          if (res.data["Status"] === "Success") {
+            this.setState({
+              SearchList: [],
+            });
+            for (var i = 0; i < res.data["SearchWords"].length; i++) {
+              var SearchList = this.state.SearchList;
+              var SearchCode = res.data["SearchWords"][i][0];
+              var SearchName = res.data["SearchWords"][i][1];
+              var SearchExchange = res.data["SearchWords"][i][3];
+              SearchList.push(
+                SearchCode.concat(" - ", SearchName, " - ", SearchExchange)
+              );
+              this.setState({
+                SearchList: SearchList,
+              });
+            }
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+          if (!e.Status) {
+            alert("Something Went Wrong");
+          }
+        });
+    }
   }
 
   render() {
@@ -120,9 +180,42 @@ export default class NavbarPostAuth extends React.Component {
       <div className="container-fluid">
         <div className="NavbarPostAuth">
           <nav className="navbar navbar-custom-post navbar-expand-lg fixed-top">
-            <a className="navbar-brand" href={this.state.url}>
+            <a
+              className="navbar-brand d-block d-lg-none d-xl-none"
+              href={this.state.url}
+            >
+              <img
+                src={smartstoxsymbol}
+                alt="Smart Stox"
+                className="navbar-logo"
+              />
+            </a>
+            <a
+              className="navbar-brand d-none d-lg-block d-xl-block"
+              href={this.state.url}
+            >
               <img src={smartstox} alt="Smart Stox" className="navbar-logo" />
             </a>
+            <div className="row">
+              <div className="col-auto">
+                <input
+                  onChange={this.onChange}
+                  list="searchlist"
+                  data-toggle="tooltip"
+                  title="Enter 2 or more characters for Getting Predictive Search Results"
+                  type="text"
+                  placeholder="Search Any Stock..."
+                  id="searchbar"
+                  name="searchbar"
+                  className="form-control"
+                />
+                <datalist id="searchlist">
+                  {this.state.SearchList.map((item) => (
+                    <option value={item} />
+                  ))}
+                </datalist>
+              </div>
+            </div>
             <button
               className="navbar-toggler"
               type="button"
@@ -260,7 +353,6 @@ export default class NavbarPostAuth extends React.Component {
                     className="nav-link active join-now"
                     href={this.state.profile}
                   >
-                    
                     Dashboard
                   </a>
                 </li>
@@ -269,7 +361,6 @@ export default class NavbarPostAuth extends React.Component {
                     className="nav-link active join-now"
                     href={this.state.profile}
                   >
-                 
                     Watchlist
                   </a>
                 </li>

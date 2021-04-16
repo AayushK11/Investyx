@@ -46,68 +46,108 @@ export default class Dashboard extends React.Component {
   }
 
   validateUser() {
-    // if (this.state.Usercode === "") {
-    //   this.props.history.push("/login");
-    //   alert("Session Expired");
-    // }
+    if (this.state.Usercode === "") {
+      this.props.history.push("/login");
+      alert("Session Expired");
+    }
   }
 
   updateChange() {
     if (this.state.PinnedChange[0] > 0) {
-      document.getElementsByClassName("Card-Stock-Price-Live")[0].style.color ="#037948";
-      document.getElementsByClassName("badge-percent")[0].style.backgroundColor = "#ccf7e5";
-      document.getElementsByClassName("badge-percent")[0].style.color = "#037948";
-      document.getElementsByClassName("badge-value")[0].style.backgroundColor ="#ccf7e5";
-      document.getElementsByClassName("badge-value")[0].style.color ="#037948";
+      document.getElementsByClassName("Card-Stock-Price-Live")[0].style.color =
+        "#037948";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[0].style.backgroundColor = "#ccf7e5";
+      document.getElementsByClassName("badge-percent")[0].style.color =
+        "#037948";
+      document.getElementsByClassName("badge-value")[0].style.backgroundColor =
+        "#ccf7e5";
+      document.getElementsByClassName("badge-value")[0].style.color = "#037948";
     }
     if (this.state.PinnedChange[1] > 0) {
-      document.getElementsByClassName("Card-Stock-Price-Live")[1].style.color ="#037948";
-      document.getElementsByClassName("badge-percent")[1].style.backgroundColor = "#ccf7e5";
-      document.getElementsByClassName("badge-percent")[1].style.color = "#037948";
-      document.getElementsByClassName("badge-value")[1].style.backgroundColor ="#ccf7e5";
-      document.getElementsByClassName("badge-value")[1].style.color ="#037948";
+      document.getElementsByClassName("Card-Stock-Price-Live")[1].style.color =
+        "#037948";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[1].style.backgroundColor = "#ccf7e5";
+      document.getElementsByClassName("badge-percent")[1].style.color =
+        "#037948";
+      document.getElementsByClassName("badge-value")[1].style.backgroundColor =
+        "#ccf7e5";
+      document.getElementsByClassName("badge-value")[1].style.color = "#037948";
     }
     if (this.state.PinnedChange[2] > 0) {
-     document.getElementsByClassName("Card-Stock-Price-Live")[2].style.color ="#037948";
-      document.getElementsByClassName("badge-percent")[2].style.backgroundColor = "#ccf7e5";
-      document.getElementsByClassName("badge-percent")[2].style.color = "#037948";
-      document.getElementsByClassName("badge-value")[2].style.backgroundColor ="#ccf7e5";
-      document.getElementsByClassName("badge-value")[2].style.color ="#037948";
+      document.getElementsByClassName("Card-Stock-Price-Live")[2].style.color =
+        "#037948";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[2].style.backgroundColor = "#ccf7e5";
+      document.getElementsByClassName("badge-percent")[2].style.color =
+        "#037948";
+      document.getElementsByClassName("badge-value")[2].style.backgroundColor =
+        "#ccf7e5";
+      document.getElementsByClassName("badge-value")[2].style.color = "#037948";
     }
     if (this.state.PinnedChange[3] > 0) {
-      document.getElementsByClassName("Card-Stock-Price-Live")[3].style.color ="#037948";
-      document.getElementsByClassName("badge-percent")[3].style.backgroundColor = "#ccf7e5";
-      document.getElementsByClassName("badge-percent")[3].style.color = "#037948";
-      document.getElementsByClassName("badge-value")[3].style.backgroundColor ="#ccf7e5";
-      document.getElementsByClassName("badge-value")[3].style.color ="#037948";
+      document.getElementsByClassName("Card-Stock-Price-Live")[3].style.color =
+        "#037948";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[3].style.backgroundColor = "#ccf7e5";
+      document.getElementsByClassName("badge-percent")[3].style.color =
+        "#037948";
+      document.getElementsByClassName("badge-value")[3].style.backgroundColor =
+        "#ccf7e5";
+      document.getElementsByClassName("badge-value")[3].style.color = "#037948";
     }
     if (this.state.PinnedChange[0] < 0) {
-      document.getElementsByClassName("Card-Stock-Price-Live")[0].style.color ="#e63757";
-      document.getElementsByClassName("badge-percent")[0].style.backgroundColor = "#fad7dd";
-      document.getElementsByClassName("badge-percent")[0].style.color = "#e63757";
-      document.getElementsByClassName("badge-value")[0].style.backgroundColor ="#fad7dd";
-      document.getElementsByClassName("badge-value")[0].style.color ="#e63757";
+      document.getElementsByClassName("Card-Stock-Price-Live")[0].style.color =
+        "#e63757";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[0].style.backgroundColor = "#fad7dd";
+      document.getElementsByClassName("badge-percent")[0].style.color =
+        "#e63757";
+      document.getElementsByClassName("badge-value")[0].style.backgroundColor =
+        "#fad7dd";
+      document.getElementsByClassName("badge-value")[0].style.color = "#e63757";
     }
     if (this.state.PinnedChange[1] < 0) {
-      document.getElementsByClassName("Card-Stock-Price-Live")[1].style.color ="#e63757";
-      document.getElementsByClassName("badge-percent")[1].style.backgroundColor = "#fad7dd";
-      document.getElementsByClassName("badge-percent")[1].style.color = "#e63757";
-      document.getElementsByClassName("badge-value")[1].style.backgroundColor ="#fad7dd";
-      document.getElementsByClassName("badge-value")[1].style.color ="#e63757";
+      document.getElementsByClassName("Card-Stock-Price-Live")[1].style.color =
+        "#e63757";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[1].style.backgroundColor = "#fad7dd";
+      document.getElementsByClassName("badge-percent")[1].style.color =
+        "#e63757";
+      document.getElementsByClassName("badge-value")[1].style.backgroundColor =
+        "#fad7dd";
+      document.getElementsByClassName("badge-value")[1].style.color = "#e63757";
     }
     if (this.state.PinnedChange[2] < 0) {
-      document.getElementsByClassName("Card-Stock-Price-Live")[2].style.color ="#e63757";
-      document.getElementsByClassName("badge-percent")[2].style.backgroundColor = "#fad7dd";
-      document.getElementsByClassName("badge-percent")[2].style.color = "#e63757";
-      document.getElementsByClassName("badge-value")[2].style.backgroundColor ="#fad7dd";
-      document.getElementsByClassName("badge-value")[2].style.color ="#e63757";
+      document.getElementsByClassName("Card-Stock-Price-Live")[2].style.color =
+        "#e63757";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[2].style.backgroundColor = "#fad7dd";
+      document.getElementsByClassName("badge-percent")[2].style.color =
+        "#e63757";
+      document.getElementsByClassName("badge-value")[2].style.backgroundColor =
+        "#fad7dd";
+      document.getElementsByClassName("badge-value")[2].style.color = "#e63757";
     }
     if (this.state.PinnedChange[3] < 0) {
-      document.getElementsByClassName("Card-Stock-Price-Live")[3].style.color ="#e63757";
-      document.getElementsByClassName("badge-percent")[3].style.backgroundColor = "#fad7dd";
-      document.getElementsByClassName("badge-percent")[3].style.color = "#e63757";
-      document.getElementsByClassName("badge-value")[3].style.backgroundColor ="#fad7dd";
-      document.getElementsByClassName("badge-value")[3].style.color ="#e63757";
+      document.getElementsByClassName("Card-Stock-Price-Live")[3].style.color =
+        "#e63757";
+      document.getElementsByClassName(
+        "badge-percent"
+      )[3].style.backgroundColor = "#fad7dd";
+      document.getElementsByClassName("badge-percent")[3].style.color =
+        "#e63757";
+      document.getElementsByClassName("badge-value")[3].style.backgroundColor =
+        "#fad7dd";
+      document.getElementsByClassName("badge-value")[3].style.color = "#e63757";
     }
     if (this.state.PinnedChange[0] === 0) {
       document.getElementsByClassName("Card-Stock-Price-Live")[0].style.color =
@@ -244,7 +284,7 @@ export default class Dashboard extends React.Component {
           />
           <div className="dashboard-main">
             <div className="dashboard-main-card-row row">
-              <div className="dashboard-main-card-col col-lg-3 col-12 col-md-6">
+              <div className="dashboard-main-card-col col-lg-3 col-6 col-md-3 col-sm-6">
                 <div className="Dashboard-Card">
                   <div className="container">
                     <div className="Card-Stock-Name row">
@@ -268,7 +308,7 @@ export default class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="dashboard-main-card-col col-lg-3 col-12 col-md-6">
+              <div className="dashboard-main-card-col col-lg-3 col-6 col-md-3 col-sm-6">
                 <div className="Dashboard-Card">
                   <div className="container">
                     <div className="Card-Stock-Name row">
@@ -292,7 +332,7 @@ export default class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="dashboard-main-card-col col-lg-3 col-12 col-md-6">
+              <div className="dashboard-main-card-col col-lg-3 col-6 col-md-3 col-sm-6">
                 <div className="Dashboard-Card">
                   <div className="container">
                     <div className="Card-Stock-Name row">
@@ -316,7 +356,7 @@ export default class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="dashboard-main-card-col col-lg-3 col-12 col-md-6">
+              <div className="dashboard-main-card-col col-lg-3 col-6 col-md-3 col-sm-6">
                 <div className="Dashboard-Card">
                   <div className="container">
                     <div className="Card-Stock-Name row">

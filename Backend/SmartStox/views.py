@@ -10,6 +10,7 @@ from BackendScripts.extra_scrapes import (
     live_active_stocks,
 )
 from BackendScripts.database_tasks import get_dashboard_cards
+from BackendScripts.extract_company_predictions import predictive_search
 
 
 # Create your views here.
@@ -269,6 +270,23 @@ def dashboardactive(request):
                     "Active4": activestocks[4],
                 }
             )
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+
+
+@api_view(["POST"])
+def searchbar(request):
+    try:
+
+        if (
+            len(request.data.keys()) == 2
+            and request.data["Requirement"] == "Search Words"
+        ):
+
+            SearchWords = predictive_search(request.data["SearchQuery"])
+
+            return Response({"Status": "Success", "SearchWords": SearchWords})
 
     except Authentication.DoesNotExist:
         return Response({"Status": "Session Expired"})

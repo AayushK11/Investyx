@@ -8,4 +8,5 @@ urlpatterns = [
     path("dashboardnews/", views.dashboardnews),
     path("dashboardmood/", views.dashboardmood),
     path("dashboardactive/", views.dashboardactive),
+    path("searchbar/", views.searchbar),
 ]

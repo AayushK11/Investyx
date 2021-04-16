@@ -81,14 +81,14 @@ def get_live_price(Code, Exchange):
 
     parser = BeautifulSoup(response, "html.parser")
 
-    current_price = parser.find_all(class_="Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)")
-    current_price = float(list(current_price[0].stripped_strings)[0])
+    current_price = parser.find_all(class_="D(ib) Mend(20px)")
+    current_price = float(list(current_price[0].stripped_strings)[0].replace(",", ""))
 
     previous_close = parser.find_all(class_="Ta(end) Fw(600) Lh(14px)")
-    previous_close = float(list(previous_close[0].stripped_strings)[0])
+    previous_close = float(list(previous_close[0].stripped_strings)[0].replace(",", ""))
 
     opening_price = parser.find_all(class_="Ta(end) Fw(600) Lh(14px)")
-    opening_price = float(list(opening_price[1].stripped_strings)[0])
+    opening_price = float(list(opening_price[1].stripped_strings)[0].replace(",", ""))
 
     value_change = round(float(current_price - previous_close), 2)
 
