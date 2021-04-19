@@ -32,18 +32,22 @@ def get_from_spreadsheet():
 
 
 def predictive_search(value):
-    stock_list = get_from_spreadsheet()
+    try:
+        stock_list = get_from_spreadsheet()
+        print(stock_list)
 
-    stock_list = [
-        [x.Code, x.Name, x.Industry, x.Exchange]
-        for x in stock_list.itertuples()
-        if (
-            value.lower() == x.Code.lower()[: len(value)]
-            or value.lower() == x.Name.lower()[: len(value)]
-        )
-    ]
+        stock_list = [
+            [x.Code, x.Name, x.Industry, x.Exchange]
+            for x in stock_list.itertuples()
+            if (
+                value.lower() == x.Code.lower()[: len(value)]
+                or value.lower() == x.Name.lower()[: len(value)]
+            )
+        ]
 
-    stock_list = sorted(stock_list, key=lambda x: x[3], reverse=True)
+        stock_list = sorted(stock_list, key=lambda x: x[3], reverse=True)
 
-    return stock_list[:4]
+        return stock_list[:4]
+    except AttributeError:
+        return []
 

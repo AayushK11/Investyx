@@ -3,6 +3,7 @@ import NavbarPostAuth from "../Navbar_PostAuth";
 import DashboardNews from "../Features/DashboardNews";
 import DashboardMood from "../Features/DashboardMood";
 import DashboardActive from "../Features/DashboardActive";
+import DashboardStockCard from "../Features/DashboardStockCard";
 import "../Css/Dashboard.css";
 import "../Css/Loader.css";
 import axios from "axios";
@@ -19,26 +20,37 @@ export default class Dashboard extends React.Component {
       PinnedPrice: ["000.00", "000.00", "000.00", "000.00"],
       PinnedPercent: ["00.00", "00.00", "00.00", "00.00"],
       PinnedChange: ["00.00", "00.00", "00.00", "00.00"],
+      SearchStock: "",
     };
     this.validateUser = this.validateUser.bind(this);
     this.updateChange = this.updateChange.bind(this);
     this.updateCards = this.updateCards.bind(this);
+    this.handleSearchClick = this.handleSearchClick.bind(this);
   }
 
   componentDidMount() {
-    this.validateUser();
-    this.interval = setInterval(() => {
-      console.log("Start Cards");
-      if (this.state.PinnedPrice[0] === "000.00") {
-        $("#dashboard").fadeTo(500, 0.5);
-        $(".cssload-loader").fadeTo(500, 1);
-      } else {
-        $("#dashboard").fadeTo(500, 1);
-        $(".cssload-loader").fadeTo(500, 0);
-      }
-      this.updateCards();
-      this.updateChange();
-    }, 2000);
+    // this.validateUser();
+    // this.interval = setInterval(() => {
+    //   console.log("Start Cards");
+    //   if (this.state.PinnedPrice[0] === "000.00") {
+    //     $("#dashboard").fadeTo(500, 0.5);
+    //     $(".cssload-loader").fadeTo(500, 1);
+    //   } else {
+    //     $("#dashboard").fadeTo(500, 1);
+    //     $(".cssload-loader").fadeTo(500, 0);
+    //   }
+    //   this.updateCards();
+    //   this.updateChange();
+    // }, 2000);
+    this.setState({ SearchStock: "ITC - Indian Tobacco Company - NSE" });
+    $(".dashboard-main").fadeTo(500, 0);
+    $(".dashboard-stock-card").fadeTo(500, 1);
+  }
+
+  handleSearchClick(data) {
+    this.setState({ SearchStock: data });
+    $(".dashboard-main").fadeTo(500, 0);
+    $(".dashboard-stock-card").fadeTo(500, 1);
   }
 
   componentWillUnmount() {
@@ -46,10 +58,10 @@ export default class Dashboard extends React.Component {
   }
 
   validateUser() {
-    if (this.state.Usercode === "") {
-      this.props.history.push("/login");
-      alert("Session Expired");
-    }
+    // if (this.state.Usercode === "") {
+    //   this.props.history.push("/login");
+    //   alert("Session Expired");
+    // }
   }
 
   updateChange() {
@@ -281,6 +293,7 @@ export default class Dashboard extends React.Component {
           <NavbarPostAuth
             Usercode={this.state.Usercode}
             UserImage={this.state.UserImage}
+            handleSearchClick={this.handleSearchClick}
           />
           <div className="dashboard-main">
             <div className="dashboard-main-card-row row">
@@ -394,6 +407,9 @@ export default class Dashboard extends React.Component {
                 <DashboardNews />
               </div>
             </div>
+          </div>
+          <div className="dashboard-stock-card">
+            <DashboardStockCard StockCode={this.state.SearchStock} />
           </div>
         </section>
       </div>

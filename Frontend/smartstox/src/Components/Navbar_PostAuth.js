@@ -117,9 +117,14 @@ export default class NavbarPostAuth extends React.Component {
     this.updateImage();
     this.updateNotifications();
 
+    let searchquer = "";
+    const componentInstance = this;
+
     $("#searchbar").bind("input", function () {
       if (checkExists($("#searchbar").val()) === true) {
-        onClick($("#searchbar").val());
+        console.log($("#searchbar").val());
+        searchquer = $("#searchbar").val();
+        handleSearch(searchquer);
       }
     });
 
@@ -135,8 +140,8 @@ export default class NavbarPostAuth extends React.Component {
       return flag;
     }
 
-    function onClick(value) {
-      console.log(value);
+    function handleSearch(searchquer) {
+      componentInstance.props.handleSearchClick(searchquer);
     }
   }
 
