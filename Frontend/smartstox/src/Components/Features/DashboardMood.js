@@ -8,9 +8,44 @@ export default class DashboardMood extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mood: 50,
     };
     this.updateMood = this.updateMood.bind(this);
+    this.updateGauge = this.updateGauge.bind(this);
+  }
+
+  updateGauge(value) {
+
+    const gaugeElement = document.querySelector(".gauge");
+
+    if (value < 0 || value > 100) {
+      return;
+    }
+
+    gaugeElement.querySelector(".gauge__fill").style.transform = `rotate(${
+      value / 200
+    }turn)`;
+    if (value < 30) {
+
+      gaugeElement.querySelector(".gauge__cover").textContent = `Extreme Fear`;
+
+      gaugeElement.querySelector(".gauge__fill").style.backgroundColor = "#12be57";
+    }
+    if (value < 50 && value >= 30) {
+      gaugeElement.querySelector(".gauge__cover").textContent = `Fear`;
+
+      gaugeElement.querySelector(".gauge__fill").style.backgroundColor = "#f5d72b";
+    }
+    if (value < 70 && value >= 50) {
+      gaugeElement.querySelector(".gauge__cover").textContent = `Greed`;
+
+      gaugeElement.querySelector(".gauge__fill").style.backgroundColor = "#e65016";
+    }
+    if (value >= 70) {
+      gaugeElement.querySelector(".gauge__cover").textContent = `Extreme Greed`;
+
+      gaugeElement.querySelector(".gauge__fill").style.backgroundColor = "#d62020";
+    }
+
   }
 
   updateMood() {
@@ -20,7 +55,7 @@ export default class DashboardMood extends React.Component {
       })
       .then((res) => {
         if (res.data["Status"] === "Success") {
-          this.setState({ mood: res.data["Mood"] });
+          this.updateGauge(res.data["Mood"]);
         }
       });
   }
@@ -37,22 +72,13 @@ export default class DashboardMood extends React.Component {
       <div className="dashboard-mood">
         <div className="container-fluid">
           <div className="mood-row row">
-            
             <div className="mood-heading">Market Live Sentiments</div>
             <div className="mood-col col-12">
-              <div className="mood ">
-                <div className="mood-guide">
-                  <div className="mood-guide-left">Bullish</div>
-                  <div className="mood-guide-right">Bearish</div>
+              <div class="gauge">
+                <div class="gauge__body">
+                  <div class="gauge__fill"></div>
+                  <div class="gauge__cover"></div>
                 </div>
-                <meter
-                  min="0"
-                  max="100"
-                  low="0"
-                  high="60"
-                  optimum="50"
-                  value={this.state.mood}
-                />
               </div>
             </div>
           </div>

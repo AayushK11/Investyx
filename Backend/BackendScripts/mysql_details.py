@@ -1,3 +1,7 @@
+# HOST = "localhost"
+# USERNAME = "AayushK11"
+# PASSWORD = "1qaz2wsx"
+
 HOST = "localhost"
-USERNAME = "AayushK11"
-PASSWORD = "1qaz2wsx"
+USERNAME = "root"
+PASSWORD = "Ajinkya@123"
