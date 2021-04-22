@@ -8,4 +8,16 @@ MARKETMOOD = "https://www.tickertape.in/market-mood-index"
 ACTIVESTOCKS = "https://www.moneycontrol.com/"
 PROFILE = "https://in.finance.yahoo.com/quote/{}.NS/profile?p={}.NS"
 LIVE_STOCK_PRICE_NSE = "https://in.finance.yahoo.com/quote/{}.NS/p={}.NS"
+LIVE_STOCK_STATS_NSE = "https://in.finance.yahoo.com/quote/{}.NS/key-statistics?p={}.NS"
+LIVE_STOCK_PROFILE_NSE = "https://in.finance.yahoo.com/quote/{}.NS/profile?p={}.NS"
+LIVE_STOCK_HOLDERS_NSE = "https://in.finance.yahoo.com/quote/{}.NS/holders?p={}.NS"
+LIVE_STOCK_SUSTAINABILITY_NSE = (
+    "https://in.finance.yahoo.com/quote/{}.NS/sustainability?p={}.NS"
+)
 LIVE_STOCK_PRICE_BSE = "https://in.finance.yahoo.com/quote/{}.BO/p={}.BO"
+LIVE_STOCK_STATS_BSE = "https://in.finance.yahoo.com/quote/{}.BO/key-statistics?p={}.BO"
+LIVE_STOCK_PROFILE_BSE = "https://in.finance.yahoo.com/quote/{}.BO/profile?p={}.BO"
+LIVE_STOCK_HOLDERS_BSE = "https://in.finance.yahoo.com/quote/{}.BO/holders?p={}.BO"
+LIVE_STOCK_SUSTAINABILITY_BSE = (
+    "https://in.finance.yahoo.com/quote/{}.BO/sustainability?p={}.BO"
+)
