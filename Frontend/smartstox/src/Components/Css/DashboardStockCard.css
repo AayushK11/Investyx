@@ -3,5 +3,40 @@
 /* _______________ */
 
 .Stock-Details {
-  background-color: antiquewhite;
+  background-color: rgb(219, 225, 247);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.Stock-Details .stockId{
+  font-weight: 700;
+  font-size: medium;
+
+}
+
+.Stock-Details .stockName{
+padding:4px 0 4px 0;
+font-weight: 400;
+}
+
+.Stock-Details .livePrice{
+  font-weight: 700;
+  font-size: medium;
+ 
+}
+
+.Stock-Details .closeBtn{
+  float: right;
+}
+.Stock-Details .noPadding{
+  padding: 0;
+}
+
+.Stock-Details .tabList{
+  padding: 10px 0 10px 0;
+}
+
+.add-to-marketwatch option{
+  background-color: aliceblue;
+  color: rgb(29, 28, 28);
 }

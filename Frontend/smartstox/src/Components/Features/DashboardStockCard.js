@@ -14,30 +14,31 @@ export default class DashboardStockCard extends React.Component {
   render() {
     return (
       <div className="Stock-Details">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-12">
               <div className="row">
                 <div className="col-11">
                   <div className="row">
                     <div className="col-3 stock-name">
-                      <div className="row">
-                        <b>ITC</b>
+                      <div className="row stockId">
+                        ITC
                       </div>
-                      <div className="row">Indian Tobacco Company - NSE</div>
+                      <div className="row stockName">Indian Tobacco Company - NSE</div>
                     </div>
-                    <div className="col-3 add-to-watchlist">
+                    <div className="col-3 add-to-watchlist noPadding">
                       <button
                         name="AddToWatchList"
                         value="AddToWatchList"
                         id="AddToWatchList"
-                      >
+                        className="btn btn-primary">
                         <i class="far fa-star"></i>
                         Add To Watch List
                       </button>
                     </div>
-                    <div className="col-3 add-to-marketwatch">
-                      <select name="AddToMarketWatch" id="AddToMarketWatch">
+                    
+                    <div className="col-3 add-to-marketwatch noPadding ">
+                      <select name="AddToMarketWatch" id="AddToMarketWatch" className="btn btn-primary">
                         <option value="" selected disabled hidden>
                           Add To Market Watch
                         </option>
@@ -47,16 +48,16 @@ export default class DashboardStockCard extends React.Component {
                         <option value="PVR">PVR</option>
                       </select>
                     </div>
-                    <div className="col-3 predict">
-                      <button name="Predict" value="Predict" id="Predict">
+                    <div className="col-3 predict noPadding">
+                      <button name="Predict" value="Predict" id="Predict" className="btn btn-primary">
                         <i class="fas fa-chart-line"></i>
                         Predict
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="col-1">
-                  <button name="Close" value="Close" id="Close">
+                <div className="col-1 noPadding">
+                  <button name="Close" value="Close" id="Close" class="btn btn-light closeBtn">
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
@@ -64,18 +65,18 @@ export default class DashboardStockCard extends React.Component {
               <div className="row">
                 <div className="col-11">
                   <div className="row">
-                    <div className="col-6 stock-price">
-                      <div className="row">
-                        <b>205.60</b>
+                    <div className="col-1 stock-price">
+                      <div className="row livePrice">
+                        205.60
                       </div>
                       <div className="row">Live : 3:30pm</div>
                     </div>
-                    <div className="col-6 add-to-change">-2.35 (-1.13%)</div>
+                    <div className="col-2 add-to-change noPadding">-2.35 (-1.13%)</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12">
+            <div className="col-12 tabList">
               <ul
                 role="tablist"
                 className="nav bg-light nav-pills rounded nav-fill "

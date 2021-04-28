@@ -15,6 +15,7 @@
   height: 50px;
 }
 
+
 .navbar-custom-post button:focus,
 button:active {
   outline: none !important;
@@ -109,7 +110,7 @@ button:active {
 .sidebar-custom-post {
   top: 75px;
   left: 0;
-  width: 14%;
+  width: 12%;
   z-index: 1;
   position: fixed;
   background-color: #e0ebe7 !important;
@@ -143,5 +144,9 @@ background-color: #b3dfce;
     border: 1px solid transparent !important;
     border-radius: 3px;
     background-color: transparent;
+  }
+  .navbar-custom-post .searchBox{
+    margin-left:15px;
+  
   }
 }

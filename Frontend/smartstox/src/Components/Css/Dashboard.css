@@ -60,9 +60,9 @@
   }
   .dashboard-stock-card {
     position: absolute;
-    top: 76px;
-    left: 15%;
-    min-width: 85% !important;
+    top: 90px;
+    left: 13%;
+    min-width: 86% !important;
     padding: 20px;
   }
 }

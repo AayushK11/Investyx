@@ -201,15 +201,15 @@ export default class NavbarPostAuth extends React.Component {
             >
               <img src={smartstox} alt="Smart Stox" className="navbar-logo" />
             </a>
-            <div className="row">
-              <div className="col-auto">
+            <div className="row searchBox">
+              <div className="col-auto ">
                 <input
                   onChange={this.onChange}
                   list="searchlist"
                   data-toggle="tooltip"
                   title="Enter 2 or more characters for Getting Predictive Search Results"
                   type="text"
-                  placeholder="Search Any Stock..."
+                  placeholder="Search"
                   id="searchbar"
                   name="searchbar"
                   className="form-control"
