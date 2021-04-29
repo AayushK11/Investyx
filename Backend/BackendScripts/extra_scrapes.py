@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 
 # import BackendScripts.links as links
 import links
+from nsepy import get_history as nsehistory
+from datetime import timedelta, datetime, date
 
 
 def live_news_scrape():
@@ -199,6 +201,64 @@ def get_stock_summary(Code, Exchange):
         return []
 
 
+def get_chart_data(Code, Exchange):
+
+    ChartData = []
+
+    try:
+        if Exchange == "NSE":
+            df = nsehistory(
+                symbol=Code,
+                start=datetime.now().date() - timedelta(days=1 * 365),
+                end=date.today(),
+            )
+            df["Date"] = df.index
+            df.drop(
+                columns=[
+                    "Series",
+                    "VWAP",
+                    "Volume",
+                    "Turnover",
+                    "Trades",
+                    "Deliverable Volume",
+                    "%Deliverble",
+                    "Last",
+                    "Symbol",
+                    "Prev Close",
+                ],
+                inplace=True,
+            )
+            df.reset_index(drop=True, inplace=True)
+
+            for i in df.itertuples():
+                if i[4] > i[1]:
+                    ChartData.append(
+                        [
+                            i[5].strftime("%d-%m-%Y"),
+                            float(i[3]),
+                            float(i[4]),
+                            float(i[1]),
+                            float(i[2]),
+                        ]
+                    )
+                else:
+                    ChartData.append(
+                        [
+                            i[5].strftime("%d-%m-%Y"),
+                            float(i[2]),
+                            float(i[4]),
+                            float(i[1]),
+                            float(i[3]),
+                        ]
+                    )
+
+            return ChartData
+
+    except requests.exceptions.ConnectionError:
+        print("Connection Error")
+        return ChartData
+
+
 def get_stock_statistics(Code, Exchange):
     try:
         if Exchange == "NSE":
@@ -369,6 +429,7 @@ def get_stock_details(Code, Exchange):
 
     RequiredDetails.append(get_stock_top_bar(Code, Exchange))
     RequiredDetails.append(get_stock_summary(Code, Exchange))
+    RequiredDetails.append(get_chart_data(Code, Exchange))
     RequiredDetails.append(get_stock_statistics(Code, Exchange))
     RequiredDetails.append(get_stock_profile(Code, Exchange))
     RequiredDetails.append(get_stock_holders(Code, Exchange))
@@ -377,5 +438,5 @@ def get_stock_details(Code, Exchange):
     print(RequiredDetails)
 
 
-get_stock_details("TATAMOTORS", "NSE")
+get_stock_details("ADANIPOWER", "NSE")
 
