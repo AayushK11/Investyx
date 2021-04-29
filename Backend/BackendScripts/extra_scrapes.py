@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-# import BackendScripts.links as links
-import links
+import BackendScripts.links as links
+
 from nsepy import get_history as nsehistory
 from datetime import timedelta, datetime, date
 
@@ -225,32 +225,18 @@ def get_chart_data(Code, Exchange):
                     "Last",
                     "Symbol",
                     "Prev Close",
+                    "Open",
+                    "High",
+                    "Low",
                 ],
                 inplace=True,
             )
             df.reset_index(drop=True, inplace=True)
 
             for i in df.itertuples():
-                if i[4] > i[1]:
-                    ChartData.append(
-                        [
-                            i[5].strftime("%d-%m-%Y"),
-                            float(i[3]),
-                            float(i[4]),
-                            float(i[1]),
-                            float(i[2]),
-                        ]
-                    )
-                else:
-                    ChartData.append(
-                        [
-                            i[5].strftime("%d-%m-%Y"),
-                            float(i[2]),
-                            float(i[4]),
-                            float(i[1]),
-                            float(i[3]),
-                        ]
-                    )
+                ChartData.append(
+                    [i[2], float(i[1]),]
+                )
 
             return ChartData
 
@@ -383,46 +369,6 @@ def get_stock_holders(Code, Exchange):
         return []
 
 
-def get_stock_sustainability(Code, Exchange):
-    try:
-        if Exchange == "NSE":
-            response = requests.get(
-                links.LIVE_STOCK_SUSTAINABILITY_NSE.format(Code, Code), timeout=5
-            ).content
-        if Exchange == "BSE":
-            response = requests.get(
-                links.LIVE_STOCK_SUSTAINABILITY_BSE.format(Code, Code), timeout=5
-            ).content
-
-        parser = BeautifulSoup(response, "html.parser")
-        commonTag = parser.find_all(class_="smartphone_Pt(20px)")
-
-        ecg_risk_score = list(commonTag[0].stripped_strings)[1]
-        ecg_percentile = list(commonTag[0].stripped_strings)[2]
-        ecg_level = list(commonTag[0].stripped_strings)[3]
-        environmental_risk_score = list(commonTag[0].stripped_strings)[6]
-        social_risk_score = list(commonTag[0].stripped_strings)[8]
-        governance_risk_score = list(commonTag[0].stripped_strings)[10]
-
-        return [
-            ecg_risk_score,
-            ecg_percentile,
-            ecg_level,
-            environmental_risk_score,
-            social_risk_score,
-            governance_risk_score,
-        ]
-    except requests.exceptions.ConnectionError:
-        print("Connection Error")
-        return []
-    except requests.exceptions.ReadTimeout:
-        print("Read Timeout Error")
-        return []
-    except IndexError:
-        print("Index Error")
-        return []
-
-
 def get_stock_details(Code, Exchange):
 
     RequiredDetails = []
@@ -433,10 +379,5 @@ def get_stock_details(Code, Exchange):
     RequiredDetails.append(get_stock_statistics(Code, Exchange))
     RequiredDetails.append(get_stock_profile(Code, Exchange))
     RequiredDetails.append(get_stock_holders(Code, Exchange))
-    RequiredDetails.append(get_stock_sustainability(Code, Exchange))
 
-    print(RequiredDetails)
-
-
-get_stock_details("ADANIPOWER", "NSE")
-
+    return RequiredDetails

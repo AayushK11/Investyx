@@ -9,4 +9,5 @@ urlpatterns = [
     path("dashboardmood/", views.dashboardmood),
     path("dashboardactive/", views.dashboardactive),
     path("searchbar/", views.searchbar),
+    path("stockinfocard/", views.stockinfocard),
 ]

@@ -8,6 +8,7 @@ from BackendScripts.extra_scrapes import (
     live_news_scrape,
     live_market_mood_scrape,
     live_active_stocks,
+    get_stock_details,
 )
 from BackendScripts.database_tasks import get_dashboard_cards
 from BackendScripts.extract_company_predictions import predictive_search
@@ -287,6 +288,34 @@ def searchbar(request):
             SearchWords = predictive_search(request.data["SearchQuery"])
 
             return Response({"Status": "Success", "SearchWords": SearchWords})
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+
+
+@api_view(["POST"])
+def stockinfocard(request):
+    try:
+
+        if (
+            len(request.data.keys()) == 2
+            and request.data["Requirement"] == "Stock Details"
+        ):
+            inputVal = request.data["InputCode"].split(" - ")
+
+            StockDetails = get_stock_details(inputVal[0], inputVal[2])
+
+            return Response(
+                {
+                    "Status": "Success",
+                    "TopBar": StockDetails[0],
+                    "Summary": StockDetails[1],
+                    "ChartData": StockDetails[2],
+                    "Statistics": StockDetails[3],
+                    "Profile": StockDetails[4],
+                    "Holders": StockDetails[5],
+                }
+            )
 
     except Authentication.DoesNotExist:
         return Response({"Status": "Session Expired"})
