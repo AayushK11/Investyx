@@ -5,6 +5,7 @@ import Landing from "./Components/Pages/Landing.js";
 import Login from "./Components/Pages/Login.js";
 import Dashboard from "./Components/Pages/Dashboard.js";
 import WatchList from "./Components/Pages/WatchList.js";
+import Predict from "./Components/Pages/Predict.js";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,6 +42,13 @@ export default class App extends React.Component {
               path={"/watchlist"}
               render={(props) => (
                 <WatchList {...props} Usercode={this.state.Usercode} />
+              )}
+            />
+               <Route
+              exact
+              path={"/predict"}
+              render={(props) => (
+                <Predict {...props} Usercode={this.state.Usercode} />
               )}
             />
           </Switch>
