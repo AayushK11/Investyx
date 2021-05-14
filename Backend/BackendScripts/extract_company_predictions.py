@@ -34,7 +34,6 @@ def get_from_spreadsheet():
 def predictive_search(value):
     try:
         stock_list = get_from_spreadsheet()
-        print(stock_list)
 
         stock_list = [
             [x.Code, x.Name, x.Industry, x.Exchange]

@@ -23,7 +23,7 @@ export default class Dashboard extends React.Component {
     super(props);
     this.state = {
       dashboardLevel: 0,
-      Usercode: this.props.Usercode,
+      Usercode: document.cookie,
       UserImage: "",
       PinnedStocks: ["", "", "", ""],
       PinnedPrice: ["000.00", "000.00", "000.00", "000.00"],
@@ -62,6 +62,8 @@ export default class Dashboard extends React.Component {
     this.updateGauge = this.updateGauge.bind(this);
     this.updateActive = this.updateActive.bind(this);
     this.updateActiveChange = this.updateActiveChange.bind(this);
+    this.onClick = this.onClick.bind(this);
+    this.addToWatchList = this.addToWatchList.bind(this);
   }
 
   componentDidMount() {
@@ -70,7 +72,7 @@ export default class Dashboard extends React.Component {
       clearInterval(this.interval);
       this.interval = setInterval(() => {
         if (this.state.PinnedPrice[0] === "000.00") {
-          $("#dashboard").fadeTo(500, 0.5);
+          $("#dashboard").fadeTo(500, 0);
           $(".cssload-loader").fadeTo(500, 1);
         } else {
           $("#dashboard").fadeTo(500, 1);
@@ -84,6 +86,29 @@ export default class Dashboard extends React.Component {
         this.updateActiveChange();
       }, 2000);
     }
+  }
+
+  onClick(event) {
+    event.preventDefault();
+    if (event.target.name === "AddToWatchList") {
+      this.addToWatchList(this.state.StockCode);
+    }
+    if (event.target.name === "Close") {
+      console.log("Close");
+      window.location.reload();
+    }
+  }
+
+  addToWatchList(StockCode) {
+    axios
+      .post(Server_Path.concat("addtowatchlist/"), {
+        Requirement: "Add To Watchlist",
+        StockCode: StockCode,
+        Usercode: this.state.Usercode,
+      })
+      .then((res) => {
+        alert(res.data["Status"]);
+      });
   }
 
   updateActive() {
@@ -304,7 +329,6 @@ export default class Dashboard extends React.Component {
         InputCode: this.state.StockCode,
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data["Status"] === "Success") {
           let TopBar = [];
           let Summary = [];
@@ -349,7 +373,6 @@ export default class Dashboard extends React.Component {
 
   handleSearchClick(data) {
     this.setState({ StockCode: data, dashboardLevel: 1 });
-    console.log(this.state);
     clearInterval(this.interval);
 
     $("#dashboard").fadeTo(500, 0.5);
@@ -357,8 +380,6 @@ export default class Dashboard extends React.Component {
     this.updateStockDetails();
 
     this.interval = setInterval(() => {
-      console.log(this.state.StockCode);
-      console.log("Start Info");
       if (this.state.TopBar.length > 0) {
         $("#dashboard").fadeTo(500, 1);
         $(".cssload-loader").fadeTo(500, 0);
@@ -960,6 +981,7 @@ export default class Dashboard extends React.Component {
                                     name="AddToWatchList"
                                     value="AddToWatchList"
                                     id="AddToWatchList"
+                                    onClick={this.onClick}
                                   >
                                     <i class="far fa-star"></i>
                                     Add To Watch List
@@ -992,7 +1014,12 @@ export default class Dashboard extends React.Component {
                               </div>
                             </div>
                             <div className="col-1">
-                              <button name="Close" value="Close" id="Close">
+                              <button
+                                name="Close"
+                                value="Close"
+                                id="Close"
+                                onClick={this.onClick}
+                              >
                                 <i class="fas fa-times"></i>
                               </button>
                             </div>

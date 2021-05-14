@@ -27,6 +27,8 @@ export default class NavbarPostAuth extends React.Component {
   generateURLs() {
     this.setState({
       profile: this.state.url.concat("/profile"),
+      dashboard: this.state.url.concat("/dashboard"),
+      watchlist: this.state.url.concat("/watchlist"),
       support: "https://investyx.netlify.app/contactus",
       logout: "http://localhost:3000/login",
     });
@@ -313,7 +315,7 @@ export default class NavbarPostAuth extends React.Component {
                 <li className="nav-item d-lg-none">
                   <a
                     className="nav-link active join-now"
-                    href={this.state.profile}
+                    href={this.state.dashboard}
                   >
                     Dashboard
                   </a>
@@ -321,7 +323,7 @@ export default class NavbarPostAuth extends React.Component {
                 <li className="nav-item d-lg-none">
                   <a
                     className="nav-link active join-now"
-                    href={this.state.profile}
+                    href={this.state.watchlist}
                   >
                     Watchlist
                   </a>
@@ -356,7 +358,7 @@ export default class NavbarPostAuth extends React.Component {
                 <li className="nav-item">
                   <a
                     className="nav-link active join-now"
-                    href={this.state.profile}
+                    href={this.state.dashboard}
                   >
                     Dashboard
                   </a>
@@ -364,7 +366,7 @@ export default class NavbarPostAuth extends React.Component {
                 <li className="nav-item">
                   <a
                     className="nav-link active join-now"
-                    href={this.state.profile}
+                    href={this.state.watchlist}
                   >
                     Watchlist
                   </a>

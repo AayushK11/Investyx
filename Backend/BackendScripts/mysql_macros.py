@@ -71,11 +71,11 @@ def create_table(usercode, database):
         insert_into_table(
             usercode=usercode, stockcode="Nifty 100", exchange="NSE", database=database
         )
+    if database == "Watchlist":
+        mycursor.execute(commands.CREATE_WATCHLIST_CARDS_TABLE.format(usercode))
 
 
-def insert_into_table(
-    usercode, stockcode, exchange, database, industry=None, company=None
-):
+def insert_into_table(usercode, stockcode, exchange, database, pl=None):
     mydb = mysql.connector.connect(
         host=Credentials.HOST,
         user=Credentials.USERNAME,
@@ -88,6 +88,12 @@ def insert_into_table(
     if database == "DashboardCards":
         mycursor.execute(
             "insert into {} values ('{}', '{}');".format(usercode, stockcode, exchange)
+        )
+    if database == "Watchlist":
+        mycursor.execute(
+            "insert into {} values ('{}', '{}', '{}');".format(
+                usercode, stockcode, exchange, pl
+            )
         )
     mydb.commit()
 

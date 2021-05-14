@@ -10,4 +10,6 @@ urlpatterns = [
     path("dashboardactive/", views.dashboardactive),
     path("searchbar/", views.searchbar),
     path("stockinfocard/", views.stockinfocard),
+    path("addtowatchlist/", views.addtowatchlist),
+    path("getwatchlist/", views.getwatchlist),
 ]

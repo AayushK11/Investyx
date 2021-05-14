@@ -1,5 +1,5 @@
 import React from "react";
-// import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";]
 import "../Css/Login.css";
 import "../Css/Loader.css";
 import smartstox from "../Images/symbol.png";
@@ -89,7 +89,7 @@ export default class Login extends React.Component {
             })
             .then((res) => {
               if (res.data["Status"] === "Success") {
-                this.props.handleLogin(this.state.Usercode);
+                document.cookie = this.state.Usercode;
                 this.props.history.push("/dashboard");
               } else {
                 alert("Invalid Details");

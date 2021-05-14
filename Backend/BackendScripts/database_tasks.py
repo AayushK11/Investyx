@@ -3,10 +3,10 @@ import BackendScripts.mysql_details as Credentials
 from BackendScripts.mysql_macros import (
     check_database,
     check_table,
-    # insert_into_table,
+    insert_into_table,
     # delete_from_table,
 )
-from BackendScripts.extra_scrapes import get_personalised_dashboard_card
+from BackendScripts.extra_scrapes import get_personalised_dashboard_card, get_live_price
 from BackendScripts.indice_scraping import (
     live_nifty_50_data,
     live_sensex_data,
@@ -62,3 +62,67 @@ def get_dashboard_cards(Usercode):
             )
 
     return LiveDetails
+
+
+def get_watchlist(Usercode):
+    check_database("Watchlist")
+    check_table(Usercode, "Watchlist")
+
+    mycon = mysql.connector.connect(
+        host=Credentials.HOST,
+        user=Credentials.USERNAME,
+        password=Credentials.PASSWORD,
+        database="Watchlist",
+    )
+
+    mycursor = mycon.cursor()
+    mycursor.execute(commands.SELECT_ALL.format(Usercode))
+    mycursor = list(mycursor)
+    stock_details = []
+    stock_list = []
+
+    for stock in mycursor:
+        _, Price, Percent, Value, _, _ = get_live_price(stock[0], stock[1])
+        stock_details = [
+            stock[0],
+            stock[1],
+            Price,
+            Percent,
+            Value,
+            float(stock[2]) - float(Price),
+        ]
+        stock_list.append(stock_details)
+
+    return stock_list
+
+
+def add_to_watchlist(Usercode, StockCode, Exchange, Plan):
+    check_database("Watchlist")
+    check_table(Usercode, "Watchlist")
+
+    mycon = mysql.connector.connect(
+        host=Credentials.HOST,
+        user=Credentials.USERNAME,
+        password=Credentials.PASSWORD,
+        database="Watchlist",
+    )
+
+    mycursor = mycon.cursor()
+    mycursor.execute(commands.COUNT_ROWS.format(Usercode))
+    mycursor = list(mycursor)
+
+    print(mycursor)
+
+    if int(mycursor[0][0]) < Plan:
+        _, AddingPrice, _, _, _, _ = get_live_price(StockCode, Exchange)
+        insert_into_table(
+            usercode=Usercode,
+            stockcode=StockCode,
+            exchange=Exchange,
+            database="Watchlist",
+            pl=AddingPrice,
+        )
+        return "Stock Added Successfully"
+    else:
+        return "Plan Exceeded"
+

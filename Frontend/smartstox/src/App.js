@@ -12,11 +12,6 @@ export default class App extends React.Component {
     this.state = {
       Usercode: "",
     };
-    this.handleLogin = this.handleLogin.bind(this);
-  }
-
-  handleLogin(data) {
-    this.setState({ Usercode: data });
   }
 
   render() {
@@ -32,9 +27,7 @@ export default class App extends React.Component {
             <Route
               exact
               path={"/login"}
-              render={(props) => (
-                <Login {...props} handleLogin={this.handleLogin} />
-              )}
+              render={(props) => <Login {...props} />}
             />
             <Route
               exact

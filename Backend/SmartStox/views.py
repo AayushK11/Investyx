@@ -10,8 +10,13 @@ from BackendScripts.extra_scrapes import (
     live_active_stocks,
     get_stock_details,
 )
-from BackendScripts.database_tasks import get_dashboard_cards
+from BackendScripts.database_tasks import (
+    get_dashboard_cards,
+    add_to_watchlist,
+    get_watchlist,
+)
 from BackendScripts.extract_company_predictions import predictive_search
+import mysql.connector
 
 
 # Create your views here.
@@ -101,7 +106,6 @@ def userdetails(request):
 
                 Notifications = list(str(Notifications).split("$$$"))
                 Notifications = Notifications[:-1]
-                print(Notifications)
 
                 return Response(
                     {
@@ -125,7 +129,6 @@ def userdetails(request):
 
                 Notifications = list(str(Notifications).split("$$$"))
                 Notifications = Notifications[:-1]
-                print(Notifications)
 
                 return Response(
                     {
@@ -163,12 +166,10 @@ def live_plan_check(usercode):
     DaysRemaining = days_remaining(LastPaidDate)
 
     if DaysRemaining == 10:
-        if "Your Monthly Plan Expires in 10 Days$$$" not in user_details.Notifications:
-            user_details.Notifications = (
-                user_details.Notifications + "Your Monthly Plan Expires in 10 Days$$$"
-            )
+        if user_details.Notifications is None:
+            user_details.Notifications = "Your Monthly Plan Expires in 10 Days$$$"
     if DaysRemaining == 5:
-        if "Your Monthly Plan Expires in 6 Days$$$" not in user_details.Notifications:
+        if "Your Monthly Plan Expires in 5 Days$$$" not in user_details.Notifications:
             user_details.Notifications = (
                 user_details.Notifications + "Your Monthly Plan Expires in 5 Days$$$"
             )
@@ -319,4 +320,46 @@ def stockinfocard(request):
 
     except Authentication.DoesNotExist:
         return Response({"Status": "Session Expired"})
+
+
+@api_view(["POST"])
+def addtowatchlist(request):
+    try:
+        if (
+            len(request.data.keys()) == 3
+            and request.data["Requirement"] == "Add To Watchlist"
+        ):
+            inputVal = request.data["StockCode"].split(" - ")
+            Plan = Authentication.objects.get(Usercode=request.data["Usercode"]).Plan
+
+            if str(Plan) == "99":
+                Plan = 5                
+            elif str(Plan) == "249":
+                Plan = 10                
+            elif str(Plan) == "499":
+                Plan = 20                
+
+
+            response = add_to_watchlist(request.data["Usercode"], inputVal[0], inputVal[2], Plan)
+
+            return Response({"Status": response,})
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+    except mysql.connector.errors.IntegrityError:
+        return Response({"Status": "Stock Already in Watchlist"})
+
+
+@api_view(["POST"])
+def getwatchlist(request):
+    try:
+        if len(request.data.keys()) == 2 and request.data["Requirement"] == "Watchlist":
+            Watchlist = get_watchlist(request.data["Usercode"])
+
+            return Response({"Status": "Success", "Watchlist": Watchlist})
+
+    except Authentication.DoesNotExist:
+        return Response({"Status": "Session Expired"})
+    except mysql.connector.errors.IntegrityError:
+        return Response({"Status": "Stock Already in Watchlist"})
 
