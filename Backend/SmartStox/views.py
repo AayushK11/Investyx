@@ -333,14 +333,15 @@ def addtowatchlist(request):
             Plan = Authentication.objects.get(Usercode=request.data["Usercode"]).Plan
 
             if str(Plan) == "99":
-                Plan = 5                
+                Plan = 5
             elif str(Plan) == "249":
-                Plan = 10                
+                Plan = 10
             elif str(Plan) == "499":
-                Plan = 20                
+                Plan = 20
 
-
-            response = add_to_watchlist(request.data["Usercode"], inputVal[0], inputVal[2], Plan)
+            response = add_to_watchlist(
+                request.data["Usercode"], inputVal[0], inputVal[2], Plan
+            )
 
             return Response({"Status": response,})
 

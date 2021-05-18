@@ -89,7 +89,7 @@ def get_watchlist(Usercode):
             Price,
             Percent,
             Value,
-            float(stock[2]) - float(Price),
+            round(float(stock[2]) - float(Price), 2),
         ]
         stock_list.append(stock_details)
 
