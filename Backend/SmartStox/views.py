@@ -9,12 +9,15 @@ from BackendScripts.extra_scrapes import (
     live_market_mood_scrape,
     live_active_stocks,
     get_stock_details,
+    stock_specific_news,
+    get_stock_summary,
 )
 from BackendScripts.database_tasks import (
     get_dashboard_cards,
     add_to_watchlist,
     get_watchlist,
 )
+from BackendScripts.predict import start_prediction
 from BackendScripts.extract_company_predictions import predictive_search
 import mysql.connector
 
@@ -364,3 +367,56 @@ def getwatchlist(request):
     except mysql.connector.errors.IntegrityError:
         return Response({"Status": "Stock Already in Watchlist"})
 
+
+@api_view(["POST"])
+def predict(request):
+    if len(request.data.keys()) == 2 and request.data["Requirement"] == "Predict":
+
+        (
+            previous_close,
+            opening_price,
+            _,
+            fiftytwo_week_range,
+            _,
+            _,
+            _,
+            _,
+            _,
+            _,
+            _,
+            _,
+        ) = get_stock_summary(request.data["StockCode"], "NSE")
+        fiftytwo_week_low = fiftytwo_week_range.split(" - ")[0]
+        fiftytwo_week_high = fiftytwo_week_range.split(" - ")[1]
+
+        news = stock_specific_news(request.data["StockCode"])
+
+        score, sentiment, price = start_prediction([request.data["StockCode"]], [news])
+
+        if (
+            (float(price) - float(previous_close)) / float(previous_close)
+        ) * 100 > 0.5 and score >= 50:
+            outcome = "Buy"
+            helphertext1 = "Buy this stock if you don't already own it"
+            helphertext2 = "Hold if you own"
+        else:
+            outcome = "Sell"
+            helphertext1 = "Sell this stock if you own it"
+            helphertext2 = "Do Not consider buying it at this moment"
+
+        return Response(
+            {
+                "Status": "Success",
+                "SentimentScore": score,
+                "Sentiment": sentiment,
+                "Price": price,
+                "Closing": previous_close,
+                "Opening": opening_price,
+                "52High": fiftytwo_week_high,
+                "52Low": fiftytwo_week_low,
+                "Change": round(float(price) - float(previous_close), 2),
+                "Outcome": outcome,
+                "HelperText1": helphertext1,
+                "HelperText2": helphertext2,
+            }
+        )

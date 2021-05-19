@@ -4,13 +4,13 @@ import warnings
 warnings.filterwarnings("ignore")
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 from nsepy import get_history
-from datetime import date, datetime
+from datetime import datetime
 from dateutil.relativedelta import *
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM
-import math
+from multiprocessing.pool import ThreadPool
 
 # Scraping the Dataset and adding the Date column
 def get_dataframe(symbol):
@@ -73,7 +73,7 @@ def generate_model(xtr, ytr):
 
     model.compile(optimizer="adam", loss="mean_squared_error")
 
-    model.fit(xtr, ytr, batch_size=64, epochs=100, verbose=2)
+    model.fit(xtr, ytr, batch_size=128, epochs=50, verbose=2)
 
     return model
 
@@ -95,6 +95,85 @@ def create_predictions(model, scaler, dataset):
     return round(float(prediction[0][0]), 2)
 
 
+def analyse_news(news):
+    positive_words = [
+        "buy",
+        "up",
+        "rise",
+        "jump",
+        "strong",
+        "support",
+        "grow",
+        "fold",
+        "double",
+        "bullish",
+        "bull",
+        "soar",
+        "high",
+    ]
+    negative_words = [
+        "sell",
+        "down",
+        "dip",
+        "hold",
+        "bear",
+        "bearish",
+        "impact",
+        "decline",
+        "fall",
+        "loss",
+        "debt",
+        "stay away",
+        "low",
+    ]
+    score = 0
+    words = 0
+
+    news = news.lower().split(" ")
+    for i in news:
+        words += 1
+        score += positive_words.count(i)
+        score -= negative_words.count(i)
+
+    return score, words
+
+
+def start_sentiment_analysis(news):
+    sentiment = []
+    score = 0
+    words = 0
+
+    for i in news:
+        single_score, word = analyse_news(i)
+        words += word
+        if single_score > 0:
+            sentiment.append("Positive")
+        if single_score < 0:
+            sentiment.append("Negative")
+        if single_score == 0:
+            sentiment.append("Neutral")
+        score += single_score
+
+    score = (((score - (-10)) * (100 - 0)) / (10 - (-10))) + 0
+
+    if len(sentiment) == 0:
+        sentiment.append("Neutral")
+        sentiment.append("Neutral")
+        sentiment.append("Neutral")
+        sentiment.append("Neutral")
+    if len(sentiment) == 1:
+        sentiment.append("Neutral")
+        sentiment.append("Neutral")
+        sentiment.append("Neutral")
+    if len(sentiment) == 2:
+        sentiment.append("Neutral")
+        sentiment.append("Neutral")
+    if len(sentiment) == 3:
+        sentiment.append("Neutral")
+
+    return score, sentiment
+
+
 def start_time_series(symbol):
     df = get_dataframe(symbol)
     dataset, scaler, scaled_data = format_dataset(df)
@@ -110,5 +189,13 @@ def start_time_series(symbol):
             model = generate_model(xtr, ytr)
 
             ypred = create_predictions(model, scaler, dataset)
-            print(ypred)
             return ypred
+
+
+def start_prediction(symbol, news):
+    pool = ThreadPool(processes=2)
+    score, sentiment = pool.apply_async(start_sentiment_analysis, args=(news)).get()
+    price = pool.apply_async(start_time_series, args=(symbol)).get()
+
+    return score, sentiment, price
+

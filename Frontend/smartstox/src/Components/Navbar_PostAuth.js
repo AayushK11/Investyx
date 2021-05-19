@@ -328,22 +328,6 @@ export default class NavbarPostAuth extends React.Component {
                     Watchlist
                   </a>
                 </li>
-                <li className="nav-item d-lg-none">
-                  <a
-                    className="nav-link active join-now"
-                    href={this.state.profile}
-                  >
-                    Indices Predictions
-                  </a>
-                </li>
-                <li className="nav-item d-lg-none">
-                  <a
-                    className="nav-link active join-now"
-                    href={this.state.profile}
-                  >
-                    Stocks Predictions
-                  </a>
-                </li>
               </ul>
             </div>
           </nav>
@@ -369,22 +353,6 @@ export default class NavbarPostAuth extends React.Component {
                     href={this.state.watchlist}
                   >
                     Watchlist
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link active join-now"
-                    href={this.state.profile}
-                  >
-                    Indices Predictions
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link active join-now"
-                    href={this.state.profile}
-                  >
-                    Stocks Predictions
                   </a>
                 </li>
               </ul>

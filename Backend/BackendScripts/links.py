@@ -21,3 +21,4 @@ LIVE_STOCK_HOLDERS_BSE = "https://in.finance.yahoo.com/quote/{}.BO/holders?p={}.
 LIVE_STOCK_SUSTAINABILITY_BSE = (
     "https://in.finance.yahoo.com/quote/{}.BO/sustainability?p={}.BO"
 )
+LIVE_STOCK_SPECIFIC_NEWS = "https://in.finance.yahoo.com/quote/{}.NS/news?p={}.NS"

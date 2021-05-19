@@ -22,6 +22,7 @@ export default class WatchList extends React.Component {
       StockCode: " -  -  - ",
       watchlistLevel: 0,
       StockRow: [],
+      UserImage: "",
       TopBar: [],
       Summary: [],
       ChartData: [],
@@ -102,6 +103,13 @@ export default class WatchList extends React.Component {
       console.log("Close");
       window.location.reload();
     }
+    if (event.target.name === "Predict") {
+      console.log("Predict");
+      window.location = "/predict?Pred="
+        .concat(this.state.StockCode.split(" - ")[0])
+        .concat("?Exch=")
+        .concat(this.state.StockCode.split(" - ")[2]);
+    }
   }
 
   addToWatchList(StockCode) {
@@ -127,6 +135,7 @@ export default class WatchList extends React.Component {
           this.setState({ StockRow: res.data["Watchlist"] });
           $(".watchlist container").fadeTo(500, 1);
           $(".cssload-loader").fadeTo(500, 0);
+          $(".cssload-text").fadeTo(500, 0);
         }
       });
   }
@@ -135,6 +144,7 @@ export default class WatchList extends React.Component {
     this.validateUser();
     $(".watchlist container").fadeTo(500, 0);
     $(".cssload-loader").fadeTo(500, 1);
+    $(".cssload-text").fadeTo(500, 1);
     if (this.state.watchlistLevel === 0) {
       clearInterval(this.interval);
       this.interval = setInterval(() => {
@@ -145,14 +155,16 @@ export default class WatchList extends React.Component {
 
   handleSearchClick(data) {
     this.setState({ StockCode: data, watchlistLevel: 1 });
-    $("#watchlist").fadeTo(500, 0.5);
+    $("#watchlist").fadeTo(500, 0);
     $(".cssload-loader").fadeTo(500, 1);
+    $(".cssload-text").fadeTo(500, 1);
     this.updateStockDetails();
 
     this.interval = setInterval(() => {
       if (this.state.TopBar.length > 0) {
         $("#watchlist").fadeTo(500, 1);
         $(".cssload-loader").fadeTo(500, 0);
+        $(".cssload-text").fadeTo(500, 0);
       }
       this.updateStockDetails();
     }, 5000);
@@ -166,6 +178,9 @@ export default class WatchList extends React.Component {
             <div className="cssload-inner cssload-one"></div>
             <div className="cssload-inner cssload-two"></div>
             <div className="cssload-inner cssload-three"></div>
+          </div>
+          <div className="cssload-text">
+            Contacting Our Server. This Takes a few minutes
           </div>
         </section>
         <section id="watchlist">
@@ -270,25 +285,12 @@ export default class WatchList extends React.Component {
                                     Add To Watch List
                                   </button>
                                 </div>
-                                <div className="col-3 add-to-marketwatch">
-                                  <select
-                                    name="AddToMarketWatch"
-                                    id="AddToMarketWatch"
-                                  >
-                                    <option value="" selected disabled hidden>
-                                      Add To Market Watch
-                                    </option>
-                                    <option value="NIFTY50">NIFTY50</option>
-                                    <option value="NIFTYBANK">NIFTYBANK</option>
-                                    <option value="ITC">ITC</option>
-                                    <option value="PVR">PVR</option>
-                                  </select>
-                                </div>
-                                <div className="col-3 predict">
+                                <div className="col-3 predict-button">
                                   <button
                                     name="Predict"
                                     value="Predict"
                                     id="Predict"
+                                    onClick={this.onClick}
                                   >
                                     <i class="fas fa-chart-line"></i>
                                     Predict

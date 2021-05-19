@@ -72,11 +72,13 @@ export default class Dashboard extends React.Component {
       clearInterval(this.interval);
       this.interval = setInterval(() => {
         if (this.state.PinnedPrice[0] === "000.00") {
-          $("#dashboard").fadeTo(500, 0);
+          $(".dashboard-main").fadeTo(500, 0);
           $(".cssload-loader").fadeTo(500, 1);
+          $(".cssload-text").fadeTo(500, 1);
         } else {
-          $("#dashboard").fadeTo(500, 1);
+          $(".dashboard-main").fadeTo(500, 1);
           $(".cssload-loader").fadeTo(500, 0);
+          $(".cssload-text").fadeTo(500, 0);
         }
         this.updateCards();
         this.updateChange();
@@ -96,6 +98,13 @@ export default class Dashboard extends React.Component {
     if (event.target.name === "Close") {
       console.log("Close");
       window.location.reload();
+    }
+    if (event.target.name === "Predict") {
+      console.log("Predict");
+      window.location = "/predict?Pred="
+        .concat(this.state.StockCode.split(" - ")[0])
+        .concat("?Exch=")
+        .concat(this.state.StockCode.split(" - ")[2]);
     }
   }
 
@@ -375,14 +384,16 @@ export default class Dashboard extends React.Component {
     this.setState({ StockCode: data, dashboardLevel: 1 });
     clearInterval(this.interval);
 
-    $("#dashboard").fadeTo(500, 0.5);
+    $("#dashboard").fadeTo(500, 0);
     $(".cssload-loader").fadeTo(500, 1);
+    $(".cssload-text").fadeTo(500, 1);
     this.updateStockDetails();
 
     this.interval = setInterval(() => {
       if (this.state.TopBar.length > 0) {
         $("#dashboard").fadeTo(500, 1);
         $(".cssload-loader").fadeTo(500, 0);
+        $(".cssload-text").fadeTo(500, 0);
       }
       this.updateStockDetails();
     }, 5000);
@@ -658,6 +669,9 @@ export default class Dashboard extends React.Component {
             <div className="cssload-inner cssload-one"></div>
             <div className="cssload-inner cssload-two"></div>
             <div className="cssload-inner cssload-three"></div>
+          </div>
+          <div className="cssload-text">
+            Contacting Our Server. This Takes a few minutes
           </div>
         </section>
         <section id="dashboard">
@@ -987,25 +1001,12 @@ export default class Dashboard extends React.Component {
                                     Add To Watch List
                                   </button>
                                 </div>
-                                <div className="col-3 add-to-marketwatch">
-                                  <select
-                                    name="AddToMarketWatch"
-                                    id="AddToMarketWatch"
-                                  >
-                                    <option value="" selected disabled hidden>
-                                      Add To Market Watch
-                                    </option>
-                                    <option value="NIFTY50">NIFTY50</option>
-                                    <option value="NIFTYBANK">NIFTYBANK</option>
-                                    <option value="ITC">ITC</option>
-                                    <option value="PVR">PVR</option>
-                                  </select>
-                                </div>
-                                <div className="col-3 predict">
+                                <div className="col-3 predict-button">
                                   <button
                                     name="Predict"
                                     value="Predict"
                                     id="Predict"
+                                    onClick={this.onClick}
                                   >
                                     <i class="fas fa-chart-line"></i>
                                     Predict

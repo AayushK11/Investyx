@@ -381,3 +381,29 @@ def get_stock_details(Code, Exchange):
     RequiredDetails.append(get_stock_holders(Code, Exchange))
 
     return RequiredDetails
+
+
+def stock_specific_news(Code):
+    try:
+        response = requests.get(
+            links.LIVE_STOCK_SPECIFIC_NEWS.format(Code, Code), timeout=5
+        ).content
+        parser = BeautifulSoup(response, "html.parser")
+
+        news_list = []
+        news = parser.find_all(class_="Mb(5px)")
+
+        for i in range(1, 5):
+            try:
+                news_single = list(news[i].stripped_strings)
+                news_list.append(news_single[0])
+            except IndexError:
+                pass
+
+        return news_list
+
+    except requests.exceptions.ConnectionError:
+        return ("Yahoo Finance", 0, 0)
+    except requests.exceptions.ReadTimeout:
+        return ("Yahoo Finance", 0, 0)
+

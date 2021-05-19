@@ -12,4 +12,5 @@ urlpatterns = [
     path("stockinfocard/", views.stockinfocard),
     path("addtowatchlist/", views.addtowatchlist),
     path("getwatchlist/", views.getwatchlist),
+    path("predict/", views.predict),
 ]

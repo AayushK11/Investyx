@@ -9,11 +9,60 @@ import $ from "jquery";
 export default class Predict extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { };
-    }
+    this.state = {
+      Usercode: document.cookie,
+      StockCode: "",
+      UserImage: "",
+      StockExchange: "",
+      Open: "",
+      Close: "",
+      FiftyTwoLow: "",
+      FiftyTwoHigh: "",
+      PredClose: "",
+      PredSentiment: "",
+      PredChange: "",
+      News: [],
+      PredWord: "",
+      PredSubtext1: "",
+      PredSubtext2: "",
+    };
+  }
 
-
-
+  componentDidMount() {
+    var StockCode = window.location.search.split("?")[1];
+    var StockCode = StockCode.split("=")[1];
+    var StockExchange = window.location.search.split("?")[2];
+    var StockExchange = StockExchange.split("=")[1];
+    this.setState({ StockCode: StockCode, StockExchange: StockExchange });
+    $(".disappearingcontainer").fadeTo(500, 0);
+    $(".cssload-loader").fadeTo(500, 1);
+    $(".cssload-text").fadeTo(500, 1);
+    axios
+      .post(Server_Path.concat("predict/"), {
+        Requirement: "Predict",
+        StockCode: StockCode,
+      })
+      .then((res) => {
+        if (res.data["Status"] === "Success") {
+          this.setState({
+            PredSentiment: res.data["SentimentScore"],
+            News: res.data["Sentiment"],
+            PredClose: res.data["Price"],
+            Close: res.data["Closing"],
+            Open: res.data["Opening"],
+            FiftyTwoHigh: res.data["52High"],
+            FiftyTwoLow: res.data["52Low"],
+            PredChange: res.data["Change"],
+            PredWord: res.data["Outcome"],
+            PredSubtext1: res.data["HelperText1"],
+            PredSubtext2: res.data["HelperText2"],
+          });
+          $(".disappearingcontainer").fadeTo(500, 1);
+          $(".cssload-loader").fadeTo(500, 0);
+          $(".cssload-text").fadeTo(500, 0);
+        }
+      });
+  }
 
   render() {
     return (
@@ -24,6 +73,9 @@ export default class Predict extends React.Component {
             <div className="cssload-inner cssload-two"></div>
             <div className="cssload-inner cssload-three"></div>
           </div>
+          <div className="cssload-text">
+            Contacting Our Server. This Takes a few minutes
+          </div>
         </section>
         <section id="predict">
           <NavbarPostAuth
@@ -32,64 +84,88 @@ export default class Predict extends React.Component {
             handleSearchClick={this.handleSearchClick}
           />
 
-        <div class="predict container">
-            <div class=" predictcard card border-light">
-
-            <div class="card-header">
-               
-                  <span className="pStockName">PVR</span> <span class="pExchange badge bg-primary">NSE</span>
-                
-            </div>
-            <div class="card-body ">
-              
-              <div className="row">
-                <div className="col">Opening Price - 1201</div>
-                <div className="col">Prev Closing Price - 1785</div>
+          <div class="predict container">
+            <div class="disappearingcontainer">
+              <div class=" predictcard card border-light">
+                <div class="card-header">
+                  <span className="pStockName">{this.state.StockCode}</span>{" "}
+                  <span class="pExchange badge bg-primary">
+                    {this.state.StockExchange}
+                  </span>
+                </div>
+                <div class="card-body ">
+                  <div className="row">
+                    <div className="col">Opening Price - {this.state.Open}</div>
+                    <div className="col">
+                      Prev Closing Price - {this.state.Close}
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col">
+                      52 Week High Price - {this.state.FiftyTwoHigh}
+                    </div>
+                    <div className="col">
+                      52 Week Low Price - {this.state.FiftyTwoLow}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="row">
-                <div className="col">52 Week High Price - 1612</div>
-                <div className="col">52 Week Low Price - 989</div>
-              </div>      
-            </div>
-            </div>
 
-            <div class=" predictcard2 card border-light">
-            <div class="card-header">
-               
-               <span className="pStockName">Predictions and Analysis</span> 
-             
-         </div>
-         <div class="card-body">
-           
-           <div className="row">
-             <div className="col">Predicted Closing Price - 1250</div>
-           </div>
-           <div className="row">
-             <div className="col">Expected Change - 50</div>
-             <div className="col"><span class="news badge badge-soft-danger">News - 1</span></div>
-             <div className="col"><span class="news badge badge-soft-success">News - 2</span></div>
-           </div>
-           <div className="row">
-             <div className="col">sentiment Value - 74</div>
-             
-             <div className="col"><span class="news badge badge-soft-warning">News - 3</span></div>
-             <div className="col"><span class="news badge badge-soft-danger">News - 4</span></div>
-           </div>      
-         </div>
-        </div>
-          <div className="suggestions">
-          <div className="buysell">
-
+              <div class=" predictcard2 card border-light">
+                <div class="card-header">
+                  <span className="pStockName">Predictions and Analysis</span>
+                </div>
+                <div class="card-body">
                   <div className="row">
-                   <div className="col buysellText"> SELL</div>
+                    <div className="col">
+                      Predicted Closing Price - {this.state.PredClose}
+                    </div>
                   </div>
                   <div className="row">
-                   <div> *Best time to buy.</div>
-                   <div> *Remain invested if you already own</div>
+                    <div className="col">
+                      Expected Change - {this.state.PredChange}
+                    </div>
+                    <div className="col">
+                      <span class="news badge badge-soft-danger">
+                        News 1 : {this.state.News[0]}
+                      </span>
+                    </div>
+                    <div className="col">
+                      <span class="news badge badge-soft-success">
+                        News 2 : {this.state.News[1]}
+                      </span>
+                    </div>
                   </div>
+                  <div className="row">
+                    <div className="col">
+                      Sentiment Value - {this.state.PredSentiment}
+                    </div>
 
-          </div>
-          </div>
+                    <div className="col">
+                      <span class="news badge badge-soft-warning">
+                        News 3 : {this.state.News[2]}
+                      </span>
+                    </div>
+                    <div className="col">
+                      <span class="news badge badge-soft-danger">
+                        News 4 : {this.state.News[3]}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="suggestions">
+                <div className="buysell">
+                  <div className="row">
+                    <div className="col buysellText">{this.state.PredWord}</div>
+                  </div>
+                  <div className="row">
+                    <div>{this.state.PredSubtext1}</div>
+                    <div>{this.state.PredSubtext2}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
