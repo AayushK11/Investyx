@@ -783,9 +783,10 @@ export default class Dashboard extends React.Component {
                     </div>
                   </div>
                   <div className="dashboard-main-content-row row">
-                    <div className="dashboard-main-stats-col col-lg-6">
-                      <div className="dashboard-main-mood-row row">
+                    <div className="dashboard-main-stats-col col-lg-6  ">
+                      <div className="dashboard-main-mood-row row Dashboard-Card">
                         <div className="dashboard-mood">
+
                           <div className="container-fluid">
                             <div className="mood-row row">
                               <div className="mood-heading">
@@ -803,14 +804,14 @@ export default class Dashboard extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="dashboard-main-active-row row">
-                        <div className="dashboard-active">
+                      <div className="dashboard-main-active-row row Dashboard-Card">
+                        <div className="dashboard-active ">
                           <div className="container-fluid">
                             <div className="active-row row">Active Stocks</div>
                             <div className="active-table-row">
-                              <table className="active-table">
+                              <table className="active-table table table-light table-hover">
                                 <thead>
-                                  <tr className="active-table-header">
+                                  <tr className="active-table-header table-light">
                                     <th>Company</th>
                                     <th>Price</th>
                                     <th>Change</th>
@@ -856,7 +857,7 @@ export default class Dashboard extends React.Component {
                       </div>
                     </div>
                     <div className="dashboard-main-news-col col-lg-6">
-                      <div className="dashboard-news">
+                      <div className="dashboard-news Dashboard-Card">
                         <div className="container-fluid">
                           <div className="row showing-news">
                             <div className="col-3 image">
@@ -975,7 +976,7 @@ export default class Dashboard extends React.Component {
                           <div className="row">
                             <div className="col-11">
                               <div className="row">
-                                <div className="col-3 stock-name">
+                                <div className="col-8 stock-name">
                                   <div className="row">
                                     <b>
                                       {this.state.StockCode.split(" - ")[0]}
@@ -990,8 +991,9 @@ export default class Dashboard extends React.Component {
                                     )}
                                   </div>
                                 </div>
-                                <div className="col-3 add-to-watchlist">
+                                <div className="col-2 add-to-watchlist">
                                   <button
+                                  className="btn btn-secondary"
                                     name="AddToWatchList"
                                     value="AddToWatchList"
                                     id="AddToWatchList"
@@ -1001,8 +1003,9 @@ export default class Dashboard extends React.Component {
                                     Add To Watch List
                                   </button>
                                 </div>
-                                <div className="col-3 predict-button">
+                                <div className="col-2 predict-button">
                                   <button
+                                  className="btn btn-secondary"
                                     name="Predict"
                                     value="Predict"
                                     id="Predict"
@@ -1016,6 +1019,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <div className="col-1">
                               <button
+                              className="btn btn-secondary"
                                 name="Close"
                                 value="Close"
                                 id="Close"
@@ -1255,7 +1259,7 @@ export default class Dashboard extends React.Component {
                                 <div className="col-12">Major Holders</div>
                               </div>
                               <div className="row">
-                                <div className="col-6">
+                                <div className="col-3">
                                   {this.state.Holders[0]}
                                 </div>
                                 <div className="col-6">
@@ -1263,7 +1267,7 @@ export default class Dashboard extends React.Component {
                                 </div>
                               </div>
                               <div className="row">
-                                <div className="col-6">
+                                <div className="col-3">
                                   {this.state.Holders[1]}
                                 </div>
                                 <div className="col-6">
@@ -1271,7 +1275,7 @@ export default class Dashboard extends React.Component {
                                 </div>
                               </div>
                               <div className="row">
-                                <div className="col-6">
+                                <div className="col-3">
                                   {this.state.Holders[2]}
                                 </div>
                                 <div className="col-6">
@@ -1279,7 +1283,7 @@ export default class Dashboard extends React.Component {
                                 </div>
                               </div>
                               <div className="row">
-                                <div className="col-6">
+                                <div className="col-3">
                                   {this.state.Holders[3]}
                                 </div>
                                 <div className="col-6">

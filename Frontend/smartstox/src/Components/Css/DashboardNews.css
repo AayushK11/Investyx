@@ -6,12 +6,12 @@
   display: inline-block;
   align-items: flex-start;
   width: 80%;
-  padding: 0px;
+  padding: 14px;
 }
 
 .dashboard-news .image {
   display: flex;
-  padding: 5px;
+  padding: 10px 20px;
   justify-content: center;
   align-items: center;
 }

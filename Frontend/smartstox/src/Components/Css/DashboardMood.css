@@ -45,7 +45,7 @@
 .gauge__cover{
   width: 75%;
   height: 150%;
-  background: rgb(255, 255, 255);
+  background: #e7f0ed;
   border-radius: 50%;
   position: absolute;
   top: 25%;

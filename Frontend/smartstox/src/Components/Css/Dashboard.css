@@ -22,6 +22,34 @@
   padding: 10px;
 }
 
+.dashboard-main-content-row .dashboard-main-stats-col .Dashboard-Card {
+padding:30px 10px;
+ margin: 0 0 30px 0;
+}
+.dashboard-main-content-row .dashboard-main-active-row {
+  padding:30px 10px;
+  }
+  
+
+.dashboard-main-active-row .active-row{
+  padding-bottom: 20px;
+  font-size: 1.5rem;
+}
+.dashboard-main-active-row .dashboard-active{
+  padding:0;
+}
+.dashboard-main-news .Dashboard-Card{
+  padding: 30px 10px;
+}
+
+.dashboard-main-content-row  .mood-heading{
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+.dashboard-main-content-row .gauge__cover{
+  font-size: 1.7rem;
+}
+
 .Dashboard-Card {
   background-color: #e7f0ed;
   height: auto;
@@ -47,7 +75,7 @@
 }
 
 .dashboard-main .dashboard-main-content-row .dashboard-main-stats-col {
-  margin: 60px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 @media only screen and (min-width: 992px) {

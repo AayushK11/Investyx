@@ -252,323 +252,325 @@ export default class WatchList extends React.Component {
             if (this.state.watchlistLevel === 1) {
               return (
                 <div className="dashboard-stock-card">
-                  <div className="Stock-Details">
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-12">
-                          <div className="row">
-                            <div className="col-11">
-                              <div className="row">
-                                <div className="col-3 stock-name">
-                                  <div className="row">
-                                    <b>
-                                      {this.state.StockCode.split(" - ")[0]}
-                                    </b>
-                                  </div>
-                                  <div className="row">
-                                    {this.state.StockCode.split(
-                                      " - "
-                                    )[1].concat(
-                                      " - ",
-                                      this.state.StockCode.split(" - ")[2]
-                                    )}
-                                  </div>
+                <div className="Stock-Details">
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="row">
+                          <div className="col-11">
+                            <div className="row">
+                              <div className="col-8 stock-name">
+                                <div className="row">
+                                  <b>
+                                    {this.state.StockCode.split(" - ")[0]}
+                                  </b>
                                 </div>
-                                <div className="col-3 add-to-watchlist">
-                                  <button
-                                    name="AddToWatchList"
-                                    value="AddToWatchList"
-                                    id="AddToWatchList"
-                                    onClick={this.onClick}
-                                  >
-                                    <i class="far fa-star"></i>
-                                    Add To Watch List
-                                  </button>
-                                </div>
-                                <div className="col-3 predict-button">
-                                  <button
-                                    name="Predict"
-                                    value="Predict"
-                                    id="Predict"
-                                    onClick={this.onClick}
-                                  >
-                                    <i class="fas fa-chart-line"></i>
-                                    Predict
-                                  </button>
+                                <div className="row">
+                                  {this.state.StockCode.split(
+                                    " - "
+                                  )[1].concat(
+                                    " - ",
+                                    this.state.StockCode.split(" - ")[2]
+                                  )}
                                 </div>
                               </div>
-                            </div>
-                            <div className="col-1">
-                              <button
-                                name="Close"
-                                value="Close"
-                                id="Close"
-                                onClick={this.onClick}
-                              >
-                                <i class="fas fa-times"></i>
-                              </button>
+                              <div className="col-2 add-to-watchlist">
+                                <button
+                                className="btn btn-secondary"
+                                  name="AddToWatchList"
+                                  value="AddToWatchList"
+                                  id="AddToWatchList"
+                                  onClick={this.onClick}
+                                >
+                                  <i class="far fa-star"></i>
+                                  Add To Watch List
+                                </button>
+                              </div>
+                              <div className="col-2 predict-button">
+                                <button
+                                className="btn btn-secondary"
+                                  name="Predict"
+                                  value="Predict"
+                                  id="Predict"
+                                  onClick={this.onClick}
+                                >
+                                  <i class="fas fa-chart-line"></i>
+                                  Predict
+                                </button>
+                              </div>
                             </div>
                           </div>
-                          <div className="row">
-                            <div className="col-11">
-                              <div className="row">
-                                <div className="col-6 stock-price">
-                                  <div className="row">
-                                    <b>{this.state.TopBar[0]}</b>
-                                  </div>
-                                  <div className="row">
-                                    Live : {this.state.TopBar[3]}
-                                  </div>
+                          <div className="col-1">
+                            <button
+                            className="btn btn-secondary"
+                              name="Close"
+                              value="Close"
+                              id="Close"
+                              onClick={this.onClick}
+                            >
+                              <i class="fas fa-times"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-11">
+                            <div className="row">
+                              <div className="col-6 stock-price">
+                                <div className="row">
+                                  <b>{this.state.TopBar[0]}</b>
                                 </div>
-                                <div className="col-6 add-to-change">
-                                  {this.state.TopBar[1]} ({this.state.TopBar[2]}
-                                  )
+                                <div className="row">
+                                  Live : {this.state.TopBar[3]}
                                 </div>
+                              </div>
+                              <div className="col-6 add-to-change">
+                                {this.state.TopBar[1]} ({this.state.TopBar[2]}
+                                )
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="col-12">
-                          <ul
-                            role="tablist"
-                            className="nav bg-light nav-pills rounded nav-fill "
-                          >
-                            <li className="nav-item">
-                              <a
-                                data-toggle="pill"
-                                href="#summary"
-                                className="nav-link active "
-                              >
-                                <i class="fas fa-clipboard-list"></i> Summary
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                data-toggle="pill"
-                                href="#chart"
-                                className="nav-link "
-                              >
-                                <i class="fas fa-chart-bar"></i> Chart
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                data-toggle="pill"
-                                href="#statistics"
-                                className="nav-link "
-                              >
-                                <i class="fas fa-calculator"></i> Statistics
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                data-toggle="pill"
-                                href="#profile"
-                                className="nav-link "
-                              >
-                                <i class="far fa-address-card"></i> Profile
-                              </a>
-                            </li>
-                            <li className="nav-item">
-                              <a
-                                data-toggle="pill"
-                                href="#holders"
-                                className="nav-link "
-                              >
-                                <i class="fas fa-coins"></i> Holders
-                              </a>
-                            </li>
-                          </ul>
-                          <div className="tab-content">
-                            <div
-                              id="summary"
-                              className="tab-pane fade show active pt-3"
+                      </div>
+                      <div className="col-12">
+                        <ul
+                          role="tablist"
+                          className="nav bg-light nav-pills rounded nav-fill "
+                        >
+                          <li className="nav-item">
+                            <a
+                              data-toggle="pill"
+                              href="#summary"
+                              className="nav-link active "
                             >
-                              <div className="row">
-                                <div className="col-6">
-                                  Previous Close {this.state.Summary[0]}
+                              <i class="fas fa-clipboard-list"></i> Summary
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a
+                              data-toggle="pill"
+                              href="#chart"
+                              className="nav-link "
+                            >
+                              <i class="fas fa-chart-bar"></i> Chart
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a
+                              data-toggle="pill"
+                              href="#statistics"
+                              className="nav-link "
+                            >
+                              <i class="fas fa-calculator"></i> Statistics
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a
+                              data-toggle="pill"
+                              href="#profile"
+                              className="nav-link "
+                            >
+                              <i class="far fa-address-card"></i> Profile
+                            </a>
+                          </li>
+                          <li className="nav-item">
+                            <a
+                              data-toggle="pill"
+                              href="#holders"
+                              className="nav-link "
+                            >
+                              <i class="fas fa-coins"></i> Holders
+                            </a>
+                          </li>
+                        </ul>
+                        <div className="tab-content">
+                          <div
+                            id="summary"
+                            className="tab-pane fade show active pt-3"
+                          >
+                            <div className="row">
+                              <div className="col-6">
+                                Previous Close {this.state.Summary[0]}
+                              </div>
+                              <div className="col-6">
+                                Market Cap {this.state.Summary[6]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-6">
+                                Open {this.state.Summary[1]}
+                              </div>
+                              <div className="col-6">
+                                PE Ratio {this.state.Summary[7]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-6">
+                                Days Range {this.state.Summary[2]}
+                              </div>
+                              <div className="col-6">
+                                Earnings Date {this.state.Summary[8]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-6">
+                                52 Week Range {this.state.Summary[3]}
+                              </div>
+                              <div className="col-6">
+                                Forward dividend & yield{" "}
+                                {this.state.Summary[9]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-6">
+                                Volume {this.state.Summary[4]}
+                              </div>
+                              <div className="col-6">
+                                Average Volume {this.state.Summary[10]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-6">
+                                Ex-Dividend Date {this.state.Summary[5]}
+                              </div>
+                              <div className="col-6">
+                                1Y Target Est {this.state.Summary[11]}
+                              </div>
+                            </div>
+                          </div>
+                          <div id="chart" className="tab-pane fade pt-3">
+                            <ResponsiveContainer width="100%" height={400}>
+                              <AreaChart data={this.state.ChartData}>
+                                <defs>
+                                  <linearGradient
+                                    id="color"
+                                    x1="0"
+                                    y1="0"
+                                    x2="0"
+                                    y2="0"
+                                  >
+                                    <stop
+                                      offset="0%"
+                                      stopColor="#037948"
+                                      stopOpacity={1}
+                                    />
+                                    <stop
+                                      offset="75%"
+                                      stopColor="#037948"
+                                      stopOpacity={0.2}
+                                    />
+                                  </linearGradient>
+                                </defs>
+                                <Area
+                                  dataKey="Price"
+                                  stroke="#037948"
+                                  fill="url(#color)"
+                                />
+                                <XAxis dataKey="Date" />
+                                <YAxis dataKey="Price" />
+                                <Tooltip />
+                              </AreaChart>
+                            </ResponsiveContainer>
+                          </div>
+                          <div id="statistics" className="tab-pane fade pt-3">
+                            <div className="row">
+                              <div className="col-12">
+                                52-Week Change {this.state.Statistics[0]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-12">
+                                52-Week High {this.state.Statistics[1]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-12">
+                                52-Week Low {this.state.Statistics[2]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-12">
+                                50-day moving average{" "}
+                                {this.state.Statistics[3]}
+                              </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-12">
+                                200-day moving average{" "}
+                                {this.state.Statistics[4]}
+                              </div>
+                            </div>
+                          </div>
+                          <div id="profile" className="tab-pane fade pt-3">
+                            <div className="row">
+                              <div className="col-6">
+                                <div className="row">
+                                  {this.state.Profile[0]}
                                 </div>
-                                <div className="col-6">
-                                  Market Cap {this.state.Summary[6]}
+                                <div className="row">
+                                  {this.state.Profile[1]}
+                                </div>
+                                <div className="row">
+                                  {this.state.Profile[2]}
+                                </div>
+                                <div className="row">
+                                  {this.state.Profile[3]}
                                 </div>
                               </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  Open {this.state.Summary[1]}
+                              <div className="col-6">
+                                <div className="row">
+                                  Sector(s): {this.state.Profile[4]}
                                 </div>
-                                <div className="col-6">
-                                  PE Ratio {this.state.Summary[7]}
+                                <div className="row">
+                                  Industry: {this.state.Profile[5]}
                                 </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  Days Range {this.state.Summary[2]}
-                                </div>
-                                <div className="col-6">
-                                  Earnings Date {this.state.Summary[8]}
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  52 Week Range {this.state.Summary[3]}
-                                </div>
-                                <div className="col-6">
-                                  Forward dividend & yield{" "}
-                                  {this.state.Summary[9]}
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  Volume {this.state.Summary[4]}
-                                </div>
-                                <div className="col-6">
-                                  Average Volume {this.state.Summary[10]}
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  Ex-Dividend Date {this.state.Summary[5]}
-                                </div>
-                                <div className="col-6">
-                                  1Y Target Est {this.state.Summary[11]}
+                                <div className="row">
+                                  Full-time employees: {this.state.Profile[6]}
                                 </div>
                               </div>
                             </div>
-                            <div id="chart" className="tab-pane fade pt-3">
-                              <ResponsiveContainer width="100%" height={400}>
-                                <AreaChart data={this.state.ChartData}>
-                                  <defs>
-                                    <linearGradient
-                                      id="color"
-                                      x1="0"
-                                      y1="0"
-                                      x2="0"
-                                      y2="0"
-                                    >
-                                      <stop
-                                        offset="0%"
-                                        stopColor="#037948"
-                                        stopOpacity={1}
-                                      />
-                                      <stop
-                                        offset="75%"
-                                        stopColor="#037948"
-                                        stopOpacity={0.2}
-                                      />
-                                    </linearGradient>
-                                  </defs>
-                                  <Area
-                                    dataKey="Price"
-                                    stroke="#037948"
-                                    fill="url(#color)"
-                                  />
-                                  <XAxis dataKey="Date" />
-                                  <YAxis dataKey="Price" />
-                                  <Tooltip />
-                                </AreaChart>
-                              </ResponsiveContainer>
-                            </div>
-                            <div id="statistics" className="tab-pane fade pt-3">
-                              <div className="row">
-                                <div className="col-12">
-                                  52-Week Change {this.state.Statistics[0]}
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-12">
-                                  52-Week High {this.state.Statistics[1]}
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-12">
-                                  52-Week Low {this.state.Statistics[2]}
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-12">
-                                  50-day moving average{" "}
-                                  {this.state.Statistics[3]}
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-12">
-                                  200-day moving average{" "}
-                                  {this.state.Statistics[4]}
+                            <div className="row">
+                              <div className="col-12">
+                                <div className="row">Description</div>
+                                <div className="row">
+                                  {this.state.Profile[7]}
                                 </div>
                               </div>
                             </div>
-                            <div id="profile" className="tab-pane fade pt-3">
-                              <div className="row">
-                                <div className="col-6">
-                                  <div className="row">
-                                    {this.state.Profile[0]}
-                                  </div>
-                                  <div className="row">
-                                    {this.state.Profile[1]}
-                                  </div>
-                                  <div className="row">
-                                    {this.state.Profile[2]}
-                                  </div>
-                                  <div className="row">
-                                    {this.state.Profile[3]}
-                                  </div>
-                                </div>
-                                <div className="col-6">
-                                  <div className="row">
-                                    Sector(s): {this.state.Profile[4]}
-                                  </div>
-                                  <div className="row">
-                                    Industry: {this.state.Profile[5]}
-                                  </div>
-                                  <div className="row">
-                                    Full-time employees: {this.state.Profile[6]}
-                                  </div>
-                                </div>
+                          </div>
+                          <div id="holders" className="tab-pane fade pt-3">
+                            <div className="row">
+                              <div className="col-12">Major Holders</div>
+                            </div>
+                            <div className="row">
+                              <div className="col-3">
+                                {this.state.Holders[0]}
                               </div>
-                              <div className="row">
-                                <div className="col-12">
-                                  <div className="row">Description</div>
-                                  <div className="row">
-                                    {this.state.Profile[7]}
-                                  </div>
-                                </div>
+                              <div className="col-6">
+                                % of shares held by all insiders
                               </div>
                             </div>
-                            <div id="holders" className="tab-pane fade pt-3">
-                              <div className="row">
-                                <div className="col-12">Major Holders</div>
+                            <div className="row">
+                              <div className="col-3">
+                                {this.state.Holders[1]}
                               </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  {this.state.Holders[0]}
-                                </div>
-                                <div className="col-6">
-                                  % of shares held by all insiders
-                                </div>
+                              <div className="col-6">
+                                % of shares held by institutions
                               </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  {this.state.Holders[1]}
-                                </div>
-                                <div className="col-6">
-                                  % of shares held by institutions
-                                </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-3">
+                                {this.state.Holders[2]}
                               </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  {this.state.Holders[2]}
-                                </div>
-                                <div className="col-6">
-                                  % of float held by institutions
-                                </div>
+                              <div className="col-6">
+                                % of float held by institutions
                               </div>
-                              <div className="row">
-                                <div className="col-6">
-                                  {this.state.Holders[3]}
-                                </div>
-                                <div className="col-6">
-                                  Number of institutions holding shares
-                                </div>
+                            </div>
+                            <div className="row">
+                              <div className="col-3">
+                                {this.state.Holders[3]}
+                              </div>
+                              <div className="col-6">
+                                Number of institutions holding shares
                               </div>
                             </div>
                           </div>
@@ -577,6 +579,7 @@ export default class WatchList extends React.Component {
                     </div>
                   </div>
                 </div>
+              </div>
               );
             }
           })()}
