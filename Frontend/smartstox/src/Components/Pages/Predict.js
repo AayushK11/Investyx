@@ -3,6 +3,7 @@ import NavbarPostAuth from "../Navbar_PostAuth";
 import "../Css/predict.css";
 import "../Css/Loader.css";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 import Server_Path from "../Server.js";
 import $ from "jquery";
 
@@ -30,9 +31,9 @@ export default class Predict extends React.Component {
 
   componentDidMount() {
     var StockCode = window.location.search.split("?")[1];
-    var StockCode = StockCode.split("=")[1];
+    StockCode = StockCode.split("=")[1];
     var StockExchange = window.location.search.split("?")[2];
-    var StockExchange = StockExchange.split("=")[1];
+    StockExchange = StockExchange.split("=")[1];
     this.setState({ StockCode: StockCode, StockExchange: StockExchange });
     $(".disappearingcontainer").fadeTo(500, 0);
     $(".cssload-loader").fadeTo(500, 1);
@@ -67,6 +68,9 @@ export default class Predict extends React.Component {
   render() {
     return (
       <div className="predict">
+        <Helmet>
+          <title>Smart Stox | Prediction</title>
+        </Helmet>
         <section id="loader">
           <div className="cssload-loader">
             <div className="cssload-inner cssload-one"></div>
@@ -84,16 +88,16 @@ export default class Predict extends React.Component {
             handleSearchClick={this.handleSearchClick}
           />
 
-          <div class="predict container">
-            <div class="disappearingcontainer">
-              <div class=" predictcard card border-light">
-                <div class="card-header">
+          <div className="predict container">
+            <div className="disappearingcontainer">
+              <div className=" predictcard card border-light">
+                <div className="card-header">
                   <span className="pStockName">{this.state.StockCode}</span>{" "}
-                  <span class="pExchange badge bg-primary">
+                  <span className="pExchange badge bg-primary">
                     {this.state.StockExchange}
                   </span>
                 </div>
-                <div class="card-body ">
+                <div className="card-body ">
                   <div className="row">
                     <div className="col">Opening Price - {this.state.Open}</div>
                     <div className="col">
@@ -111,11 +115,11 @@ export default class Predict extends React.Component {
                 </div>
               </div>
 
-              <div class=" predictcard2 card border-light">
-                <div class="card-header">
+              <div className=" predictcard2 card border-light">
+                <div className="card-header">
                   <span className="pStockName">Predictions and Analysis</span>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                   <div className="row">
                     <div className="col">
                       Predicted Closing Price - {this.state.PredClose}
@@ -126,12 +130,12 @@ export default class Predict extends React.Component {
                       Expected Change - {this.state.PredChange}
                     </div>
                     <div className="col">
-                      <span class="news badge badge-soft-danger">
+                      <span className="news badge badge-soft-danger">
                         News 1 : {this.state.News[0]}
                       </span>
                     </div>
                     <div className="col">
-                      <span class="news badge badge-soft-success">
+                      <span className="news badge badge-soft-success">
                         News 2 : {this.state.News[1]}
                       </span>
                     </div>
@@ -142,12 +146,12 @@ export default class Predict extends React.Component {
                     </div>
 
                     <div className="col">
-                      <span class="news badge badge-soft-warning">
+                      <span className="news badge badge-soft-warning">
                         News 3 : {this.state.News[2]}
                       </span>
                     </div>
                     <div className="col">
-                      <span class="news badge badge-soft-danger">
+                      <span className="news badge badge-soft-danger">
                         News 4 : {this.state.News[3]}
                       </span>
                     </div>

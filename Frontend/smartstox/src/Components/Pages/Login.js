@@ -1,5 +1,5 @@
 import React from "react";
-// import { Helmet } from "react-helmet";]
+import { Helmet } from "react-helmet";
 import "../Css/Login.css";
 import "../Css/Loader.css";
 import smartstox from "../Images/symbol.png";
@@ -192,6 +192,9 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className="login">
+        <Helmet>
+          <title>Smart Stox | Login</title>
+        </Helmet>
         <section id="loader">
           <div className="cssload-loader">
             <div className="cssload-inner cssload-one"></div>

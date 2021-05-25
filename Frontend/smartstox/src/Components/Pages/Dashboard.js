@@ -8,6 +8,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { Helmet } from "react-helmet";
 import "../Css/Dashboard.css";
 import "../Css/DashboardStockCard.css";
 import "../Css/DashboardNews.css";
@@ -86,7 +87,7 @@ export default class Dashboard extends React.Component {
         this.updateMood();
         this.updateActive();
         this.updateActiveChange();
-      }, 2000);
+      }, 5000);
     }
   }
 
@@ -361,12 +362,12 @@ export default class Dashboard extends React.Component {
           res.data["Holders"].forEach(function (item, index) {
             Holders = Holders.concat(item);
           });
-          res.data["ChartData"].map((item) => {
+          res.data["ChartData"].map((item) =>
             ChartData.push({
               Date: item[0],
               Price: parseFloat(item[1]),
-            });
-          });
+            })
+          );
 
           this.setState({
             TopBar: TopBar,
@@ -664,6 +665,9 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
+        <Helmet>
+          <title>Smart Stox | Dashboard</title>
+        </Helmet>
         <section id="loader">
           <div className="cssload-loader">
             <div className="cssload-inner cssload-one"></div>
@@ -786,17 +790,16 @@ export default class Dashboard extends React.Component {
                     <div className="dashboard-main-stats-col col-lg-6  ">
                       <div className="dashboard-main-mood-row row Dashboard-Card">
                         <div className="dashboard-mood">
-
                           <div className="container-fluid">
                             <div className="mood-row row">
                               <div className="mood-heading">
                                 Market Live Sentiments
                               </div>
                               <div className="mood-col col-12">
-                                <div class="gauge">
-                                  <div class="gauge__body">
-                                    <div class="gauge__fill"></div>
-                                    <div class="gauge__cover"></div>
+                                <div className="gauge">
+                                  <div className="gauge__body">
+                                    <div className="gauge__fill"></div>
+                                    <div className="gauge__cover"></div>
                                   </div>
                                 </div>
                               </div>
@@ -993,25 +996,25 @@ export default class Dashboard extends React.Component {
                                 </div>
                                 <div className="col-2 add-to-watchlist">
                                   <button
-                                  className="btn btn-secondary"
+                                    className="btn btn-secondary"
                                     name="AddToWatchList"
                                     value="AddToWatchList"
                                     id="AddToWatchList"
                                     onClick={this.onClick}
                                   >
-                                    <i class="far fa-star"></i>
+                                    <i className="far fa-star"></i>
                                     Add To Watch List
                                   </button>
                                 </div>
                                 <div className="col-2 predict-button">
                                   <button
-                                  className="btn btn-secondary"
+                                    className="btn btn-secondary"
                                     name="Predict"
                                     value="Predict"
                                     id="Predict"
                                     onClick={this.onClick}
                                   >
-                                    <i class="fas fa-chart-line"></i>
+                                    <i className="fas fa-chart-line"></i>
                                     Predict
                                   </button>
                                 </div>
@@ -1019,13 +1022,13 @@ export default class Dashboard extends React.Component {
                             </div>
                             <div className="col-1">
                               <button
-                              className="btn btn-secondary"
+                                className="btn btn-secondary"
                                 name="Close"
                                 value="Close"
                                 id="Close"
                                 onClick={this.onClick}
                               >
-                                <i class="fas fa-times"></i>
+                                <i className="fas fa-times"></i>
                               </button>
                             </div>
                           </div>
@@ -1059,7 +1062,8 @@ export default class Dashboard extends React.Component {
                                 href="#summary"
                                 className="nav-link active "
                               >
-                                <i class="fas fa-clipboard-list"></i> Summary
+                                <i className="fas fa-clipboard-list"></i>{" "}
+                                Summary
                               </a>
                             </li>
                             <li className="nav-item">
@@ -1068,7 +1072,7 @@ export default class Dashboard extends React.Component {
                                 href="#chart"
                                 className="nav-link "
                               >
-                                <i class="fas fa-chart-bar"></i> Chart
+                                <i className="fas fa-chart-bar"></i> Chart
                               </a>
                             </li>
                             <li className="nav-item">
@@ -1077,7 +1081,7 @@ export default class Dashboard extends React.Component {
                                 href="#statistics"
                                 className="nav-link "
                               >
-                                <i class="fas fa-calculator"></i> Statistics
+                                <i className="fas fa-calculator"></i> Statistics
                               </a>
                             </li>
                             <li className="nav-item">
@@ -1086,7 +1090,7 @@ export default class Dashboard extends React.Component {
                                 href="#profile"
                                 className="nav-link "
                               >
-                                <i class="far fa-address-card"></i> Profile
+                                <i className="far fa-address-card"></i> Profile
                               </a>
                             </li>
                             <li className="nav-item">
@@ -1095,7 +1099,7 @@ export default class Dashboard extends React.Component {
                                 href="#holders"
                                 className="nav-link "
                               >
-                                <i class="fas fa-coins"></i> Holders
+                                <i className="fas fa-coins"></i> Holders
                               </a>
                             </li>
                           </ul>

@@ -1,9 +1,14 @@
 import React from "react";
 import NavbarPreAuth from "../Navbar_PreAuth.js";
-// import Footer from "../Footer.js";
 import { Helmet } from "react-helmet";
 import "../Css/Landing.css";
 import logo512 from "../Images/symbol.png";
+import searchstock from "../Images/searchstock.png";
+import oneclickaway from "../Images/oneclickaway.png";
+import ml from "../Images/ml.jpg";
+import chart from "../Images/chart.png";
+import exactrupee from "../Images/exactrupee.png";
+import mobile from "../Images/mobile.jpg";
 
 export default class Landing extends React.Component {
   constructor(props) {
@@ -25,7 +30,7 @@ export default class Landing extends React.Component {
     return (
       <div className="landing">
         <Helmet>
-          <title>Smart Stox</title>
+          <title>Smart Stox | Landing</title>
         </Helmet>
         <NavbarPreAuth />
         <section id="smartstox-intro">
@@ -63,7 +68,7 @@ export default class Landing extends React.Component {
             <div className="row">
               <div className="search-design order-first col-md-6 col-12">
                 <img
-                  src={logo512}
+                  src={searchstock}
                   alt="Search Design"
                   className="search-design"
                 />
@@ -87,7 +92,7 @@ export default class Landing extends React.Component {
           <div className="container">
             <div className="row">
               <div className="ui-design order-first order-md-last col-md-6 col-12">
-                <img src={logo512} alt="UI Design" className="ui-design" />
+                <img src={oneclickaway} alt="UI Design" className="ui-design" />
               </div>
               <div className="ui-text col-md-6 my-auto">
                 <div className="row ui-heading">
@@ -109,7 +114,7 @@ export default class Landing extends React.Component {
             <div className="row">
               <div className="ml-design order-first col-md-6 col-12">
                 <img
-                  src={logo512}
+                  src={ml}
                   alt="Machine Learning Design"
                   className="ml-design"
                 />
@@ -133,11 +138,7 @@ export default class Landing extends React.Component {
           <div className="container">
             <div className="row">
               <div className="chart-design order-first order-md-last col-md-6 col-12">
-                <img
-                  src={logo512}
-                  alt="Chart Design"
-                  className="chart-design"
-                />
+                <img src={chart} alt="Chart Design" className="chart-design" />
               </div>
               <div className="chart-text col-md-6 my-auto">
                 <div className="row chart-heading">
@@ -159,7 +160,7 @@ export default class Landing extends React.Component {
             <div className="row">
               <div className="prices-design order-first col-md-6 col-12">
                 <img
-                  src={logo512}
+                  src={exactrupee}
                   alt="Prices Design"
                   className="prices-design"
                 />
@@ -183,7 +184,7 @@ export default class Landing extends React.Component {
             <div className="row">
               <div className="mobile-design order-first order-md-last col-md-6 col-12">
                 <img
-                  src={logo512}
+                  src={mobile}
                   alt="Mobile Design"
                   className="mobile-design"
                 />
