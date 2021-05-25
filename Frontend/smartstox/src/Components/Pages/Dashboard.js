@@ -588,9 +588,9 @@ export default class Dashboard extends React.Component {
           Requirement: "Dashboard Cards",
         })
         .then((res) => {
+          console.log(res);
           if (res.data["Status"] === "Success") {
-            if (res.data["Card1"].includes(0)) {
-            } else {
+            if (res.data["Card1"].length > 0) {
               let PinnedStocks = this.state.PinnedStocks;
               let PinnedPrice = this.state.PinnedPrice;
               let PinnedPercent = this.state.PinnedPercent;
@@ -606,8 +606,7 @@ export default class Dashboard extends React.Component {
                 PinnedChange: PinnedChange,
               });
             }
-            if (res.data["Card2"].includes(0)) {
-            } else {
+            if (res.data["Card2"].length > 0) {
               let PinnedStocks = this.state.PinnedStocks;
               let PinnedPrice = this.state.PinnedPrice;
               let PinnedPercent = this.state.PinnedPercent;
@@ -623,8 +622,7 @@ export default class Dashboard extends React.Component {
                 PinnedChange: PinnedChange,
               });
             }
-            if (res.data["Card3"].includes(0)) {
-            } else {
+            if (res.data["Card3"].length > 0) {
               let PinnedStocks = this.state.PinnedStocks;
               let PinnedPrice = this.state.PinnedPrice;
               let PinnedPercent = this.state.PinnedPercent;
@@ -640,8 +638,7 @@ export default class Dashboard extends React.Component {
                 PinnedChange: PinnedChange,
               });
             }
-            if (res.data["Card4"].includes(0)) {
-            } else {
+            if (res.data["Card4"].length > 0) {
               let PinnedStocks = this.state.PinnedStocks;
               let PinnedPrice = this.state.PinnedPrice;
               let PinnedPercent = this.state.PinnedPercent;
