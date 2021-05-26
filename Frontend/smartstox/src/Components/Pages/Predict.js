@@ -99,17 +99,17 @@ export default class Predict extends React.Component {
                 </div>
                 <div className="card-body ">
                   <div className="row">
-                    <div className="col">Opening Price - {this.state.Open}</div>
+                    <div className="col">Opening Price : {this.state.Open}</div>
                     <div className="col">
-                      Prev Closing Price - {this.state.Close}
+                      Prev Closing Price : {this.state.Close}
                     </div>
                   </div>
                   <div className="row">
                     <div className="col">
-                      52 Week High Price - {this.state.FiftyTwoHigh}
+                      52 Week High Price : {this.state.FiftyTwoHigh}
                     </div>
                     <div className="col">
-                      52 Week Low Price - {this.state.FiftyTwoLow}
+                      52 Week Low Price : {this.state.FiftyTwoLow}
                     </div>
                   </div>
                 </div>
@@ -122,12 +122,12 @@ export default class Predict extends React.Component {
                 <div className="card-body">
                   <div className="row">
                     <div className="col">
-                      Predicted Closing Price - {this.state.PredClose}
+                      Predicted Closing Price : {this.state.PredClose}
                     </div>
                   </div>
                   <div className="row">
                     <div className="col">
-                      Expected Change - {this.state.PredChange}
+                      Expected Change : {this.state.PredChange}
                     </div>
                     <div className="col">
                       <span className="news badge badge-soft-danger">
@@ -142,7 +142,7 @@ export default class Predict extends React.Component {
                   </div>
                   <div className="row">
                     <div className="col">
-                      Sentiment Value - {this.state.PredSentiment}
+                      Sentiment Value : {this.state.PredSentiment}
                     </div>
 
                     <div className="col">
