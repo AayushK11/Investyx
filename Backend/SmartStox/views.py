@@ -392,14 +392,15 @@ def predict(request):
         news = stock_specific_news(request.data["StockCode"])
 
         score, sentiment, price = start_prediction([request.data["StockCode"]], [news])
+        change = ""
 
-        if (
-            (float(price) - float(previous_close)) / float(previous_close)
-        ) * 100 > 0.5 and score >= 50:
+        if (float(price) - float(previous_close)) > 0:
+            change = " + " + str(abs(round(float(price) - float(previous_close), 2)))
             outcome = "Buy"
             helphertext1 = "Buy this stock if you don't already own it"
             helphertext2 = "Hold if you own"
         else:
+            change = " - " + str(abs(round(float(price) - float(previous_close), 2)))
             outcome = "Sell"
             helphertext1 = "Sell this stock if you own it"
             helphertext2 = "Do Not consider buying it at this moment"
@@ -414,7 +415,7 @@ def predict(request):
                 "Opening": opening_price,
                 "52High": fiftytwo_week_high,
                 "52Low": fiftytwo_week_low,
-                "Change": round(float(price) - float(previous_close), 2),
+                "Change": change,
                 "Outcome": outcome,
                 "HelperText1": helphertext1,
                 "HelperText2": helphertext2,
