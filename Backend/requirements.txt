@@ -27,9 +27,6 @@ httplib2==0.19.1
 idna==2.10
 importlib-metadata==4.0.1
 joblib==1.0.1
-Keras==2.4.3
-keras-nightly==2.5.0.dev2021032900
-Keras-Preprocessing==1.1.2
 lxml==4.6.3
 Markdown==3.3.4
 mypy-extensions==0.4.3
@@ -55,19 +52,10 @@ regex @ file:///C:/ci/regex_1616096096031/work
 requests==2.25.1
 requests-oauthlib==1.3.0
 rsa==4.7.2
-scikit-learn==0.24.2
 scipy==1.6.3
 six==1.15.0
-sklearn==0.0
 soupsieve==2.2.1
 sqlparse==0.4.1
-tensorboard==2.5.0
-tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.7.0
-tensorflow==2.4.1
-tensorflow-estimator==2.4.0
-tensorflow-gpu==2.5.0
-tensorflow-gpu-estimator==2.3.0
 termcolor==1.1.0
 threadpoolctl==2.1.0
 toml @ file:///tmp/build/80754af9/toml_1616166611790/work

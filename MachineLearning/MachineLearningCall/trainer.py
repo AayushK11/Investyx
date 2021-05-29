@@ -192,9 +192,10 @@ def start_time_series(symbol):
             return ypred
 
 
-def start_prediction(symbol):
-    print(start_time_series(symbol))
-    # price = pool.apply_async(start_time_series, args=(symbol)).get()
+def start_prediction(symbol, news):
+    pool = ThreadPool(processes=2)
+    score, sentiment = pool.apply_async(start_sentiment_analysis, args=(news)).get()
+    price = pool.apply_async(start_time_series, args=(symbol)).get()
 
-    # return score, sentiment, price
+    return score, sentiment, price
 
