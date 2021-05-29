@@ -15,7 +15,7 @@ export default class NavbarPreAuth extends React.Component {
 
   generateURLs() {
     this.setState({
-      login: this.state.url.concat("/login"),
+      login: "https://investyx.netlify.app/signup",
     });
   }
 

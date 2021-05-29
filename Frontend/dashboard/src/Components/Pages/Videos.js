@@ -24,7 +24,7 @@ export default class ContactUs extends React.Component {
               <div className="row">
                 <div className="video-column col-sm-6 col-12">
                   <iframe
-                    src="https://www.youtube.com/embed/Sz_YPczxzZc"
+                    src="https://www.youtube.com/embed/aoEMe8EsfJQ"
                     title="Advertisement Video"
                   ></iframe>
                 </div>
